@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="//jeff95.me">
-  <title>Archives: 2017 | Jeff的博客</title>
+  <title>Python基础数据结构 | Jeff的博客</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Jeff的博客">
-<meta property="og:url" content="//jeff95.me/archives/2017/index.html">
+  <meta name="description" content="##1、list：列表（即动态数组，C++标准库的vector，但可含不同类型的元素于一个list中）   a = [“I”,”you”,”he”,”she”]      元素可为任何类型。 ###下标：按下标读写，就当作数组处理,以0开始，有负下标的使用  0第一个元素，-1最后一个元素，   -len第一个元素，len-1最后一个元素. ###取list的元素数量:  len(list)">
+<meta name="keywords" content="Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python基础数据结构">
+<meta property="og:url" content="//jeff95.me/2017/08/23/Python基础数据结构/index.html">
 <meta property="og:site_name" content="Jeff的博客">
+<meta property="og:description" content="##1、list：列表（即动态数组，C++标准库的vector，但可含不同类型的元素于一个list中）   a = [“I”,”you”,”he”,”she”]      元素可为任何类型。 ###下标：按下标读写，就当作数组处理,以0开始，有负下标的使用  0第一个元素，-1最后一个元素，   -len第一个元素，len-1最后一个元素. ###取list的元素数量:  len(list)">
+<meta property="og:updated_time" content="2017-08-23T05:44:28.427Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Jeff的博客">
+<meta name="twitter:title" content="Python基础数据结构">
+<meta name="twitter:description" content="##1、list：列表（即动态数组，C++标准库的vector，但可含不同类型的元素于一个list中）   a = [“I”,”you”,”he”,”she”]      元素可为任何类型。 ###下标：按下标读写，就当作数组处理,以0开始，有负下标的使用  0第一个元素，-1最后一个元素，   -len第一个元素，len-1最后一个元素. ###取list的元素数量:  len(list)">
   
     <link rel="alternative" href="/atom.xml" title="Jeff的博客" type="application/atom+xml">
   
@@ -147,36 +152,125 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-Python基础数据结构" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Python基础数据结构
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/23/Python基础数据结构/" class="archive-article-date">
+
+        
+        <a href="/2017/08/23/Python基础数据结构/" class="archive-article-date">
   	<time datetime="2017-08-23T05:43:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-23</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/23/Python基础数据结构/">Python基础数据结构</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>##1、list：列表（即动态数组，C++标准库的vector，但可含不同类型的元素于一个list中）</p>
+<p>  a = [“I”,”you”,”he”,”she”]      元素可为任何类型。</p>
+<p>###下标：按下标读写，就当作数组处理,以0开始，有负下标的使用<br>  0第一个元素，-1最后一个元素，</p>
+<p>  -len第一个元素，len-1最后一个元素.</p>
+<p>###取list的元素数量:<br>  len(list)   #list的长度。实际该方法是调用了此对象的<strong>len</strong>(self)方法。 </p>
+<p>###创建连续的list<br>  L = range(1,5)      #即 L=[1,2,3,4],不含最后一个元素</p>
+<p>  L = range(1, 10, 2) #即 L=[1, 3, 5, 7, 9]</p>
+<p>###list的方法<br>  L.append(var)    #追加元素</p>
+<p>  L.insert(index,var)</p>
+<p>  L.pop(var)      #返回最后一个元素，并从list中删除之</p>
+<p>  L.remove(var)   #删除第一次出现的该元素</p>
+<p>  L.count(var)    #该元素在列表中出现的个数</p>
+<p>  L.index(var)    #该元素的位置,无则抛异常 </p>
+<p>  L.extend(list)  #追加list，即合并list到L上</p>
+<p>  L.sort()        #排序</p>
+<p>  L.reverse()     #倒序</p>
+<p>  list 操作符:,+,*，关键字del</p>
+<p>  a[1:]       #片段操作符，用于子list的提取</p>
+<p>  [1,2]+[3,4] #为[1,2,3,4]。同extend()</p>
+<p>  [2]*4       #为[2,2,2,2]</p>
+<p>  del L[1]    #删除指定下标的元素</p>
+<p>  del L[1:3]  #删除指定下标范围的元素</p>
+<p>  list comprehension<br>       [ <expr1> for k in L if <expr2> ]</expr2></expr1></p>
+<p>##2、dictionary： 字典（即C++标准库的map）<br>  dict = {‘ob1’:’computer’, ‘ob2’:’mouse’, ‘ob3’:’printer’}</p>
+<p>  每一个元素是pair，包含key、value两部分。key是Integer或string类型，value 是任意类型。<br>  键是唯一的，字典只认最后一个赋的键值。</p>
+<p>###dictionary的方法<br>   D.get(key, 0)       #同dict[key]，多了个没有则返回缺省值，0。[]没有则抛异常</p>
+<p>   D.has_key(key)      #有该键返回TRUE，否则FALSE</p>
+<p>   D.keys()            #返回字典键的列表</p>
+<p>   D.values()          #以列表的形式返回字典中的值，返回值的列表中可包含重复元素</p>
+<p>   D.items()           #将所有的字典项以列表方式返回，这些列表中的每一项都来自于(键,值),但是项在返回时并没有特殊的顺序</p>
+<p>   D.update(dict2)     #增加合并字典</p>
+<p>   D.popitem()         #得到一个pair，并从字典中删除它。已空则抛异常</p>
+<p>   D.clear()           #清空字典，同del dict</p>
+<p>   D.copy()            #拷贝字典</p>
+<p>   D.cmp(dict1,dict2)  #第一个大返回1，小返回-1，一样返回0</p>
+<h3 id="dict的遍历："><a href="#dict的遍历：" class="headerlink" title="dict的遍历："></a>dict的遍历：</h3><p>   for (k,v) in D.items():</p>
+<p>##3、tuple：元组（即常量数组）<br>   元组中的元素值是不允许修改和删除的。</p>
+<p>   tuple = (‘a’, ‘b’, ‘c’, ‘d’, ‘e’)</p>
+<p>   可以用list的 [],:操作符提取元素。就是不能直接修改元素。</p>
+<p>   ###list 和 tuple 的相互转化:</p>
+<p>   tuple(ls) </p>
+<p>   list(ls)</p>
+<p>##4、string：     字符串（即不能修改的字符list）<br>   str = “Hello My friend”</p>
+<p>   字符串是一个整体。如果你想直接修改字符串的某一部分，是不可能的。<br>   但我们能够读出字符串的某一部分。</p>
+<p>   ###子字符串的提取<br>   str[:6]</p>
+<p>   字符串包含判断操作符：in，not in</p>
+<p>   “He” in str<br>   “she” not in str</p>
+<p>###string模块，还提供了很多方法，如<br>  S.find(substring, [start [,end]]) #可指范围查找子串，返回索引值，否则返回-1</p>
+<p>  S.rfind(substring,[start [,end]]) #反向查找</p>
+<p>  S.index(substring,[start [,end]]) #同find，只是找不到产生ValueError异常</p>
+<p>  S.rindex(substring,[start [,end]])#同上反向查找</p>
+<p>  S.count(substring,[start [,end]]) #返回找到子串的个数</p>
+<p>  S.lowercase()</p>
+<p>  S.capitalize()      #首字母大写</p>
+<p>  S.lower()           #转小写</p>
+<p>  S.upper()           #转大写</p>
+<p>  S.swapcase()        #大小写互换</p>
+<p>  S.split(str, ‘ ‘)   #将string转list，以空格切分</p>
+<p>  S.join(list, ‘ ‘)   #将list转string，以空格连接</p>
+<p>###处理字符串的内置函数<br>  len(str)                #串长度</p>
+<p>  cmp(“my friend”, str)   #字符串比较。第一个大，返回1</p>
+<p>  max(‘abcxyz’)           #寻找字符串中最大的字符</p>
+<p>  min(‘abcxyz’)           #寻找字符串中最小的字符</p>
+<p>###string的转换</p>
+<p>  float(str)      #变成浮点数，float(“1e-1”)  结果为0.1</p>
+<p>  int(str)        #变成整型，  int(“12”)  结果为12</p>
+<p>  int(str,base)   #变成base进制整型数，int(“11”,2) 结果为2</p>
+<p>###字符串的格式化（注意其转义字符，大多如C语言的，略）<br>   str_format % (参数列表) #参数列表是以tuple的形式定义的，即不可运行中改变</p>
+<p>   print “”%s’s height is %dcm” % (“My brother”, 180)</p>
+<pre><code>#结果显示为 My brother&apos;s height is 180cm
+</code></pre>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -188,122 +282,104 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://jeff95.me/2017/08/23/Python基础数据结构/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-python">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/07/Python lambda函数/" class="archive-article-date">
-  	<time datetime="2017-08-07T02:33:40.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-07</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2017/08/07/Python lambda函数/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">lambda函数</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/07/Python lambda函数/">lambda函数</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Python</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/05/hello-world/" class="archive-article-date">
-  	<time datetime="2017-08-05T02:43:08.814Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/05/hello-world/">Hello Hexo</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/08/05/hello-world-1/" class="archive-article-date">
-  	<time datetime="2017-08-05T02:42:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-08-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/05/hello-world-1/">hello world!</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">TEST</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -326,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
