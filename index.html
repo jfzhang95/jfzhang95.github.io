@@ -207,12 +207,11 @@
 <h2 id="3、tuple：元组（即常量数组）"><a href="#3、tuple：元组（即常量数组）" class="headerlink" title="3、tuple：元组（即常量数组）"></a>3、tuple：元组（即常量数组）</h2><p>   元组中的元素值是不允许修改和删除的。</p>
 <p>   tuple = (‘a’, ‘b’, ‘c’, ‘d’, ‘e’)</p>
 <p>   可以用list的 [],:操作符提取元素。就是不能直接修改元素。</p>
-<p>   ###list 和 tuple 的相互转化:</p>
-<p>   tuple(ls) </p>
+<h3 id="list-和-tuple-的相互转化"><a href="#list-和-tuple-的相互转化" class="headerlink" title="list 和 tuple 的相互转化:"></a>list 和 tuple 的相互转化:</h3><p>   tuple(ls) </p>
 <p>   list(ls)</p>
 <h2 id="4、string：-字符串（即不能修改的字符list）"><a href="#4、string：-字符串（即不能修改的字符list）" class="headerlink" title="4、string：     字符串（即不能修改的字符list）"></a>4、string：     字符串（即不能修改的字符list）</h2><p>   str = “Hello My friend”</p>
 <p>   字符串是一个整体。如果你想直接修改字符串的某一部分，是不可能的。<br>   但我们能够读出字符串的某一部分。</p>
-<p>   ###子字符串的提取<br>   str[:6]</p>
+<h3 id="子字符串的提取"><a href="#子字符串的提取" class="headerlink" title="子字符串的提取"></a>子字符串的提取</h3><p>   str[:6]</p>
 <p>   字符串包含判断操作符：in，not in</p>
 <p>   “He” in str<br>   “she” not in str</p>
 <h3 id="string模块，还提供了很多方法，如"><a href="#string模块，还提供了很多方法，如" class="headerlink" title="string模块，还提供了很多方法，如"></a>string模块，还提供了很多方法，如</h3><p>  S.find(substring, [start [,end]]) #可指范围查找子串，返回索引值，否则返回-1</p>
@@ -236,7 +235,7 @@
 <p>  int(str,base)   #变成base进制整型数，int(“11”,2) 结果为2</p>
 <h3 id="字符串的格式化（注意其转义字符，大多如C语言的，略）"><a href="#字符串的格式化（注意其转义字符，大多如C语言的，略）" class="headerlink" title="字符串的格式化（注意其转义字符，大多如C语言的，略）"></a>字符串的格式化（注意其转义字符，大多如C语言的，略）</h3><p>   str_format % (参数列表) #参数列表是以tuple的形式定义的，即不可运行中改变</p>
 <p>   print “”%s’s height is %dcm” % (“My brother”, 180)</p>
-<pre><code>#结果显示为 My brother&apos;s height is 180cm
+<pre><code># 结果显示为 My brother&apos;s height is 180cm
 </code></pre>
       
 
