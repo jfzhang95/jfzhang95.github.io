@@ -1,12 +1,12 @@
 # Site settings
-title: Yihui He blog
-email: yihuihe@foxmail.com
+title: Jianfeng Zhang blog
+email: jf.zhang958@outlook.com
 description: "Musings of a Computer Scientist."
 baseurl: ""
-url: "http://yihui-he.github.io"
-blogurl: "http://yihui-he.github.io/blog"
+url: "https://jfzhang95.github.io"
+blogurl: "http://jfzhang95.github.io/blog"
 #twitter_username: karpathy
-github_username:  yihui-he
+github_username:  jfzhang95
 
 # Build settings
 markdown: kramdown
