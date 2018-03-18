@@ -53,8 +53,10 @@
                                                                               href="http://www.github.com/jfzhang95">Github</a>
             <img src="./assets_files/linkedin.png" class="icon-adjust"> <a target="_blank"
                                                                            href="http://www.linkedin.com/in/jianfeng-jeff-zhang-518815104/">Linkedin</a><br>
-            <img src="./assets_files/qq.png" class="icon-adjust"> 1036303100
-            <img src="./assets_files/wechat.png" class="icon-adjust"> zjf23336666<br>
+            <!-- 
+	    <img src="./assets_files/qq.png" class="icon-adjust"> 1036303100
+            <img src="./assets_files/wechat.png" class="icon-adjust"> zjf23336666<br> 
+	    -->
         </div>
 
         <!-- Otherwise, we simply use a flat list of links -->
@@ -81,7 +83,7 @@
                 <img class="media-object" src="assets_files/me.png" width="96px" style="margin: 0px 10px">
             </a>
             <p>
-                I'm a Applied Mathematics undergrad from <a
+                I'm an Applied Mathematics undergrad from <a
                     href="https://en.wikipedia.org/wiki/Wuhan_University">Wuhan University</a>, with
                 my interest focus on Computer Vision, Deep Learning and Convex Optimization.
             </p>
@@ -124,15 +126,16 @@
                 <div class="media-body">
                     <p class="media-heading">
                         <strong>
-                             ADC: Automated Deep Compression and Acceleration with Reinforcement Learning
+                             Developing a Long Short-Term Memory (LSTM) based Model for Predicting Water Table Depth in Agricultural Areas
                      </strong><br>
-                        <strong>Yihui He</strong>, <a target="_blank" href="https://stanford.edu/~songhan/">Song Han</a>, <i>CVPR 2018 submission</i>
+                        <strong>Jianfeng Zhang</strong>, Yan Zhu, <a target="_blank" href="http://xpzhang.me">Xiaoping Zhang</a>, Ming Ye, Jinzhong Yang, <i>Journal of Hydrology submission</i>
                     </p>
                     <p class="abstract-text">
-                        In this paper, we propose ADC:Automated Deep Compression that leverage reinforcement learning to efficiently sample the design space and greatly improve the model compression quality.
+                        In this paper, we developed a LSTM based model framework for predicting water table depth in Hetao Irrigation District.
                     </p>
                 </div>
-            </div>              
+            </div>        
+      
         <div class="media">
                 <a class="pull-left">
                     <img class="media-object" src="./assets_files/ill-1.png" width="96px" height="96px">
@@ -160,6 +163,7 @@
                     </p>
                 </div>
             </div>   
+
         <div class="media">
                 <a class="pull-left">
                     <img class="media-object" src="./assets_files/filterwise.png" width="96px" height="96px">
@@ -208,6 +212,7 @@
                     </p>
                 </div>
             </div>        
+
             <div class="media">
                 <a class="pull-left">
                     <img class="media-object" src="./assets_files/vehicle.png" width="96px" height="96px">
@@ -261,10 +266,11 @@
             <!--
              *** Projects ***
             -->
+
             <h3>
                 <a name="projects"></a> Projects
             </h3>
-            Link to my <a target="_blank" href="https://github.com/yihui-he">[github public projects]</a>
+            Link to my <a target="_blank" href="https://github.com/jfzhang95">[github public projects]</a>
 
             <div class="media">
                 <a class="pull-left">
@@ -275,17 +281,16 @@
                 <div class="media-body">
                     <p class="media-heading">
                         <strong>
-                            An Empirical Analysis of Approximation Algorithms for the Euclidean Traveling Salesman Problem
+                            Total Variation Image segmentation Model based on Primal-dual Method
                         </strong>
                         <a target="_blank"
-                           href="https://arxiv.org/abs/1705.09058">[arXiv]</a>
+                           href="https://github.com/jfzhang95/TV_Segmentation/blob/master/notes.pdf">[pdf]</a>
                         <a target="_blank"
-                           href="https://github.com/yihui-he/TSP">[Code]</a>
+                           href="https://github.com/jfzhang95/TV_Segmentation">[Code]</a>
                     </p>
                     <p class="abstract-text">
-we perform an evaluation and analysis of cornerstone algorithms for the metric TSP. We evaluate greedy, 2-opt, and genetic algorithms. We use
-several datasets as input for the algorithms including a small dataset, a medium-sized dataset representing
-cities in the United States, and a synthetic dataset consisting of 200 cities to test algorithm scalability.
+We implemented total variation image segmentation model and applied Primal-dual method to optimize it. Besides, we also combined the model with K-means to improve 
+region term.
                     </p>
                 </div>
             </div>
@@ -299,16 +304,13 @@ cities in the United States, and a synthetic dataset consisting of 200 cities to
                 <div class="media-body">
                     <p class="media-heading">
                         <strong>
-                            Estimated Depth Map Helps Image Classification
+                            Deep Grabcut
                         </strong>
                         <a target="_blank"
-                           href="https://arxiv.org/abs/1709.07077">[arXiv]</a>
-                        <a target="_blank" href="https://github.com/yihui-he/Estimated-Depth-Map-Helps-Image-Classification">[Code]</a>
-                        <a target="_blank"
-                           href="http://nbviewer.jupyter.org/github/yihui-he/Estimated-Depth-Map-Helps-Image-Classification/blob/master/presentation/depth.pdf">[Slides]</a>
-                    </p>
+                           href="https://arxiv.org/abs/1707.00243">[arXiv]</a>
+                        <a target="_blank" href="https://github.com/jfzhang95/Deep-Grabcut-TF">[Code]</a>
                     <p class="abstract-text">
-                        We consider image classification with estimated depth. This problem falls into the domain of transfer learning, since we are using a model trained on a set of depth images to generate depth maps (additional features) for use in another classification problem using another disjoint set of images. It's challenging as no direct depth information is provided. Though depth estimation has been well studied, none have attempted to aid image classification with estimated depth. Therefore, we present a way of transferring domain knowledge on depth estimation to a separate image classification task over a disjoint set of train, and test data. We build a RGBD dataset based on RGB dataset and do image classification on it. Then evaluation the performance of neural networks on the RGBD dataset compared to the RGB dataset. From our experiments, the benefit is significant with shallow and deep networks. It improves ResNet-20 by 0.55% and ResNet-56 by 0.53%.
+An Tensorflow implementation of Deep Grabcut, using Pascal-Voc 2012.
                     </p>
                 </div>
             </div>
