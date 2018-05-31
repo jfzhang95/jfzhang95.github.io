@@ -190,7 +190,7 @@
                 <a class="pull-left">
                     <img class="media-object"
                          src="./assets_files/tvseg_result.png"
-                         width="110px" height="110px">
+                         width="96px" height="110px">
                 </a>
                 <div class="media-body">
                     <p class="media-heading">
@@ -249,7 +249,13 @@
                            href="https://arxiv.org/abs/1707.00243">[arXiv]</a>
                         <a target="_blank" href="https://github.com/jfzhang95/DeepGrabCut-PyTorch">[code]</a>
                     <p class="abstract-text">
-						A PyTorch implementation of Deep Grabcut, using Pascal Voc 2012 and SBD datasets.
+						We replicated "Deep Grabcut for Object Selection", this paper propose 
+						a segmentation approach that uses a rectangle as a soft constraint by 
+						transforming it into an Euclidean distance map. A convolutional 
+						encoder-decoder network is trained end-to-end by concatenating images
+						with these distance maps as inputs and predicting the object masks as outputs.
+						We implemented this paper using PyTorch and trained this model using 
+						Pascal Voc 2012 and SBD datasets. 
                     </p>
                 </div>
             </div>
