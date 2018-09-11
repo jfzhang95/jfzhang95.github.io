@@ -215,17 +215,18 @@
 
 	<tr>
 		<td width="306">
-		<img src="./assets_files/video_result.gif" height="200" width="285px" style="box-shadow: 4px 4px 8px #888">
+		<img src="./assets_files/videoseg_result.GIF" width="285px" style="box-shadow: 4px 4px 8px #888">
 		</td>
         <td>
             <b>Video Object Segmentation Framework</b>
         <p></p>
-			We build a Video Object Segmentation Framework. It can perform key frame extraction
-			based on VGG16 and interactive object segmentation for online fine-tune.
-			Only 200~3000 iters of online fine-tune can reach very good video object segmentation results.
-        <p></p>
-			<p>[<a href="https://github.com/jfzhang95/TV_Segmentation/blob/master/notes.pdf" target="_blank">pdf</a>]
-				[<a href="https://github.com/jfzhang95/TV_Segmentation">code</a>]</p>
+			We build a Video Object Segmentation Framework. In this framework, we use MobileNetV2 to extract each
+			video frame's feature and utilize a very simple algorithm to determine if a certain frame is key frame.
+			Based on aformentioned method, we can extract expected number of key frames (usually 5~15 frames). After get
+			video key frames, we utilize YOLOV2 and Deep Grabcut to detect center object and obtain object mask, respectively.
+			Finally, we use key frames masks to finetune segmentation network before segment the whole video. Only 200~3000
+			iters of online fine-tune can reach very good video object segmentation results. This framework is now incorporate
+			into our company's product and applied to extract products in E-commerce video and people in Douyin, Kuaishou and YouTube
 		</td>
 	</tr>
 	<tr>&nbsp</tr>
