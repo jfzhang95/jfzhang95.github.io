@@ -227,7 +227,7 @@
         <p></p>
 			We build a Video Object Segmentation Framework. In this framework, we use MobileNetV2 to extract each
 			video frame's feature and utilize a very simple algorithm to determine if a certain frame is key frame.
-			Based on aformentioned method, we can extract expected number of key frames (usually 5~15 frames). After get
+			Based on aformentioned method, we can extract expected number of key frames (usually set to 5~15 frames). After get
 			video key frames, we utilize YOLOV2 and Deep Grabcut to detect center object and obtain object mask, respectively.
 			Finally, we use key frames masks to finetune segmentation network before segment the whole video. Only 200~3000
 			iters of online fine-tune can reach very good video object segmentation results. This framework is now incorporate
