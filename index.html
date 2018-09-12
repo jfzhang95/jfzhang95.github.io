@@ -57,7 +57,7 @@
 
 
 <h2><font face="Arial"> Biography [<a target="_blank"
-                            href="./info/resume.pdf">CV</a>]</font></h2>
+                            href="./Jianfeng_CV.pdf">CV</a>]</font></h2>
    <p>
         I am currently an Applied Mathematics undergrad. student from <a
                         href="https://en.wikipedia.org/wiki/Wuhan_University">Wuhan University</a>,
@@ -67,7 +67,9 @@
     </p>
 
     <p>
-	    My research interests include 2D/3D Vision and Deep Learning.
+	    My research interests include 2D/3D Vision, Video Analysis, Deep Learning and their applications.
+        Recently, I am focusing on semantic segmentation on 2D/3D images, the combination of semantic
+        segmentation and stereo matching, and video classification.
     </p>
 
     <p>
@@ -125,8 +127,8 @@
             <b>Deeplab V3+ in PyTorch</b>
         <p></p>
 			We reimplement <b>Deeplab V3+</b> in PyTorch, and evaluate it on Pascal VOC 2012 and Cityscapes datasets.
-			We apply Deeplab V3+ to extract the same object from multi-view images in order to get better 3D reconstruction
-			results.
+			We apply Deeplab V3+ to extract the expected object from multi-view images for stereo matching,
+            in order to get better 3D reconstruction results.
         <p></p>
             <p>[<a href="https://arxiv.org/pdf/1802.02611.pdf" target="_blank">paper</a>][<a href="https://github.com/jfzhang95/pytorch-deeplab-xception">code</a>]</p>
 		</td>
@@ -164,7 +166,7 @@
         <td>
             <b>Video Action Recognition in PyTorch</b>
         <p></p>
-            We reimplement several video action recognition models including <b>C3D</b>, <b>R2Plus1D</b>, <b>R3D</b>
+            We reimplement several video activity recognition models including <b>C3D</b>, <b>R2Plus1D</b>, <b>R3D</b>
             in PyTorch, and evaluate these models on HMDB51 and UCF101 datasets. We also apply C3D model into an online web
 			game demo called "<b>You Perform, I Guess!</b>". This demo obtains <b>Excellent Demo Award</b> in DeeCamp 2018.
 
@@ -229,7 +231,8 @@
 			video key frames, we utilize YOLOV2 and Deep Grabcut to detect center object and obtain object mask, respectively.
 			Finally, we use key frames masks to finetune segmentation network before segment the whole video. Only 200~3000
 			iters of online fine-tune can reach very good video object segmentation results. This framework is now incorporate
-			into our company's product and applied to extract products in E-commerce video and people in Douyin, Kuaishou and YouTube.
+			into our company's product and applied to extract products in E-commerce videos and people in videos from
+            Douyin, Kuaishou and YouTube.
 		</td>
 	</tr>
 	<tr>&nbsp</tr>
@@ -259,9 +262,9 @@
         <td>
             <b>Clothing Fashion Style Recognition</b>
         <p></p>
-			We build our fashion style recognition based on resnet, densenet and vgg net. We
-                        also use Deeplab V3+ to extract clothes and remove background.
-                        In addition, we apply model ensemble method to improve our result.
+			We build our fashion style recognition model based on ResNet, DenseNet and VGG. We
+                        also use Deeplab V3+ to extract clothes and remove background, which could help to denoise.
+                        In addition, we apply model ensemble method to improve our results.
 						Finally, our method achieves 0.6103 F2 score and ranks <b>9/213</b> on <a target="_blank" href="https://fashion-challenge.github.io/#index">JD AI Fashion-Challenge</a>.
 		</td>
 	</tr>
@@ -277,7 +280,7 @@
     <tbody>
         <tr><td> Excellent Demo Award, DeeCamp, 2018</td></tr>
 		<tr><td> Best Bachelor Thesis Award (<b>1/180+</b>, School of Mathematics and Stastics, Wuhan University), 2018</td></tr>
-		<tr><td> Outstanding Student Scholarship, 2015-2017</td></tr>
+		<tr><td> Award for Merit Student of Wuhan University, 2015-2017</td></tr>
 		<tr><td> Honorable Mention, The Mathematical Contest in Modeling (MCM), Consortium for Mathematics and Its Application, 2015</td></tr>
 	</tbody>
 </table>
