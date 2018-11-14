@@ -1,12 +1,12 @@
 # Site settings
-title: Xiaoping Zhang blog
-email: xpzhang.math@whu.edu.cn
+title: Jianfeng Zhang blog
+email: jf.zhang958@outlook.com
 description: "Musings of a Computer Scientist."
 baseurl: ""
-url: "https://zxplsec.github.io"
-blogurl: "http://zxplsec.github.io/blog"
+url: "https://jfzhang95.github.io"
+blogurl: "http://jfzhang95.github.io/blog"
 #twitter_username: karpathy
-github_username:  zxplsec
+github_username:  jfzhang95
 
 # Build settings
 markdown: kramdown
