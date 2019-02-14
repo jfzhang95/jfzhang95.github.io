@@ -5,12 +5,12 @@
 <link rel="shortcut icon" href="myIcon.ico">
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 
-<meta name="keywords" content="Jianfeng Zhang, zhangjianfeng, jianfeng zhang, Zhang Jianfeng, Jianfeng, math, whu, Wuhan University">
+<meta name="keywords" content="Jianfeng Zhang, zhangjianfeng, jianfeng zhang, Zhang Jianfeng, Jianfeng, jfzhang95, math, whu, Wuhan University, ece, nus, National University of Singapore">
 <meta name="description" content="Jianfeng Zhang's home page">
 <meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg" />
 <meta name="google-site-verification" content="yy_3iiS_X6pJdegdwitJMrH0LRLHXwpjrV9RKLXxKjg" />
 <link rel="stylesheet" href="jemdoc.css" type="text/css">
-<title>Jianfeng Zhang, Wuhan University</title>
+<title>Jianfeng Zhang</title>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -216,14 +216,7 @@
         <td>
             <b>Video Object Segmentation Framework</b>
         <p></p>
-			We build a Video Object Segmentation Framework. In this framework, we use MobileNetV2 to extract each
-			video frame's feature and utilize a very simple algorithm to determine if a certain frame is key frame.
-			Based on aformentioned method, we can extract expected number of key frames (usually set to 5~15 frames). After get
-			video key frames, we utilize YOLOV2 and Deep Grabcut to detect center object and obtain object mask, respectively.
-			Finally, we use key frames masks to finetune segmentation network before segment the whole video. Only 200~3000
-			iters of online fine-tune can reach very good video object segmentation results. This framework is now incorporate
-			into our company's product and applied to extract products in E-commerce videos and people in videos from
-            Douyin, Kuaishou and YouTube.
+			We build a Video Object Segmentation Framework.
 		</td>
 	</tr>
 	<tr>&nbsp</tr>
