@@ -56,13 +56,19 @@
 <h2><font face="Arial"> Biography <!-- [<a target="_blank"
                             href="./Jianfeng_CV.pdf">CV</a>] --></font></h2>
    <p>
-        I am currently a first-year PhD student at NUS Vision & Machine Learning Lab, advised by Prof. <a href="https://sites.google.com/site/jshfeng/" target="_blank"> Jiashi Feng</a> and working closely with Dr. <a href="https://niexc.github.io" target="_blank"> Xuecheng Nie</a>. Previously, I received the B.S. degree from Department of Applied Mathematics
+        I am currently a first-year PhD student at NUS Vision & Machine Learning Lab, fortunately supervised by Prof. <a href="https://sites.google.com/site/jshfeng/" target="_blank"> Jiashi Feng</a> and working closely with Dr. <a href="https://niexc.github.io" target="_blank"> Xuecheng Nie</a>. Previously, I received the B.S. degree from Department of Applied Mathematics
 	    in Wuhan University, supervised by Prof. <a href="http://xpzhang.me" target="_blank"> Xiaoping Zhang</a>
 	    for undergraduate research.
     </p>
 
     <p>
-	    My research interests include 2D/3D Human Pose Estimation and related applications. 
+	    My research interests include 3D computer vision and related applications. 
+	    Currently I'm focusing on 3D human pose/shape reconstruction.  
+    </p>
+
+    <p>
+	    Always open to <b>research position</b> and cooperation opportunities. 
+	    If you're interested, don't hesitate to contact me.
     </p>
 
     <p>
@@ -86,21 +92,6 @@
     <tr>&nbsp</tr>
     <tr>&nbsp</tr>
 
-	<tr>
-		<td width="306">
-		<img src="./assets_files/segresult.png" width="285px" style="box-shadow: 4px 4px 8px #888">
-		</td>
-		<td><b>Interactive Binary Image Segmentation with Edge Preservation</b><br />
-			<b>Jianfeng Zhang</b>, Liezhuo Zhang, Yuankai Teng, Xiaoping Zhang, Song Wang, Lili Ju<br />
-            Arxiv Preprint
-		<br />
-            <p>[<a href="https://arxiv.org/abs/1809.03334" target="_blank">pdf</a>]</p>
-		</td>
-	</tr>
-	<tr>&nbsp</tr>
-    <tr>&nbsp</tr>
-    <tr>&nbsp</tr>
-
     <tr>
 		<td width="306">
 		<img src="./assets_files/jh_graphabstract.png" width="285px" style="box-shadow: 4px 4px 8px #888">
@@ -111,6 +102,21 @@
             <em>Journal of Hydrology</em> (<b>JH</b>), 2018
 		<br />
             <p>[<a href="./publications/JH2018.pdf" target="_blank">pdf</a>] [<a href="https://github.com/jfzhang95/LSTM-water-table-depth-prediction">code</a>]</p>
+		</td>
+	</tr>
+	<tr>&nbsp</tr>
+    <tr>&nbsp</tr>
+    <tr>&nbsp</tr>
+
+    	<tr>
+		<td width="306">
+		<img src="./assets_files/segresult.png" width="285px" style="box-shadow: 4px 4px 8px #888">
+		</td>
+		<td><b>Interactive Binary Image Segmentation with Edge Preservation</b><br />
+			<b>Jianfeng Zhang</b>, Liezhuo Zhang, Yuankai Teng, Xiaoping Zhang, Song Wang, Lili Ju<br />
+            Arxiv Preprint
+		<br />
+            <p>[<a href="https://arxiv.org/abs/1809.03334" target="_blank">pdf</a>]</p>
 		</td>
 	</tr>
 	<tr>&nbsp</tr>
@@ -131,9 +137,9 @@
         <td>
             <b>Deeplab V3+ in PyTorch</b>
         <p></p>
-			We reimplement <b>Deeplab V3+</b> in PyTorch, and evaluate it on Pascal VOC 2012 and Cityscapes datasets.
-			We apply Deeplab V3+ to extract the expected object from multi-view images for stereo matching,
-            in order to get better 3D reconstruction results.
+			We provide a high-performance PyTorch implementation of <b>Deeplab V3+</b>. 
+			This project receives more than 1.6k star on GitHub.
+
         <br />
             <p>[<a href="https://arxiv.org/pdf/1802.02611.pdf" target="_blank">paper</a>][<a href="https://github.com/jfzhang95/pytorch-deeplab-xception">code</a>]</p>
 		</td>
@@ -149,13 +155,11 @@
         <td>
             <b>Deep Grabcut (DeepGC)</b>
         <p></p>
-			We replicate "<b>Deep Grabcut for Object Selection</b>", this paper proposes
+			We reimplement "<b>Deep Grabcut for Object Selection</b>" in PyTorch. This paper proposes
 						a segmentation approach that uses a rectangle as a soft constraint by
 						transforming it into an Euclidean distance map. A convolutional
 						encoder-decoder network is trained end-to-end by concatenating images
 						with these distance maps as inputs and predicting the object masks as outputs.
-						We implement this paper using PyTorch and train this model using
-						Pascal VOC 2012 and SBD datasets.
         <br />
             <p>[<a href="https://arxiv.org/abs/1707.00243" target="_blank">paper</a>][<a href="https://github.com/jfzhang95/DeepGrabCut-PyTorch">code</a>]</p>
 		</td>
@@ -172,8 +176,7 @@
             <b>Video Activity Recognition in PyTorch</b>
         <p></p>
             We reimplement several video activity recognition models including <b>C3D</b>, <b>R2Plus1D</b>, <b>R3D</b>
-            in PyTorch, and evaluate these models on HMDB51 and UCF101 datasets. We also apply C3D model into an online web
-			game demo called "<b>You Perform, I Guess!</b>". This demo obtains <b>Excellent Demo Award</b> in DeeCamp 2018.
+            in PyTorch, and evaluate these models on HMDB51 and UCF101 datasets. In addition, we adopt C3D model to build an online web game called "<b>You Perform, I Guess!</b>", which obtains <b>Excellent Demo Award</b> in DeeCamp 2018.
 
         <br />
             <p>[<a href="https://github.com/jfzhang95/pytorch-video-recognition">code</a>]
@@ -191,8 +194,8 @@
         <td>
             <b>Interactive Segmentation on RGBD Image</b>
         <p></p>
-            We replicate “<b>Interactive Segmentation on RGBD Images via Cue Selection</b>”,
-			this paper proposes a novel interactive segmentation algorithm which can incorporate
+            We reimplement “<b>Interactive Segmentation on RGBD Images via Cue Selection</b>”.
+			This paper proposes a novel interactive segmentation algorithm which can incorporate
 			multiple feature cues like color, depth and normals in a graph cut framework.
         <br />
             <p>[<a href="http://openaccess.thecvf.com/content_cvpr_2016/papers/Feng_Interactive_Segmentation_on_CVPR_2016_paper.pdf" target="_blank">paper</a>]
@@ -211,9 +214,9 @@
             <b>Total Variation Image Segmentation Model Based on Primal-dual Method</b>
         <p></p>
 			We implement total variation image segmentation algorithm and
-			applied primal-dual method to optimize it. In order to obtain better results, we
-			integrate user provided information into algorithm. In addition, we also
-			combine the model with K-means to improve the final results.
+			applied primal-dual method to optimize it. We implement our algorithm in 
+			an interactive fashion, which allows users to choose object of interest.
+			Additionally, we combine the algorithm with K-means to improve the final results.
         <br />
             <p>[<a href="https://github.com/jfzhang95/TV_Segmentation/blob/master/notes.pdf" target="_blank">pdf</a>]
 				[<a href="https://github.com/jfzhang95/TV_Segmentation">code</a>]</p>
@@ -230,7 +233,7 @@
         <td>
             <b>Video Object Segmentation Framework</b>
         <p></p>
-			We build a Video Object Segmentation Framework. In this framework, we combine MobileNetV2, YOLOV2 and Deep Grabcut to do video object segmentation.
+			We build a Video Object Segmentation Framework. In this framework, we combine MobileNetV2, YOLOV2 and Deep Grabcut to perform video object segmentation.
 		</td>
 	</tr>
 	<tr>&nbsp</tr>
