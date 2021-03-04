@@ -1,5 +1,5 @@
 @inproceedings{zhang2020inference,
-  title={Inference stage optimization for cross-scenario 3d human pose estimation},
+  title={Inference Stage Optimization for Cross-scenario 3D Human Pose Estimation},
   author={Zhang, Jianfeng and Nie, Xuecheng and Feng, Jiashi},
   booktitle={NeurIPS},
   year={2020}

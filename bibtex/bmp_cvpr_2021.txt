@@ -1,0 +1,6 @@
+@inproceedings{zhang2020inference,
+  title={Body Meshes as Points},
+  author={Zhang, Jianfeng and Yu, Dongdong and Liew, Jun Hao and Nie, Xuecheng and Feng, Jiashi},
+  booktitle={CVPR},
+  year={2021}
+}

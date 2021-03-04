@@ -1,0 +1,6 @@
+@inproceedings{zhang2020inference,
+  title={PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation in the Wild},
+  author={Gong, Kehong and Zhang, Jianfeng and Feng, Jiashi},
+  booktitle={CVPR},
+  year={2021}
+}
