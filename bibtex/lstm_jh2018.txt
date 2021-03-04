@@ -1,7 +1,7 @@
 @article{zjf18,
   journal        = {Journal of Hydrology},
   title          = {Developing a Long Short-Term Memory (LSTM) based Model for Predicting Water Table Depth in Agricultural Areas},
-  author         = {Jianfeng Zhang, Yan Zhu, Xiaoping Zhang, Ming Ye and Jinzhong Yang},
+  author         = {Zhang, Jianfeng and Zhu, Yan and Zhang, Xiaoping and Ye, Ming and Yang Jinzhong},
   year           = {2018},
   volume         = {561},
   pages          = {918-929}
