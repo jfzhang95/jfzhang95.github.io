@@ -1,0 +1,225 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" 
+                               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <title>Multiperson</title>
+    </head>
+    <body class="container" style="max-width:920px">
+        <!-- Title -->
+        <div>
+            <div class='row mt-5 mb-5'>
+                <div class='col text-center'>
+                    <p class="h3 font-weight-normal">Body Meshes as Points</p>
+                </div>
+            </div>
+
+            <!-- authors -->
+            <div class='col text-center h5 font-weight-bold mb-1'>
+		    <a class="col-md-3 col-xs-7" href="https://jeff95.me/"><span>Jianfeng Zhang</span></a>
+		    <a class="col-md-3 col-xs-7" href="https://miracle-fmh.github.io/"><span>Dongdong Yu</span></a>
+            <a class="col-md-3 col-xs-7" href="https://scholar.google.com/citations?user=8gm-CYYAAAAJ&hl=zh-CN"><span>Jun Hao Liew</span></a>
+            </div>
+            <div class='col text-center h5 font-weight-bold mb-3'>
+		    <a class="col-md-3 col-xs-7" href="https://niexc.github.io/"><span>Xuecheng Nie</span></a>
+		    <a class="col-md-3 col-xs-7" href="https://sites.google.com/site/jshfeng/"><span>Jiashi Feng</span></a>
+            </div>
+
+	    <div>
+      	    <img width=100% src="framework.png"/>
+	    </div>
+        </div>
+
+        <!-- Paper section -->
+        <div>
+            <hr>
+            <div class='row'>
+                <div class='col-md-3 col-sm-3 col-xs-12 text-center col-sm-3'>
+                    <div class="row mt-4">
+                        <a href="https://arxiv.org/pdf/2006.08586.pdf" style="max-width:200px; margin-left:auto; margin-right:auto">
+                            <img src="files/paper.png" alt="paper-snapshot" class="img-thumbnail" width="80%" style="box-shadow: 10px 10px 5px grey;">
+                        </a>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col">
+                            <a class="h5" href="https://arxiv.org/pdf/2006.08586.pdf" style="margin-right:10px">
+                                <span>[Paper]</span>
+                            </a>
+                            <a class="h5" href="files/multiperson-supp.pdf" style="margin-right:10px">
+                                <span>[Supplementary]</span>
+                            </a>
+                            <a class="h5" href="https://github.com/JiangWenPL/multiperson" style="margin-right:10px">
+                                <span>[Code]</span>
+                            </a>
+                            <a class="h5" href="files/jiang2020multiperson.bib" target="_blank">
+                                <span>[Bibtex]</span>
+                            </a>
+                        </div>
+                      </div>
+                    </div>
+                    <div class='col-md-9 col-sm-9 col-xs-12'>
+                      <p class='h4 font-weight-bold '>Abstract</p>
+                      <p> 
+                        We consider the challenging multi-person 3D body mesh estimation task in this work. Existing methods are mostly 
+                        two-stage based——one stage for person localization and the other stage for individual  body mesh estimation, 
+                        leading to redundant pipelines with high computation cost and degraded performance for complex scenes (e.g., occluded person instances).   
+                        In this work, we present a single-stage model, Body Meshes as Points (BMP), to simplify the pipeline and lift both efficiency and performance. 
+                        In particular, BMP adopts a new method that represents multiple  person instances as points in the spatial-depth space where each point 
+                        is associated with one body mesh. Hinging on such representations, BMP can directly predict body meshes for multiple persons in a 
+                        single stage by concurrently localizing person instance points and estimating the corresponding body meshes.
+                        To better reason about depth ordering of all the persons within the same scene, BMP designs a simple yet effective 
+                        inter-instance ordinal depth loss to obtain depth-coherent  body mesh estimation. BMP also introduces a novel keypoint-aware augmentation 
+                        to enhance model robustness to occluded and partially observed person instances. 
+                        Comprehensive experiments on benchmarks Panoptic, MuPoTS-3D and 3DPW clearly demonstrate the state-of-the-art efficiency of BMP 
+                        for multi-person body mesh estimation, together with outstanding accuracy.
+                      </p>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <hr>
+
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2 mr-3'>Video</p>
+                </div>
+            </div>
+
+
+            <div class='row mt-3 text-center center-block' style=" margin-left:auto; margin-right:auto; max-width:560px">
+                <div class='col ml-1 mr-1' style="position: relative; width: 100%;height: 0;padding-bottom: 56%;">
+		    <iframe width="558" height="314" src="https://www.youtube.com/embed/EC181I4ejbY" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </iframe>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Architecture, explaination -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Overview</p>
+                </div>
+            </div>
+
+            <div class='row mt-3'>
+            <div class='col-md-6 col-sm-6 col-xs-12 align-middle mt-4'>
+      	    	<img width=100% src="files/teaser.jpg"/>
+	    </div>
+                <div class='col-md-6 col-sm-6 col-xs-12 align-middle mt-5'>
+                    <p class="text-break">
+		    We use an end-to-end top-down approach. Our model follows the R-CNN paradigm.
+		    We augment Faster-RCNN with a SMPL parameter regression branch.
+		    To reconstruct humans, we use the detected bounding box to sample from the corresponding region of the shared feature map.
+		    Our key novelty is the introduction of two novel geometric losses.
+                    </p>
+                </div>
+            </div>
+
+	    <!--
+            <div class='row text-left'>
+                <div class='col'>
+			<p class='h5'><em>Interpenetration loss</em></p>
+	    	</div>
+	    </div>
+	    -->
+
+            <div class='row mt-3'>
+            <div class='col-md-6 col-sm-6 col-xs-12 align-middle mt-5'>
+                    <p class="text-break">
+		    First, we penalize interpenetrations among the reconstructed people using a distance field-based loss.
+		    This loss function requires no additional annotations and encourages the network to regress meshes that do not overlap with each other.
+                    </p>
+            </div>
+            <div class='col-md-6 col-sm-6 col-xs-12 align-middle mt-4'>
+      	    	<img width=100% src="files/interpenetration_loss.jpg"/>
+	    </div>
+            </div>
+
+	    <!--
+            <div class='row text-left'>
+                <div class='col'>
+			<p class='h5'><em>Depth ordering-aware loss</em></p>
+	    	</div>
+	    </div>
+	    -->
+            <div class='row mt-3'>
+            <div class='col-md-6 col-sm-6 col-xs-12 align-middle mt-4'>
+      	    	<img width=100% src="files/depth_loss.jpg"/>
+	    </div>
+                <div class='col-md-6 col-sm-6 col-xs-12 align-middle mt-5'>
+                    <p class="text-break">
+		    Second, we leverage available instance segmentation annotations and apply a depth ordering-aware loss that promotes the reconstruction of a scene whose rendering is consistent with the annotations.
+                    </p>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- Results, transformation -->
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Comparison with naive regression</p>
+                    <p class="text-left">
+		    Here we compare our method to naive regression approach that was trained without our geometric losses.
+		    Our method is able to predict the correct ordinal depth and avoid mesh collisions.
+                </div>
+            </div>
+            <div class='row'>
+                <div>
+      	    	    <video width=100% src="files/comparison.m4v", type="video/m4v" autoplay muted loop/>
+                </div>
+            </div>
+        </div>
+        <div>
+            <hr>
+            <div class='row text-center'>
+                <div class='col'>
+                    <p class='h2'>Additional results</p>
+                </div>
+            </div>
+            <div class='row'>
+                <div>
+      	    	    <video width=100% src="files/results_video.m4v", type="video/m4v" autoplay muted loop/>
+                </div>
+            </div>
+        </div>
+
+        <!-- Ack -->
+        <div>
+            <hr>
+
+            <div class='row mb-5 text-center'>
+                <div class='col'>
+                    <p class='h2'>Acknowledgements</p>
+		    <div class='text-left'>
+		    <p> This research was partially supported by AISG-100E-2019-035, MOE2017-T2-2-151, NUS_ECRA_FY17_P08 and CRP20-2017-0006.
+		    <p>The design of this project page was based on <a href="https://www.guandaoyang.com/PointFlow/">this</a> website.
+		    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
