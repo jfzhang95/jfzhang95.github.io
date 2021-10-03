@@ -25,7 +25,7 @@
 </head>
 
 <!-- <body onload="startPetCursor();"> -->
-  <table style="width:100%;max-width:900px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
     <tr style="padding:0px">
       <td style="padding:0px">
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
@@ -98,14 +98,96 @@
           </tr>
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          
+        
+        
+          <tr onmouseout="mvp_stop()" onmouseover="mvp_start()">
+            <td style="padding:20px;width:35%;vertical-align:top">
+              <div class="one">
+                <div class="two" id="mvp_image" style="opacity: 0;">
+                  <img src='images/mvp_teaser.png' width="300">
+                </div>
+                <img src='images/mvp_teaser.png' width="300">
+              </div>
+              <script type="text/javascript">
+                function mvp_start() {
+                  document.getElementById('mvp_image').style.opacity = "1";
+                }
+  
+                function mvp_stop() {
+                  document.getElementById('mvp_image').style.opacity = "0";
+                }
+                mvp_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="http://jeff95.me/">
+                <papertitle>Direct Multi-view Multi-person 3D Pose Estimation</papertitle>
+              </a>
+              <br>
+              <a href="https://twangnh.github.io/">Tao Wang</a>*,
+              <strong>Jianfeng Zhang</strong>*,
+              <a href="https://yujuncai.netlify.app/">Yujun Cai</a>,
+              <a href="https://yanshuicheng.ai/">Shuicheng Yan</a>,
+              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
+              <br>
+              <em>Neural Information Processing Systems (NeurIPS)</em>, 2021
+              <br>
+              <a href="http://jeff95.me/">arxiv</a> /
+              <a href="http://jeff95.me/">project page</a> /
+              <a href="http://jeff95.me/">code</a> /
+              <a href="bibtex/mvp_nips2021.txt">bibtex</a>
+              <p></p>
+            </td>
+          </tr>
+
+          <tr onmouseout="spatt_stop()" onmouseover="spatt_start()">
+            <td style="padding:20px;width:35%;vertical-align:top">
+              <div class="one">
+                <div class="two" id="spatt_image" style="opacity: 0;">
+                  <img src='images/spatt_teaser.png' width="300">
+                </div>
+                <img src='images/spatt_teaser.png' width="300">
+              </div>
+              <script type="text/javascript">
+                function spatt_start() {
+                  document.getElementById('spatt_image').style.opacity = "1";
+                }
+  
+                function spatt_stop() {
+                  document.getElementById('spatt_image').style.opacity = "0";
+                }
+                spatt_stop()
+              </script>
+            </td>
+            <td valign="top" width="75%">
+              <a href="https://ieeexplore.ieee.org/document/9525061/">
+                <papertitle>Spatial-Aware Texture Transformer for
+                  High-Fidelity Garment Transfer</papertitle>
+              </a>
+              <br>
+              <a href="https://www.ece.nus.edu.sg/lv/index.html">Ting Liu</a>,
+              <strong>Jianfeng Zhang</strong>,
+              <a href="https://niexc.github.io/">Xuecheng Nie</a>,
+              <a href="https://weiyc.github.io/">Yunchao Wei</a>,
+              <a href="https://scholar.google.com/citations?user=vpuMdMUAAAAJ&hl=en/">Shikui Wei</a>,
+              <a href="https://scholar.google.com/citations?user=474TbQYAAAAJ&hl=en/">Yao Zhao</a>,
+              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
+              <br>
+              <em>IEEE Transactions on Image Processing (TIP)</em>, 2021
+              <br>
+              <a href="https://ieeexplore.ieee.org/document/9525061/">pdf</a> /
+              <a href="bibtex/spatt_tip2021.txt">bibtex</a>
+              <p></p>
+            </td>
+          </tr>
+
         <tr onmouseout="poseaug_stop()" onmouseover="poseaug_start()">
           <td style="padding:20px;width:35%;vertical-align:top">
             <div class="one">
               <div class="two" id="poseaug_image" style="opacity: 0;">
-                <img src='images/pose_aug_teaser.gif' width="280">
+                <img src='images/pose_aug_teaser.gif' width="300">
               </div>
-              <img src='images/pose_aug_teaser.jpg' width="280">
+              <img src='images/pose_aug_teaser.jpg' width="300">
             </div>
             <script type="text/javascript">
               function poseaug_start() {
@@ -142,7 +224,7 @@
 
           <tr onmouseout="bird_stop()" onmouseover="bird_start()">
             <td style="padding:20px;width:35%;vertical-align:top">
-              <img src='images/bmp_teaser.png' width="280">
+              <img src='images/bmp_teaser.png' width="300">
           </td>
 
             <td valign="middle" width="75%">
@@ -168,7 +250,7 @@
 
           <tr onmouseout="bird_stop()" onmouseover="bird_start()">
             <td style="padding:20px;width:35%;vertical-align:top">
-              <img src='images/iso_motivation.png' width="280">
+              <img src='images/iso_motivation.png' width="300">
           </td>
 
             <td valign="middle" width="75%">
@@ -191,7 +273,7 @@
 
         <tr>
           <td style="padding:20px;width:35%;vertical-align:top">
-            <img src='images/spm.png' width="280">
+            <img src='images/spm.png' width="300">
         </td>
 
             <td width="75%" valign="middle">
@@ -221,8 +303,8 @@
         <tr onmouseout="portrait_stop()" onmouseover="portrait_start()">
             <td style="padding:20px;width:35%;vertical-align:middle">
                 <div class="one">
-                    <div class="two" id='wang2018cvsp'><img src='images/jh_graphabstract.png' width="280"></div>
-                    <img src='images/jh_graphabstract.png' width="280">
+                    <div class="two" id='wang2018cvsp'><img src='images/jh_graphabstract.png' width="300"></div>
+                    <img src='images/jh_graphabstract.png' width="300">
                     </div>
                 <script type="text/javascript">
                     function portrait_start() {
@@ -317,7 +399,7 @@
           <p><center><font face="Arial">
                 <br>
                     <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=360&t=tt&d=notuMmjZmmmqgGr27ELZx5OsJzDyX5EM5xhYhsafATk&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
-                    &copy; Jianfeng Zhang | Last updated: 01/12/2020
+                    &copy; Jianfeng Zhang | Last updated: 10/2021
                 </font></center></p>
 
 <script xml:space="preserve" language="JavaScript">
