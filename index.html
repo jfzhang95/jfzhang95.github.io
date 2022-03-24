@@ -99,6 +99,51 @@
         </tbody></table>
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         
+          <tr onmouseout="posetriplet_stop()" onmouseover="posetriplet_start()">
+            <td style="padding:5px;width:35%;vertical-align:top">
+              <div class="one">
+                <div class="two" id="posetriplet_image" style="opacity: 0;">
+                  <img src='images/posetriplet_teaser.gif' width="300">
+                </div>
+                <img src='images/posetriplet_teaser.jpg' width="300">
+              </div>
+              <script type="text/javascript">
+                function posetriplet_start() {
+                  document.getElementById('posetriplet_image').style.opacity = "1";
+                }
+  
+                function posetriplet_stop() {
+                  document.getElementById('posetriplet_image').style.opacity = "0";
+                }
+                posetriplet_stop()
+              </script>
+            </td>
+            
+            <td valign="top" width="75%">
+              <a href="https://arxiv.org/pdf/2105.02465">
+                <papertitle>PoseTriplet: Co-evolving 3D Human Pose Estimation, Imitation, and Hallucination under Self-supervision</papertitle>
+              </a>
+              <br>
+              <a href="https://github.com/Garfield-kh">Kehong Gong</a>*,
+              <a href="https://jeff95.me">Bingbing Li</a>*,
+              <strong>Jianfeng Zhang</strong>*,
+              <a href="https://jeff95.me">Tao Wang</a>*,
+              <a href="https://jeff95.me">Jing Huang</a>,
+              <a href="https://jeff95.me">Bi Mi</a>,
+              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>,
+              <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a>
+              <br>
+              <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2022
+              <br>
+              <a href="https://arxiv.org/pdf/2105.02465">arxiv</a> /
+              <a href="http://jeff95.me/">project page</a> /
+              <a href="https://github.com/Garfield-kh/PoseTriplet/">code</a> /
+              <a href="bibtex/posetriplet_cvpr_2022.txt">bibtex</a>
+              <p></p>
+            </td>
+          </tr>
+
+          
           <tr onmouseout="gpnerf_stop()" onmouseover="gpnerf_start()">
             <td style="padding:5px;width:35%;vertical-align:top">
               <div class="one">
@@ -206,7 +251,7 @@
                   High-Fidelity Garment Transfer</papertitle>
               </a>
               <br>
-              <a href="https://www.ece.nus.edu.sg/lv/index.html">Ting Liu</a>,
+              <a href="https://scholar.google.com/citations?hl=en&user=KXwNipsAAAAJ&view_op=list_works">Ting Liu</a>,
               <strong>Jianfeng Zhang</strong>,
               <a href="https://niexc.github.io/">Xuecheng Nie</a>,
               <a href="https://weiyc.github.io/">Yunchao Wei</a>,
@@ -247,7 +292,7 @@
             </a>
             <br>
             <strong>Jianfeng Zhang</strong>*,
-            <a href="https://www.ece.nus.edu.sg/lv/index.html">Kehong Gong</a>*,
+            <a href="https://github.com/Garfield-kh">Kehong Gong</a>*,
             <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
             <br>
             <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2021
