@@ -98,6 +98,56 @@
             </td>
           </tr>
         </tbody></table>
+
+        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+        
+          <tr onmouseout="avatargen_stop()" onmouseover="avatargen_start()">
+            <td style="padding:5px;width:35%;vertical-align:top">
+              <div class="one">
+                <div class="two" id="avatargen_image" style="opacity: 0;">
+                  <img src='images/avatargen_teaser.gif' width="300">
+                </div>
+                <img src='images/avatargen_teaser.gif' width="300">
+              </div>
+              <script type="text/javascript">
+                function avatargen_start() {
+                  document.getElementById('avatargen_image').style.opacity = "1";
+                }
+  
+                function avatargen_stop() {
+                  document.getElementById('avatargen_image').style.opacity = "0";
+                }
+                avatargen_stop()
+              </script>
+            </td>
+            
+            <td valign="top" width="75%">
+              <a href="https://arxiv.org/pdf/2208.00561.pdf">
+                <papertitle>AvatarGen: A 3D Generative Model for Animatable Human Avatars</papertitle>
+              </a>
+              <br>
+              <strong>Jianfeng Zhang</strong>*,
+              <a href="https://zihangjiang.github.io">Zihang Jiang</a>*,
+              <a href="https://dblp.org/pid/213/8223.html">Dingdong Yang</a>,
+              <a href="http://www-scf.usc.edu/~hongyixu/">Hongyi Xu</a>,
+              <a href="https://seasonsh.github.io">Yichun Shi</a>,
+              <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song</a>,
+              <a href="https://github.com/zcxu-eric">Zhongcong Xu</a>,
+              <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a>,
+              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
+              <br>
+            <em>Arxiv Prepring</em>, 2022
+            <br>
+            <!-- <font color="red"><strong>Oral Presentation</strong></font> -->
+            <!-- <br> -->
+              <a href="https://arxiv.org/pdf/2208.00561.pdf">arxiv</a> /
+              <a href="http://jeff95.me/">project page</a> /
+              <a href="https://github.com/jfzhang95/AvatarGen/">code</a> /
+              <a href="bibtex/avatargen_2022.txt">bibtex</a>
+              <p></p>
+            </td>
+          </tr>
+
         <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
         
           <tr onmouseout="posetriplet_stop()" onmouseover="posetriplet_start()">
