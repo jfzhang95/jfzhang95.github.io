@@ -241,7 +241,7 @@
             </td>
           </tr>
         
-          <tr onmouseout="mpv_stop()" onmouseover="mpv_start()">
+          <tr onmouseout="mvp_stop()" onmouseover="mvp_start()">
             <td style="padding:5px;width:35%;vertical-align:top">
               <div class="one">
                 <div class="two" id="mvp_image" style="opacity: 0;">
@@ -250,14 +250,14 @@
                 <img src='images/mvp_teaser.png' width="300">
               </div>
               <script type="text/javascript">
-                function mpv_start() {
+                function mvp_start() {
                   document.getElementById('mvp_image').style.opacity = "1";
                 }
   
-                function mpv_stop() {
+                function mvp_stop() {
                   document.getElementById('mvp_image').style.opacity = "0";
                 }
-                poseaug_stop()
+                mvp_stop()
               </script>
             </td>
             <td valign="top" width="75%">
