@@ -1,0 +1,6 @@
+@inproceedings{zhang2022avatargen,
+  title      = {AvatarGen: A 3D Generative Model for Animatable Human Avatars},
+  author     = {Zhang, Jianfeng and Jiang, Zihang and Yang, Dingdong and Xu, Hongyi and Shi, Yichun and Song, Guoxian and Xu, Zhongcong and Wang, Xinchao and Feng, Jiashi},
+  booktitle  = {Arxiv},
+  year       = {2022}
+}
