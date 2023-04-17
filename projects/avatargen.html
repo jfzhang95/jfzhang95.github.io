@@ -1,552 +1,691 @@
-
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
 <html>
-
-    <head>
-        <meta charset="utf-8">
-        <meta name="description"
-              content="AvatarGen can generate high-quality animatable 3D human avatars.">
-        <meta name="keywords" content="AvatarGen, 3D Human GAN, Human Generation">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>AvatarGen: A 3D Generative Model for Animatable Human Avatars</title>
-      
-        <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-      
-          function gtag() {
-            dataLayer.push(arguments);
-          }
-      
-          gtag('js', new Date());
-      
-          gtag('config', 'G-PYVRSFMDRL');
-        </script>
-      
-        <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-              rel="stylesheet">
-      
-        <link rel="stylesheet" href="./avatargen/static/css/bulma.min.css">
-        <link rel="stylesheet" href="./avatargen/static/css/bulma-carousel.min.css">
-        <link rel="stylesheet" href="./avatargen/static/css/bulma-slider.min.css">
-        <link rel="stylesheet" href="./avatargen/static/css/fontawesome.all.min.css">
-        <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-        <link rel="stylesheet" href="./avatargen/static/css/index.css">
-        <!-- <link rel="icon" href="./avatargen/static/images/favicon.svg"> -->
-      
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script defer src="./avatargen/static/js/fontawesome.all.min.js"></script>
-        <script src="./avatargen/static/js/bulma-carousel.min.js"></script>
-        <script src="./avatargen/static/js/bulma-slider.min.js"></script>
-        <script src="./avatargen/static/js/index.js"></script>
-      </head>
-      <body>
-      
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        <div class="navbar-brand">
-          <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-            <span aria-hidden="true"></span>
-          </a>
-        </div>
-        <!-- <div class="navbar-menu">
-          <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-            <a class="navbar-item" href="http://jeff95.me">
-            <span class="icon">
-                <i class="fas fa-home"></i>
-            </span>
-            </a> -->
-      
-            <!-- <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">
-                More Research
-              </a>
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="https://hypernerf.github.io">
-                  HyperNeRF
-                </a>
-                <a class="navbar-item" href="https://nerfies.github.io">
-                  Nerfies
-                </a>
-                <a class="navbar-item" href="https://latentfusion.github.io">
-                  LatentFusion
-                </a>
-                <a class="navbar-item" href="https://photoshape.github.io">
-                  PhotoShape
-                </a>
-              </div>
-            </div>
-          </div> -->
-      
-        </div>
-      </nav>
-
-<script src="http://www.google.com/jsapi" type="text/javascript"></script>
-<script type="text/javascript">google.load("jquery", "1.3.2");</script>
-
-<style type="text/css">
-body {
-    font-family: "Titillium Web", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-    font-weight: 300;
-    font-size: 17px;
-    margin-left: auto;
-    margin-right: auto;
-    width: 980px;
-}
-h1 {
-    font-weight:300;
-    line-height: 1.15em;
-}
-
-h2 {
-    font-size: 1.75em;
-}
-a:link,a:visited {
-    color: #1367a7;
-    text-decoration: none;
-}
-a:hover {
-    color: #208799;
-}
-h1, h2, h3 {
-    text-align: center;
-}
-h1 {
-    font-size: 40px;
-    font-weight: 500;
-}
-h2 {
-    font-weight: 400;
-    margin: 16px 0px 4px 0px;
-}
-.paper-title {
-    padding: 16px 0px 16px 0px;
-}
-section {
-    margin: 32px 0px 32px 0px;
-    text-align: justify;
-    clear: both;
-}
-.col-6 {
-     width: 16.6%;
-     float: left;
-}
-.col-5 {
-     width: 20%;
-     float: left;
-}
-.col-4 {
-     width: 25%;
-     float: left;
-}
-.col-3 {
-     width: 33%;
-     float: left;
-}
-.col-2 {
-     width: 50%;
-     float: left;
-}
-.row, .author-row, .affil-row {
-     overflow: auto;
-}
-.author-row, .affil-row {
-    font-size: 20px;
-}
-.row {
-    margin: 16px 0px 16px 0px;
-}
-.authors {
-    font-size: 18px;
-}
-.affil-row {
-    margin-top: 16px;
-}
-.teaser {
-    max-width: 100%;
-}
-.text-center {
-    text-align: center;  
-}
-.screenshot {
-    width: 256px;
-    border: 1px solid #ddd;
-}
-.screenshot-el {
-    margin-bottom: 16px;
-}
-hr {
-    height: 1px;
-    border: 0; 
-    border-top: 1px solid #ddd;
-    margin: 0;
-}
-.material-icons {
-    vertical-align: -6px;
-}
-p {
-    line-height: 1.25em;
-}
-.caption {
-    font-size: 16px;
-    /*font-style: italic;*/
-    color: #666;
-    text-align: left;
-    margin-top: 8px;
-    margin-bottom: 8px;
-}
-video {
-    display: block;
-    margin: auto;
-}
-figure {
-    display: block;
-    margin: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
-}
-#bibtex pre {
-    font-size: 14px;
-    background-color: #eee;
-    padding: 16px;
-}
-.blue {
-    color: #2c82c9;
-    font-weight: bold;
-}
-.orange {
-    color: #d35400;
-    font-weight: bold;
-}
-.flex-row {
-    display: flex;
-    flex-flow: row wrap;
-    justify-content: space-around;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-.paper-btn {
-  position: relative;
-  text-align: center;
-
-  display: inline-block;
-  margin: 8px;
-  padding: 8px 8px;
-
-  border-width: 0;
-  outline: none;
-  border-radius: 2px;
-  
-  background-color: #1367a7;
-  color: #ecf0f1 !important;
-  font-size: 20px;
-  width: 100px;
-  font-weight: 600;
-}
-
-.supp-btn {
-  position: relative;
-  text-align: center;
-
-  display: inline-block;
-  margin: 8px;
-  padding: 8px 8px;
-
-  border-width: 0;
-  outline: none;
-  border-radius: 2px;
-  
-  background-color: #1367a7;
-  color: #ecf0f1 !important;
-  font-size: 20px;
-  width: 150px;
-  font-weight: 600;
-}
-
-.paper-btn-parent {
-    display: flex;
-    justify-content: center;
-    margin: 16px 0px;
-}
-.paper-btn:hover {
-    opacity: 0.85;
-}
-.container {
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 16px;
-    padding-right: 16px;
-}
-.venue {
-    color: #1367a7;
-}
-
-
-
-.topnav {
-  overflow: hidden;
-  background-color: #EEEEEE;
-}
-
-.topnav a {
-  float: left;
-  color: black;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 16px;
-}
-
-
-
-</style>
-
-<!-- End : Google Analytics Code -->
-<script type="text/javascript" src="../js/hidebib.js"></script>
-<link href='https://fonts.googleapis.com/css?family=Titillium+Web:400,600,400italic,600italic,300,300italic' rel='stylesheet' type='text/css'>
 <head>
-    <title>AvatarGen: A 3D Generative Model for Animatable Human Avatars</title>
-    <meta property="og:description" content="AvatarGen: A 3D Generative Model for Animatable Human Avatars"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Icons" rel="stylesheet">
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+<script type="text/javascript"
+  src="http://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 </head>
-
-
- <body>
-
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <section class="hero">
-        <div class="hero-body">
-          <div class="container is-max-desktop">
-            <div class="columns is-centered">
-              <div class="column has-text-centered">
-                <h1 class="title is-1 publication-title">AvatarGen: A 3D Generative Model for Animatable Human Avatars</h1>
-                <div class="is-size-5 publication-authors">
-                  <span class="author-block">
-                    <a href="http://jeff95.me">Jianfeng Zhang*</a><sup>1</sup>,</span>
-                  <span class="author-block">
-                    <a href="https://zihangjiang.github.io/">Zihang Jiang*</a><sup>1</sup>,</span>
-                  <span class="author-block">
-                    <a href="https://santisy.github.io/">Dingdong Yang</a><sup>2</sup>,
-                  </span>
-                  <span class="author-block">
-                    <a href="http://www-scf.usc.edu/~hongyixu/">Hongyi Xu</a><sup>2</sup>,
-                  </span>
-                  <br>
-                  <span class="author-block">
-                    <a href="https://seasonsh.github.io/">Yichun Shi</a><sup>2</sup>,
-                  </span>
-                  
-                  <span class="author-block">
-                    <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song</a><sup>2</sup>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://github.com/zcxu-eric">Zhongcong Xu</a><sup>1</sup>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a><sup>1</sup>,
-                  </span>
-                  <span class="author-block">
-                    <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a><sup>2</sup>
-                  </span>
-                </div>
-      
-                <div class="is-size-5 publication-authors">
-                  <span class="author-block"><sup>1</sup>National University of Singapore,</span>
-                  <span class="author-block"><sup>2</sup>ByteDance</span>
-                </div>
-      
-                <div class="column has-text-centered">
-                  <div class="publication-links">
-                    <!-- PDF Link. -->
-                    <span class="link-block">
-                      <a href="https://arxiv.org/pdf/2211.14589.pdf"
-                         class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                            <i class="fas fa-file-pdf"></i>
-                        </span>
-                        <span>Paper</span>
-                      </a>
-                    </span>
-                    <span class="link-block">
-                      <a href="https://arxiv.org/abs/2211.14589"
-                         class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                            <i class="ai ai-arxiv"></i>
-                        </span>
-                        <span>arXiv</span>
-                      </a>
-                    </span>
-                    <!-- Video Link. -->
-                    <!-- <span class="link-block">
-                      <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
-                         class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                            <i class="fab fa-youtube"></i>
-                        </span>
-                        <span>Video</span>
-                      </a>
-                    </span> -->
-                    <!-- Code Link. -->
-                    <span class="link-block">
-                      <a href="https://github.com/jfzhang95/AvatarGen/"
-                         class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                            <i class="fab fa-github"></i>
-                        </span>
-                        <span>Code</span>
-                        </a>
-                    </span>
-                    <!-- Dataset Link. -->
-                    <!-- <span class="link-block">
-                      <a href="https://github.com/google/nerfies/releases/tag/0.1"
-                         class="external-link button is-normal is-rounded is-dark">
-                        <span class="icon">
-                            <i class="far fa-images"></i>
-                        </span>
-                        <span>Data</span>
-                        </a> -->
-                  </div>
-      
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="3DHumanGeneration">
 
-    <section id="teaser">
-            <figure style="width: 80%;">
-                <a href="avatargen/assets/teaser_img.jpg">
-                    <img width="100%" src="avatargen/assets/teaser_img.png">
+    <title>AvatarGen - Project Page</title>
+
+    <link rel="stylesheet" href="avatargen/avatargen_assets/bootstrap.min.css">
+    <link rel="stylesheet" href="avatargen/avatargen_assets/all.min.css">
+    <link rel="stylesheet" href="avatargen/avatargen_assets/academicons.min.css">
+    <link rel="stylesheet" href="avatargen/avatargen_assets/charts.min.css">
+    <link id="theme-style" rel="stylesheet" href="avatargen/avatargen_assets/avatarclip_main.css">
+    <link id="theme-style" rel="stylesheet" href="avatargen/avatargen_assets/bulma-carousel.min.css">
+    <link id="theme-style" rel="stylesheet" href="avatargen/avatargen_assets/bulma-slider.min.css">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async="" src="avatargen/avatargen_assets/js"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-7G7KG5PND3');
+    </script>
+    
+    
+    <script type="module" src="avatargen/avatargen_assets/background_star.js"></script>
+
+    <script src="avatargen/avatargen_assets/jquery.min.js"></script>
+    <script src="avatargen/avatargen_assets/bulma-carousel.min.js"></script>
+    <script src="avatargen/avatargen_assets/bulma-slider.min.js"></script>
+    <script src="avatargen/avatargen_assets/index.js"></script>
+    <script src="avatargen/avatargen_assets/libgif.js"></script>
+    <script type="module" src="avatargen/avatargen_assets/model-viewer.min.js"></script>
+
+    <script>
+        function initComparisons() {
+            var x, i;
+            /* Find all elements with an "overlay" class: */
+            x = document.getElementsByClassName("img-comp-overlay");
+            for (i = 0; i < x.length; i++) {
+                /* Once for each "overlay" element:
+                pass the "overlay" element as a parameter when executing the compareImages function: */
+                compareImages(x[i]);
+            }
+            function compareImages(img) {
+                var slider, img, clicked = 0, w, h;
+                /* Get the width and height of the img element */
+                w = img.offsetWidth;
+                h = img.offsetHeight;
+                /* Set the width of the img element to 50%: */
+                img.style.width = (w / 2) + "px";
+                /* Create slider: */
+                slider = document.createElement("DIV");
+                slider.setAttribute("class", "img-comp-slider");
+                /* Insert slider */
+                img.parentElement.insertBefore(slider, img);
+                /* Position the slider in the middle: */
+                slider.style.top = (h / 2) - (slider.offsetHeight / 2) + "px";
+                slider.style.left = (w / 2) - (slider.offsetWidth / 2) + "px";
+                /* Execute a function when the mouse button is pressed: */
+                slider.addEventListener("mousedown", slideReady);
+                /* And another function when the mouse button is released: */
+                window.addEventListener("mouseup", slideFinish);
+                /* Or touched (for touch screens: */
+                slider.addEventListener("touchstart", slideReady);
+                /* And released (for touch screens: */
+                window.addEventListener("touchend", slideFinish);
+                function slideReady(e) {
+                /* Prevent any other actions that may occur when moving over the image: */
+                e.preventDefault();
+                /* The slider is now clicked and ready to move: */
+                clicked = 1;
+                /* Execute a function when the slider is moved: */
+                window.addEventListener("mousemove", slideMove);
+                window.addEventListener("touchmove", slideMove);
+                }
+                function slideFinish() {
+                /* The slider is no longer clicked: */
+                clicked = 0;
+                }
+                function slideMove(e) {
+                var pos;
+                /* If the slider is no longer clicked, exit this function: */
+                if (clicked == 0) return false;
+                /* Get the cursor's x position: */
+                pos = getCursorPos(e)
+                /* Prevent the slider from being positioned outside the image: */
+                if (pos < 0) pos = 0;
+                if (pos > w) pos = w;
+                /* Execute a function that will resize the overlay image according to the cursor: */
+                slide(pos);
+                }
+                function getCursorPos(e) {
+                var a, x = 0;
+                e = (e.changedTouches) ? e.changedTouches[0] : e;
+                /* Get the x positions of the image: */
+                a = img.getBoundingClientRect();
+                /* Calculate the cursor's x coordinate, relative to the image: */
+                x = e.pageX - a.left;
+                /* Consider any page scrolling: */
+                x = x - window.pageXOffset;
+                return x;
+                }
+                function slide(x) {
+                /* Resize the image: */
+                img.style.width = x + "px";
+                /* Position the slider: */
+                slider.style.left = img.offsetWidth - (slider.offsetWidth / 2) + "px";
+                }
+            }
+        }
+    </script>
+<style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;-o-transition:opacity .1s linear;-moz-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1 !important}.dg.main:hover .close-button,.dg.main .close-button.drag{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;-o-transition:opacity .1s linear;-moz-transition:opacity .1s linear;transition:opacity .1s linear;border:0;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button.close-top{position:relative}.dg.main .close-button.close-bottom{position:absolute}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-y:visible}.dg.a.has-save>ul.close-top{margin-top:0}.dg.a.has-save>ul.close-bottom{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{top:0;z-index:1002}.dg.a .save-row.close-top{position:relative}.dg.a .save-row.close-bottom{position:fixed}.dg li{-webkit-transition:height .1s ease-out;-o-transition:height .1s ease-out;-moz-transition:height .1s ease-out;transition:height .1s ease-out;-webkit-transition:overflow .1s linear;-o-transition:overflow .1s linear;-moz-transition:overflow .1s linear;transition:overflow .1s linear}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid rgba(0,0,0,0)}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px;overflow:hidden}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%;position:relative}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:7px}.dg .c select{margin-top:5px}.dg .cr.function,.dg .cr.function .property-name,.dg .cr.function *,.dg .cr.boolean,.dg .cr.boolean *{cursor:pointer}.dg .cr.color{overflow:visible}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0px 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco, monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px 'Lucida Grande', sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px 4px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2FA1D6}.dg .cr.number input[type=text]{color:#2FA1D6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.function:hover,.dg .cr.boolean:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2FA1D6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}
+</style><style type="text/css">.dg ul{list-style:none;margin:0;padding:0;width:100%;clear:both}.dg.ac{position:fixed;top:0;left:0;right:0;height:0;z-index:0}.dg:not(.ac) .main{overflow:hidden}.dg.main{-webkit-transition:opacity .1s linear;-o-transition:opacity .1s linear;-moz-transition:opacity .1s linear;transition:opacity .1s linear}.dg.main.taller-than-window{overflow-y:auto}.dg.main.taller-than-window .close-button{opacity:1;margin-top:-1px;border-top:1px solid #2c2c2c}.dg.main ul.closed .close-button{opacity:1 !important}.dg.main:hover .close-button,.dg.main .close-button.drag{opacity:1}.dg.main .close-button{-webkit-transition:opacity .1s linear;-o-transition:opacity .1s linear;-moz-transition:opacity .1s linear;transition:opacity .1s linear;border:0;line-height:19px;height:20px;cursor:pointer;text-align:center;background-color:#000}.dg.main .close-button.close-top{position:relative}.dg.main .close-button.close-bottom{position:absolute}.dg.main .close-button:hover{background-color:#111}.dg.a{float:right;margin-right:15px;overflow-y:visible}.dg.a.has-save>ul.close-top{margin-top:0}.dg.a.has-save>ul.close-bottom{margin-top:27px}.dg.a.has-save>ul.closed{margin-top:0}.dg.a .save-row{top:0;z-index:1002}.dg.a .save-row.close-top{position:relative}.dg.a .save-row.close-bottom{position:fixed}.dg li{-webkit-transition:height .1s ease-out;-o-transition:height .1s ease-out;-moz-transition:height .1s ease-out;transition:height .1s ease-out;-webkit-transition:overflow .1s linear;-o-transition:overflow .1s linear;-moz-transition:overflow .1s linear;transition:overflow .1s linear}.dg li:not(.folder){cursor:auto;height:27px;line-height:27px;padding:0 4px 0 5px}.dg li.folder{padding:0;border-left:4px solid rgba(0,0,0,0)}.dg li.title{cursor:pointer;margin-left:-4px}.dg .closed li:not(.title),.dg .closed ul li,.dg .closed ul li>*{height:0;overflow:hidden;border:0}.dg .cr{clear:both;padding-left:3px;height:27px;overflow:hidden}.dg .property-name{cursor:default;float:left;clear:left;width:40%;overflow:hidden;text-overflow:ellipsis}.dg .c{float:left;width:60%;position:relative}.dg .c input[type=text]{border:0;margin-top:4px;padding:3px;width:100%;float:right}.dg .has-slider input[type=text]{width:30%;margin-left:0}.dg .slider{float:left;width:66%;margin-left:-5px;margin-right:0;height:19px;margin-top:4px}.dg .slider-fg{height:100%}.dg .c input[type=checkbox]{margin-top:7px}.dg .c select{margin-top:5px}.dg .cr.function,.dg .cr.function .property-name,.dg .cr.function *,.dg .cr.boolean,.dg .cr.boolean *{cursor:pointer}.dg .cr.color{overflow:visible}.dg .selector{display:none;position:absolute;margin-left:-9px;margin-top:23px;z-index:10}.dg .c:hover .selector,.dg .selector.drag{display:block}.dg li.save-row{padding:0}.dg li.save-row .button{display:inline-block;padding:0px 6px}.dg.dialogue{background-color:#222;width:460px;padding:15px;font-size:13px;line-height:15px}#dg-new-constructor{padding:10px;color:#222;font-family:Monaco, monospace;font-size:10px;border:0;resize:none;box-shadow:inset 1px 1px 1px #888;word-wrap:break-word;margin:12px 0;display:block;width:440px;overflow-y:scroll;height:100px;position:relative}#dg-local-explain{display:none;font-size:11px;line-height:17px;border-radius:3px;background-color:#333;padding:8px;margin-top:10px}#dg-local-explain code{font-size:10px}#dat-gui-save-locally{display:none}.dg{color:#eee;font:11px 'Lucida Grande', sans-serif;text-shadow:0 -1px 0 #111}.dg.main::-webkit-scrollbar{width:5px;background:#1a1a1a}.dg.main::-webkit-scrollbar-corner{height:0;display:none}.dg.main::-webkit-scrollbar-thumb{border-radius:5px;background:#676767}.dg li:not(.folder){background:#1a1a1a;border-bottom:1px solid #2c2c2c}.dg li.save-row{line-height:25px;background:#dad5cb;border:0}.dg li.save-row select{margin-left:5px;width:108px}.dg li.save-row .button{margin-left:5px;margin-top:1px;border-radius:2px;font-size:9px;line-height:7px;padding:4px 4px 5px 4px;background:#c5bdad;color:#fff;text-shadow:0 1px 0 #b0a58f;box-shadow:0 -1px 0 #b0a58f;cursor:pointer}.dg li.save-row .button.gears{background:#c5bdad url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAANCAYAAAB/9ZQ7AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAQJJREFUeNpiYKAU/P//PwGIC/ApCABiBSAW+I8AClAcgKxQ4T9hoMAEUrxx2QSGN6+egDX+/vWT4e7N82AMYoPAx/evwWoYoSYbACX2s7KxCxzcsezDh3evFoDEBYTEEqycggWAzA9AuUSQQgeYPa9fPv6/YWm/Acx5IPb7ty/fw+QZblw67vDs8R0YHyQhgObx+yAJkBqmG5dPPDh1aPOGR/eugW0G4vlIoTIfyFcA+QekhhHJhPdQxbiAIguMBTQZrPD7108M6roWYDFQiIAAv6Aow/1bFwXgis+f2LUAynwoIaNcz8XNx3Dl7MEJUDGQpx9gtQ8YCueB+D26OECAAQDadt7e46D42QAAAABJRU5ErkJggg==) 2px 1px no-repeat;height:7px;width:8px}.dg li.save-row .button:hover{background-color:#bab19e;box-shadow:0 -1px 0 #b0a58f}.dg li.folder{border-bottom:0}.dg li.title{padding-left:16px;background:#000 url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlI+hKgFxoCgAOw==) 6px 10px no-repeat;cursor:pointer;border-bottom:1px solid rgba(255,255,255,0.2)}.dg .closed li.title{background-image:url(data:image/gif;base64,R0lGODlhBQAFAJEAAP////Pz8////////yH5BAEAAAIALAAAAAAFAAUAAAIIlGIWqMCbWAEAOw==)}.dg .cr.boolean{border-left:3px solid #806787}.dg .cr.color{border-left:3px solid}.dg .cr.function{border-left:3px solid #e61d5f}.dg .cr.number{border-left:3px solid #2FA1D6}.dg .cr.number input[type=text]{color:#2FA1D6}.dg .cr.string{border-left:3px solid #1ed36f}.dg .cr.string input[type=text]{color:#1ed36f}.dg .cr.function:hover,.dg .cr.boolean:hover{background:#111}.dg .c input[type=text]{background:#303030;outline:none}.dg .c input[type=text]:hover{background:#3c3c3c}.dg .c input[type=text]:focus{background:#494949;color:#fff}.dg .c .slider{background:#303030;cursor:ew-resize}.dg .c .slider-fg{background:#2FA1D6;max-width:100%}.dg .c .slider:hover{background:#3c3c3c}.dg .c .slider:hover .slider-fg{background:#44abda}
+</style></head>
+
+<body>
+
+
+
+<div class="wrapper">
+
+    <section class="section intro-section">
+        <div class="intro-container" style="text-align: center;">
+            <div class="header">
+                <h3 class="papername">AvatarGen: A 3D Generative Model for Animatable Human</h3>
+            </div>
+            
+            
+            <ul class="list-unstyled name-list">
+                <li><a href="http://jeff95.me/" target="_blank">Jianfeng Zhang</a><sup>*,1</sup></li>
+                <li><a href="https://zihangjiang.github.io/" target="_blank">Zihang Jiang</a><sup>*,1</sup></li>
+                <li><a href="https://santisy.github.io" target="_blank">Dingdong Yang</a><sup>2</sup></li>
+                <li><a href='http://www-scf.usc.edu/~hongyixu/' target='_blank'>Hongyi Xu</a><sup>2</sup></li>
+                <li><a href="https://seasonsh.github.io" target="_blank">Yichun Shi</a><sup>2</sup></li>
+                <li><a href="https://guoxiansong.github.io/homepage/index.html" target="_blank">Guoxian Song</a><sup>2</sup></li>
+                <li><a href="https://github.com/zcxu-eric" target="_blank">Zhongcong Xu</a><sup>1</sup></li>
+                <li><a href="https://sites.google.com/site/sitexinchaowang" target="_blank">Xinchao Wang</a><sup>1</sup></li>
+                <li><a href="https://sites.google.com/site/jshfeng" target="_blank">Jiashi Feng</a><sup>2</sup></li>
+            </ul>
+            <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>National University of Singapore,</span>
+                <span class="author-block"><sup>2</sup>TikTok</span>
+              </div>
+            <div class='title'>ArXiv 2023</div>
+            <div style="font-size:large;"><strong>TL;DR:</strong> AvatarGen is a 3D-aware human generative model that enables not only geometry-aware  human synthesis with high-fidelity appearances but also disentangled animation  controllability, while only requiring 2D images for training.</div>
+        </div>
+        <br>
+
+        <div style="width: 95%; text-align: center; margin:auto;">
+            <figure style="width: 100%;">
+                <a href="avatargen/assets/teaserfinal.png">
+                    <img width="100%" src="avatargen/assets/teaserfinal.png">
                 </a>
                 <p class="caption" style="margin-bottom: 1px;  text-align: justify">
-                    We propose AvatarGen, a 3D-aware generative model that enables not only geometry-aware clothed human synthesis with high-fidelity appearances but also disentangled human animation controllability, while only requiring 2D images for training.
+                    AvatarGen can synthesize 3D-aware human avatars with detailed geometries and diverse appearances under disentangled
+                    control over (a) camera viewpoints, (b) human poses and (c) shapes. (d) Moreover, given the SMPL control signals, the
+                    generated avatars can be animated accordingly.
                 </p>
             </figure>
-            <br>
-            <figure style="width: 80%;">
-             <video class="centered" width="90%" controls muted loop autoplay>
-                <source src="avatargen/assets/teaser_demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            
-            <video class="centered" width="90%" controls muted loop autoplay>
-                <source src="avatargen/assets/anim_demo.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-            <p class="caption" style="margin-bottom : 1px; text-align: center">
-                AvatarGen can synthesize clothed 3D human avatars with detailed geometries and diverse appearances under disentangled control over camera viewpoints and human poses.  
-            </p>
-        </figure>
-    </section>
-
-    <section id="abstract"/>
-    <h2>Abstract</h2>
-    <hr>
-    <p>
-Unsupervised generation of 3D-aware clothed  humans with various appearances and controllable geometries is important for creating virtual human avatars and other AR/VR applications. Existing methods are either limited to rigid object modeling, or not generative  and thus unable to generate high-quality virtual humans and animate them. In this work, we proposeAvatarGen, the first method that enables not only geometry-aware clothed human synthesis with high-fidelity appearances but also disentangled human animation controllability, while only requiring 2D images for training. Specifically, we decompose the generative 3D human synthesis into pose-guided mapping and canonical representation with predefined human pose and shape, such that the canonical representation can be explicitly driven to different poses and shapes with the guidance of a 3D parametric human model SMPL.
-AvatarGen further introduces a deformation network to learn non-rigid deformations for modeling fine-grained geometric details and pose-dependent dynamics. To improve the geometry quality of the generated human avatars, it leverages the signed distance field as geometric proxy, which allows more direct regularization from the 3D geometric
-priors of SMPL. Benefiting from these designs, our method can generate animatable 3D human avatars with high-quality appearance and geometry modeling, significantly outperforming previous 3D GANs.
-Furthermore, it is competent for many applications, e.g., single-view reconstruction, re-animation, and text-guided synthesis/editing.
-    </p>
-    </section>
-
-
-    <section id="results">
-        <h2>Comparison with Baselines</h2>
-        <hr>
-        <figure style="width: 100%;">
-            <a href="avatargen/assets/compare_baselines.png">
-                <img width="100%" src="avatargen/assets/compare_baselines.png">
-            </a>
-            <p class="caption" style="margin-bottom: 1px;  text-align: center">
-                Qualitative comparisons of generation results against baselines.
-            </p>
-        </figure>
-
-        <br>
-        <br>
-
-        <h2>Applications</h2>
-        <hr>
-        <h3>Human Portrait Reconstruction and Animation</h3>
-        </table>
-        <table width="100%" align="center">
-            <tr>
-                <td  width="40%" style="text-align:center; font-size:14px"><b>Input and inversion</b></td>
-                <td  width="20%" style="text-align:center; font-size:14px"><b>Geometry</b></td>
-                <td  width="20%" style="text-align:center; font-size:14px"><b>Novel pose</b></td>
-                <td  width="20%" style="text-align:center; font-size:14px"><b>Geometry</b></td>
-            </tr>
-            <tr>
-                <td><video width="100%" muted loop autoplay><source src="avatargen/application/inversion/pose-0/proj.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
-                <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-0/geometry-seed0000.png"></figure></td>
-                <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-0/seed0017_image.png"></figure></td>
-                <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-0/geometry-seed0017.png"></figure></td>
-            </tr>
-            <tr>
-                <td><video width="100%" muted loop autoplay><source src="avatargen/application/inversion/pose-50/proj.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
-                <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-50/geometry-seed0303.png"></figure></td>
-                <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-50/seed0022_image.png"></figure></td>
-                <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-50/geometry-seed0022.png"></figure></td>
-            </tr>
-          </table> 
-          <p class="caption" style="margin-bottom: 1px; text-align: center">
-            Given target image, we optimize the latent code to inverse the input images. Then we can synthesize novel view rendering with multi-view consistency and control the generation with novel poses.
-          </p>
-        </table>
-        <br>
-        <br>
-        <hr>
-        <h3>Text-guided Synthesis/Editing</h3>
-        <table width="100%" align="center">
-            <tr>
-                <td  width="20%" style="text-align:center; font-size:14px"><b>Text prompts</b></td>
-                <td  width="25%" style="text-align:center; font-size:14px"><b> </b></td>
-                <td  width="25%" style="text-align:center; font-size:14px"><b> </b></td>
-                <td  width="25%" style="text-align:center; font-size:14px"><b> </b></td>
-            </tr>
-            <tr>
-                <td  width="20%" style="text-align:center; font-size:23px"><b>Light blue jeans</b></td>
-                <td><video width="100%" muted loop autoplay><source src="avatargen/application/language/jeans1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>      
-                <td><video width="100%" muted loop autoplay><source src="avatargen/application/language/jeans2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
-                <td><video width="100%" muted loop autoplay><source src="avatargen/application/language/jeans3.mp4" type="video/mp4">Your browser does not support the video tag.</video></td> 
-            </tr>
-            <tr>
-                <td  width="20%" style="text-align:center; font-size:23px"><b>Long dress</b></td>
-                <td><video width="100%" muted loop autoplay><source src="avatargen/application/language/dress1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>      
-                <td><video width="100%" muted loop autoplay><source src="avatargen/application/language/dress2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
-                <td><video width="100%" muted loop autoplay><source src="avatargen/application/language/dress3.mp4" type="video/mp4">Your browser does not support the video tag.</video></td> 
-            </tr>
-          </table> 
-          <p class="caption" style="margin-bottom: 1px; text-align: center">
-                We visualize text-guided clothed human synthesis. Following StyleCLIP, we optimize the latent code of the synthesized images with a sequence of text prompts that specify different cloth styles. 
-          </p>
-        <br>
-        <br>
-
-    </section>
-
-    <section class="section" id="BibTeX">
-        <div class="container is-max-desktop content">
-          <h2 class="title">BibTeX</h2>
-          <pre><code>@article{zhang2022avatargen,
-        author    = {Zhang, Jianfeng and Jiang, Zihang and Yang, Dingdong and Xu, Hongyi and Shi, Yichun and Song, Guoxian and Xu, Zhongcong and Wang, Xinchao and Feng, Jiashi},
-        title     = {AvatarGen: A 3D Generative Model for Animatable Human Avatars},
-        journal   = {Arxiv},
-        year      = {2022},
-      }</code></pre>
         </div>
-      </section>
+        <br>
+        <!-- <figure style="width: 100%;"> -->
+        <!-- <video class="centered" width="50%" controls muted loop autoplay>
+            <source src="assets/teaser_demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <br>
+        <video class="centered" width="50%" controls muted loop autoplay>
+            <source src="assets/anim_demo.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video> -->
 
-    <br />
+            <div class="details links-table">
+                <table>
+                    <tbody><tr>
+                        <td><video class="centered" width="100%" controls muted loop autoplay>
+                            <source src="avatargen/assets/teaser_demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.</td>
+                        <td><video class="centered" width="100%" controls muted loop autoplay>
+                            <source src="avatargen/assets/anim_demo.mp4" type="video/mp4">
+                            Your browser does not support the video tag.</td>
+                    </tr>
+                </tbody></table>
+            </div>
+            <p class="caption" style="margin-bottom: 1px;  text-align: justify">
+                We generate  avatars via AvatarGen and render them from 360-degree viewpoints (left). The avatars can be animated given a SMPL  sequence (right).
+            </p>
+
+        <!-- <div id="carouselExampleIndicators" class="video-container" style="margin-top:20px;"> -->
+            <!-- <div id="results-carousel" class="carousel is-dark results-carousel video-container-inner"> -->
+                
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            Abstract
+        </div>
+        <div class="details">
+            Unsupervised generation of 3D-aware clothed  humans with diverse appearances and animatable geometry is essential for creating virtual human avatars and other AR/VR applications. However, existing methods are limited either to modeling rigid objects or lack generative ability, thus making it challenging to produce high-quality virtual humans and animate them. In this work, we propose AvatarGen, which generates 3D-aware clothed human with high-fidelity appearances and   disentangled controllability, while using only 2D images for training.
+            Specifically, our method decomposes generative 3D human synthesis into SMPL-guided mapping from observation to canonical space and canonical human generation with a pre-defined  pose and shape. Such decomposition  enables  the explicit driving of the canonical human to different poses and shapes, while preserving its identity.
+            AvatarGen further introduces a deformation network to learn residual deformations to better generate the fine-grained geometric details and pose-dependent dynamics.  
+            To enhance the geometry quality of the generated  avatars, AvatarGen leverages signed distance fields as geometric proxy, allowing for more direct regularization from the 3D geometric priors of SMPL. 
+            With these designs, AvatarGen significantly outperforms previous 3D GAN methods in terms of generation quality and controllability for 3D human avatars.
+            Moreover, AvatarGen is competent for various applications, e.g., single-view reconstruction, re-animation, and text-guided synthesis/editing.
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            Method Overview
+        </div>
+        <div style="width: 90%; text-align: center; margin:auto;">
+            <img style="width:100%" src="avatargen/assets/triplanefinal.png">
+        </div>
+        <!-- <p>Pipeline of AvatarGen. It consists of three parts. a) Canonical human generation: Given a  latent code $\mathbf{z}$ sampled from Gaussian distribution and camera pose ${\mathbf{c}}$, the model first uses a StyleGAN-like backbone to generate  tri-plane features of an identity with a canonical pose and shape $\bar{\mathbf{p}}$. 
+            b) SMPL guided mapping: The canonical mapping module,  guided by the SMPL     $\mathbf{p}=(\mathbf{\theta}, \mathbf{\beta})$, un-warps the spatial points $\mathbf{x}$ sampled from the observation space $\mathcal{O(\mathbf{p})}$ to the canonical space $\mathcal{C(\bar{\mathbf{p}})}$.
+            The resulting deformed positions $\bar{\mathbf{x}}$ are used to query features from the canonical tri-plane for human rendering in the observation space. c) Rendering: The obtained features are then rendered as low-resolution feature images using an SDF-based volume renderer. 
+            Finally, a super-resolution module synthesizes the high-resolution images from the volume-rendered feature images. The whole pipeline is   optimized by adversarial training.
+            For more details of AvatarGen, please kindly refer to the paper.
+        </p> -->
+        <div style="width: 100%; text-align: center;  margin:auto;">
+            <img style="width:100%" src="avatargen/assets/pipeline_caption.png">
+        </div>
+    </section>
+
+
+    <section class="section links-section">
+        <div class="section-title">
+            Appearance / Geometry Visualization
+        </div>
+        <div class="details links-table">
+            Drag the blue separator to see the pixel-aligned RGB and geometry. Refresh the page if RGB and geometry are out of sync.
+            <table>
+                <tbody><tr>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_1/geo_1.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_1/rgb_1.gif" width="280" height="280">
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_1/geo_2.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_1/rgb_2.gif" width="280" height="280">
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_2/geo_1.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_2/rgb_1.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_1/geo_4.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_1/rgb_4.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_2/geo_2.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_2/rgb_2.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_2/geo_3.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_2/rgb_3.gif" width="280" height="280">
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_2/geo_4.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_2/rgb_4.gif" width="280" height="280">
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_3/geo_1.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_3/rgb_1.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_3/geo_2.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_3/rgb_2.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_3/geo_3.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_3/rgb_3.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_3/geo_4.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_3/rgb_4.gif" width="280" height="280">
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_4/geo_1.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/multiview_2x2_4/rgb_1.gif" width="280" height="280">
+                            </div>
+                        </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_4/geo_2.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_4/rgb_2.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_4/geo_3.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_4/rgb_3.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="img-comp-container">
+                                <div class="img-comp-img">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_4/geo_4.gif" width="280" height="280">
+                                </div>
+                                <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                    <img class="" src="avatargen/assets/gif_results/multiview_2x2_4/rgb_4.gif" width="280" height="280">
+                                </div>
+                            </div>
+                        </td>
+                    </td>
+                </tr>
+
+
+            </tbody></table>
+        </div>
+    </section>
+
+    <section class="section links-section">
+        <div class="section-title">
+            Novel Pose Generation
+        </div>
+        <div class="details links-table">
+        Drag the blue separator to see the pixel-aligned RGB and geometry. Refresh the page if RGB and geometry are out of sync.
+            <table>
+                <tbody><tr>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_5/geo_1.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_5/rgb_1.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_5/geo_3.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_5/rgb_3.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_6/geo_1.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_6/rgb_1.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_6/geo_2.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_6/rgb_2.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_5/geo_4.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_20_5/rgb_4.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_5/geo_1.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_5/rgb_1.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_5/geo_2.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_5/rgb_2.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_2/geo_4.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_2/rgb_4.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_5/geo_3.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_5/rgb_3.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_2/geo_3.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_22_2/rgb_3.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_5/geo_1.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_5/rgb_1.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_5/geo_2.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_5/rgb_2.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_6/geo_3.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_6/rgb_3.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_6/geo_1.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_6/rgb_1.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="img-comp-container">
+                            <div class="img-comp-img">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_5/geo_4.gif" width="280" height="280">
+                            </div>
+                            <div class="img-comp-img img-comp-overlay" style="width: 280px;">
+                                <img class="" src="avatargen/assets/gif_results/animation_2x2_32_5/rgb_4.gif" width="280" height="280">
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody></table>
+            <p class="caption" style="margin-bottom: 1px; text-align: center">
+                Given different SMPL sequences, AvatarGen can animate the generated avatars accordingly, while preserving their identities.
+          </p>
+        </div>
+    </section>
+
+    <section class="section links-section">
+        <div class="section-title">
+            Portrait image reconstruction
+        </div>
+        <div class="details links-table">
+            <table>
+                <tbody>
+                    <tr>
+                        <td  width="40%" style="text-align:center; font-size:14px"><b>Input and inversion</b></td>
+                        <td  width="20%" style="text-align:center; font-size:14px"><b>Geometry</b></td>
+                        <td  width="20%" style="text-align:center; font-size:14px"><b>Novel pose</b></td>
+                        <td  width="20%" style="text-align:center; font-size:14px"><b>Geometry</b></td>
+                    </tr>
+                    <tr>
+                        <td><video width="100%" muted loop autoplay><source src="avatargen/application/inversion/pose-0/proj.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
+                        <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-0/geometry-seed0000.png"></figure></td>
+                        <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-0/seed0017_image.png"></figure></td>
+                        <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-0/geometry-seed0017.png"></figure></td>
+                    </tr>
+                    <tr>
+                        <td><video width="100%" muted loop autoplay><source src="avatargen/application/inversion/pose-50/proj.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
+                        <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-50/geometry-seed0303.png"></figure></td>
+                        <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-50/seed0022_image.png"></figure></td>
+                        <td><figure style="width: 100%;"><img width="100%" src="avatargen/application/inversion/pose-50/geometry-seed0022.png"></figure></td>
+                    </tr>
+            </tbody>
+        </table>
+        <p class="caption" style="margin-bottom: 1px; text-align: center">
+            Given a target portrait, we reconstruct its 3D-aware appearance and geometry, which can then be rendered under novel camera views and re-posed using novel SMPL parameters as control signals.
+            Please kindly refer to Section 4.3 for more details.
+        </p>
+        </div>
+    </section>
+
+
+    <section class="section links-section">
+        <div class="section-title">
+            Text-guided Synthesis/Editing
+        </div>
+        <div class="details links-table">
+            <table>
+                <tbody>
+                <tr>
+                    <td  width="20%" style="text-align:center; font-size:14px"><b>Text prompts</b></td>
+                    <td  width="25%" style="text-align:center; font-size:14px"><b> </b></td>
+                    <td  width="25%" style="text-align:center; font-size:14px"><b> </b></td>
+                    <td  width="25%" style="text-align:center; font-size:14px"><b> </b></td>
+                </tr>
+                <tr>
+                    <td  width="20%" style="text-align:center; font-size:16px"><b>Light blue jeans</b></td>
+                    <td><video width="80%" muted loop autoplay><source src="avatargen/application/language/jeans1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>      
+                    <td><video width="80%" muted loop autoplay><source src="avatargen/application/language/jeans2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
+                    <td><video width="80%" muted loop autoplay><source src="avatargen/application/language/jeans3.mp4" type="video/mp4">Your browser does not support the video tag.</video></td> 
+                </tr>
+                <tr>
+                    <td  width="20%" style="text-align:center; font-size:16px"><b>Long dress</b></td>
+                    <td><video width="80%" muted loop autoplay><source src="avatargen/application/language/dress1.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>      
+                    <td><video width="80%" muted loop autoplay><source src="avatargen/application/language/dress2.mp4" type="video/mp4">Your browser does not support the video tag.</video></td>
+                    <td><video width="80%" muted loop autoplay><source src="avatargen/application/language/dress3.mp4" type="video/mp4">Your browser does not support the video tag.</video></td> 
+                </tr>
+            </tbody>
+            </table>
+            <p class="caption" style="margin-bottom: 1px; text-align: center">
+                Text-guided synthesis results of AvatarGen with multi-view rendering. We optimize the latent code of the synthesized images with a sequence of text prompts that specify different cloth styles. 
+                Please kindly refer to Section 4.3 for more details.
+            </p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="section-title">
+            Music-driven Avatar Animation
+        </div>
+        <div style="width: 100%; text-align: center; margin:auto;">
+            <iframe width="500" height="500" src="avatargen/application/music/music_to_dance.mp4" title="Music-driven Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+        </div>
+        <p class="caption" style="margin-bottom: 1px; text-align: center">
+            Given an audio sequence, we use the open-source audio-to-motion method <a href="https://github.com/lisiyao21/Bailando">Bailando</a> to generate the corresponding SMPL sequence, and then apply it to animate the generated avatars. 
+            We fix avatars' orientation and position for better visualization (click to play, video with audio).
+        </p>
+    </section>
+
+
+    <section class="section">
+        <div class="section-title">
+            Bibtex
+        </div>
+        <div class="details">       
+            <pre>@article{Avatargen2023,
+    title={AvatarGen: A 3D Generative Model for Animatable Human Avatars},
+    author={Zhang, Jianfeng and Jiang, Zihang and Yang, Dingdong and Xu, Hongyi and Shi, Yichun and Song, Guoxian and Xu, Zhongcong and Wang, Xinchao and Feng, Jiashi},
+    journal={ArXiv},
+    year={2023}
+}
+            </pre>
+        </div>
+    </section>
+
     
-
 </div>
-</body>
-</html>
+
+<script>
+    initComparisons();
+</script>
+
+
+
+</body></html>
