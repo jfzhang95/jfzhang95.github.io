@@ -655,7 +655,10 @@
             Music-driven Avatar Animation
         </div>
         <div style="width: 100%; text-align: center; margin:auto;">
-            <iframe width="500" height="500" src="avatargen/application/music/music_to_dance.mp4" title="Music-driven Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+            <!-- <iframe width="500" height="500" src="./avatargen/application/music/music_to_dance.mp4" title="Music-driven Animation" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe> -->
+            <video width="500" height="500" class="results" loop="" playsinline="" controls="" width="85%" onloadstart="this.volume=0.1">
+                <source src="avatargen/application/music/music_to_dance.mp4" type="video/mp4">
+            </video>
         </div>
         <p class="caption" style="margin-bottom: 1px; text-align: center">
             Given an audio sequence, we use the open-source audio-to-motion method <a href="https://github.com/lisiyao21/Bailando">Bailando</a> to generate the corresponding SMPL sequence, and then apply it to animate the generated avatars. 
