@@ -1,0 +1,916 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>AvatarStudio: High-fidelity and Animatable 3D Avatar Creation from Text</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,500,600' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="avatarstudio/assets/css/Highlight-Clean.css">
+    <link rel="stylesheet" href="avatarstudio/assets/css/styles.css">
+
+    <!-- <link rel="stylesheet" type="text/css" href="avatarstudio/static/slick/slick.css"/> -->
+    <!-- <link rel="stylesheet" type="text/css" href="avatarstudio/static/slick/slick-theme.css"/> -->
+
+    <!-- <link rel="stylesheet" href="avatarstudio/static/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="avatarstudio/static/css/bulma-slider.min.css">
+    <link rel="stylesheet" href="avatarstudio/static/css/fontawesome.all.min.css">
+    <link rel="stylesheet"
+            href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+    <link rel="stylesheet" href="avatarstudio/static/css/index.css">
+
+    <script defer src="avatarstudio/static/js/fontawesome.all.min.js"></script>
+    <!-- <script src="avatarstudio/static/js/bulma-slider.min.js"></script> -->
+    <!-- <script src="avatarstudio/static/js/index.js"></script> -->
+
+    <link rel="manifest" href="site.webmanifest">
+    <meta name="robots" content="noindex">
+
+    <meta property="og:site_name" content="AvatarStudio" />
+    <meta property="og:type" content="video.other" />
+    <meta property="og:title" content="AvatarStudio: High-fidelity and Animatable 3D Avatar Creation from Text" />
+    <meta property="og:description" content="AvatarStudio: High-fidelity and Animatable 3D Avatar Creation from Text, 2023." />
+    <meta property="og:url" content="" />
+
+    <script src="avatarstudio/assets/js/video_comparison.js"></script>
+    <script type="module" src="https://unpkg.com/@google/model-viewer@2.0.1/dist/model-viewer.min.js"></script>
+</head>
+
+<body>
+
+    <div class="highlight-clean" style="padding-bottom: 10px;">
+        <div class="container" style="max-width: 1024px; margin-bottom: 20px;">
+            <h1 class="text-center"><b>AvatarStudio</b>: High-fidelity and Animatable 3D Avatar Creation from Text</h1>
+        </div>
+    </div>
+
+    <div class="container" style="max-width: 1024px; margin-bottom: 20px;">
+        <div class="text-center" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: baseline;">
+            <a href="https://jeff95.me//" style="font-size: 18px; margin: 0 8px;">Jianfeng Zhang<sup>1*</sup></a>
+            <a href="https://scholar.google.com/citations?user=QzlBBMEAAAAJ&hl=en/" style="font-size: 18px; margin: 0 8px;">Xuanmeng Zhang<sup>2*</sup></a>
+            <a href="https://scholar.google.com/citations?user=ZfUJGskAAAAJ&hl=zh-CN/" style="font-size: 18px; margin: 0 8px;">Huichao Zhang<sup>1</sup></a>
+            <a href="https://scholar.google.com.sg/citations?user=8gm-CYYAAAAJ&hl=en/" style="font-size: 18px; margin: 0 8px;">Jun Hao Liew<sup>1</sup></a>
+            <a href="https://zhangchenxu528.github.io/" style="font-size: 18px; margin: 0 8px;">Chenxu Zhang<sup>1</sup></a>
+            <a href="https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en" style="font-size: 18px; margin: 0 8px;">Yi Yang<sup>3</sup></a>
+            <a href="https://sites.google.com/site/jshfeng/" style="font-size: 18px; margin: 0 8px;">Jiashi Feng<sup>1</sup></a>
+            
+            <div style="width: 100%; text-align: center;">
+                <a style="margin: 0 8px;"><sup>1</sup> ByteDance Inc.</a> 
+                <a style="margin: 0 8px;"><sup>2</sup> University of Technology Sydney</a>
+                <a style="margin: 0 8px;"><sup>3</sup> Zhejiang University</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="column text-center">
+        <div class="publication-links">
+          <span class="link-block">
+              <a href="https://arxiv.org/abs/"
+              style="margin: 0 5px;">
+                <span class="icon">
+                    <i class="ai ai-arxiv"></i>
+                </span>
+                <span>arXiv</span>
+              </a>
+          </span>
+          <span class="link-block">
+            <a href="https://github.com/magic-research/avatarstudio"
+            style="margin: 0 5px;">
+              <span class="icon">
+                  <i class="fab fa-github"></i>
+              </span>
+              <span>Code</span>
+              </a>
+          </span>
+          <!-- <span class="link-block">
+            <a href="https://youtu.be/UN7W5oKmWNA"
+            style="margin: 0 5px;">
+              <span class="icon">
+                  <i class="fab fa-youtube"></i>
+              </span>
+              <span>Video</span>
+              </a>
+          </span> -->
+
+      </div>
+    </div>
+
+    <!-- <div class="buttons text-center" style="margin-top: 8px; margin-bottom: 8px;">
+        <a class="btn btn-light" role="button" href="https://arxiv.org/abs/2308.16512">
+            <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                <path fill="currentColor" d="M16 0H8C6.9 0 6 .9 6 2V18C6 19.1 6.9 20 8 20H20C21.1 20 22 19.1 22 18V6L16 0M20 18H8V2H15V7H20V18M4 4V22H20V24H4C2.9 24 2 23.1 2 22V4H4M10 10V12H18V10H10M10 14V16H15V14H10Z"></path>
+            </svg>Paper
+        </a>
+        <a class="btn btn-light" role="button" href="https://github.com/bytedance/MVDream">
+            <svg xmlns="http://www.w3.org/2000/svg" style="width:24px;height:24px;margin-left:-12px;margin-right:12px" viewBox="0 0 24 24">
+                <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 
+                        1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 
+                        3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 
+                        2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"></path>
+            </svg>
+            Code
+        </a>
+        <a class="btn btn-light" role="button" href="gallery_0.html">
+            <svg style="width:24px;height:24px;margin-left:-12px;margin-right:12px" width="24px" height="24px" viewBox="0 0 375 531">
+                <polygon stroke="#000000" points="0.5,0.866 459.5,265.87 0.5,530.874 "></polygon>
+            </svg>
+            Gallery (New)
+        </a>
+    </div>
+     -->
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Abstract</h2>
+                <p>
+                    Existing text-to-avatar methods are either limited to static avatars which cannot be animated or struggle to generate animatable avatars with promising quality and precise pose control.
+                    To address these, we propose AvatarStudio, a 
+                    coarse-to-fine 
+                    generative model that generates explicit textured 3D meshes for animatable human avatars.
+                    Specifically, AvatarStudio begins with a low-resolution NeRF-based representation for coarse generation, followed by incorporating SMPL-guided articulation into the explicit mesh representation to support avatar animation and high-resolution rendering.
+                    To ensure view consistency and pose controllability of the resulting avatars, we  introduce a 2D diffusion model conditioned on DensePose for Score Distillation Sampling supervision.
+                    By effectively leveraging the synergy between the articulated mesh representation and the DensePose-conditional diffusion model, AvatarStudio can create high-quality avatars from text that are ready for animation, significantly outperforming previous methods.  Moreover, it is competent for many applications, e.g., multimodal avatar animations and style-guided avatar creation.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="container" style="max-width: 768px;">
+        <div class="row captioned_videos">
+            <div class="col-md-12">
+                <img src="avatarstudio/static/teaser.png" alt="pipeline" style="width: 100%">
+                </h6>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Example generated avatars</h2>
+                <p>AvatarStudio generates high-quality avatars in a multi-view consistent way.</p>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex1" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/messi.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex1Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Messi</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex7" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/Bruce_Lee.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex7Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Bruce Lee</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex3" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/trump.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex3Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Donald Trump</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex36" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/Kim_Kardashian.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex36Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Kim Kardashian</h6>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex5" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/Terracotta_Warriors.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex5Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Terracotta Warriors</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex15" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/einstein.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex15Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Albert Einstein</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex20" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/kilt.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex20Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A man wearing kilt</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex8" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/Captain_America.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex8Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Captain America</h6>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex9" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/a_chef_dressed_in_white.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex9Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A chef wearing in white</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex14" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/dreadlocks.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex14Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A man with dreadlocks</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex34" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/Lara_Croft_in_Tomb_Raider.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex34Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Lara Croft in Tomb Raider</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex4" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/master.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex4Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A karate master wearing a black belt</h6>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex29" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/a_professional_boxer.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex29Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A professional boxer</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex16" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/A_young_man_with_curly_hair_wearing_glasses.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex16Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A man with curly hair wearing glasses</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex31" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/an_American_football_player.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex31Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">An American football player</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex32" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/Wolfgang_Amadeus_Mozart.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex32Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Wolfgang Amadeus Mozart</h6>
+            </div>
+        </div>
+        <!-- <div class="row captioned_videos">
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex17" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/harry_potter.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex17Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Harry Potter</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex25" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/michael_jackson.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex25Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Michael Jackson</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex30" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/a_ninja.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex30Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">A ninja</h6>
+            </div>
+            <div class="col-3">
+                <div class="video-compare-container" style="width: 100%">
+                    <video class="video lazy" id="ex22" loop playsinline autoplay muted onplay="resizeAndPlay(this)" style="height: 0px;">
+                        <source data-src="avatarstudio/static/generation/lincoln.mp4" type="video/mp4"></source>
+                    </video>
+                    <canvas height="752" class="videoMerge" id="ex22Merge" width="1002"></canvas>
+                </div>
+                <h6 class="caption">Abraham Lincoln</h6>
+            </div>
+        </div> -->
+    </div>
+
+    <!-- More complicated prompts -->
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Avatar creation with more complicated prompts</h2>
+                <p>AvatarStudio has shown promising results, effectively aligning the generated avatars with the detailed descriptions of the complex prompts.</p>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/1_america_native_outfit.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Elderly woman, dressed in a traditional Native American outfit, holding dream catchers, braided hair</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/2_lara.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Cute chibi Lara Croft, game, Pixar design, studio lighting, modern Disney style, 3D character</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/3_thor.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Chibi Thor with Mjolnir, cute, volumetric lighting, reflective textures, game, character</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/9_medieval.mp4" type="video/mp4"></source>
+                </video>
+            <h6 class="caption">Medieval solder holding two longswords on hands, fantasy, game, character</h6>
+        </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/5_tesla_trooper.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Tesla trooper, wearing Mecha suit, scifi, game character, unreal, 3D rendering, fantasy</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/6_magic.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Chibi, single boy, cute, magician's outfit, top hat, magic wand, curly hair, shiny shoes</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/7_cyberpunk.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Young man, dressed in a futuristic cyberpunk outfit, neon accents, holding a high-tech gadget</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/4_gentleman.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Elderly gentleman, dressed in a vintage suit, monocle, holding walking canes on hands</h6>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/11_teenage.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Teenage boy, dressed in a modern hip-hop style, baseball cap tilted, holding basketballs</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/10_boy_toy_knife.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Chibi, 1boy, cute, knight armor, helmet, holding toy knife on hands, Pixar design</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/12_samurai-outfit.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Elderly man, dressed in a traditional samurai outfit, holding katana</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/8_fox_outfit.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Chibi, 1girl, hanfu, cat ears, cat girl, silk robe, wavy hair, wearing traditional sandals</h6>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/14_ninja.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Stealthy hinja holding dual katanas, 3D, game character, unreal</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/16_A_little_girl_dressed_as_Wonder_Woman,_chibi_style,_action_pose,_best_quality,_masterpiece,_details,_volumetric_lighting,_reflection,_reflective_textures,_highly_detailed.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A little girl dressed as Wonder Woman, chibi style, volumetric lighting, Disney style</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/15_salyer.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Strong Slayer, holding machete on hands, game character, 3D rendering, unreal</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/complicated_prompts/13_goku.mp4" type="video/mp4"></source>
+                </video>
+            <h6 class="caption">Cute chibi Son Goku, Sporty style outfit, shoes, nike jacket, little boy, cartoon</h6>
+        </div>
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Comparison Results</h2>
+                <p>We compare AvatarStudio with other text-guided generation methods.</p>
+            </div>
+        </div>
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="col-xs-15 compare-title  compare-title-sm">
+                <p>DreamFusion</p>
+            </div>
+            <div class="col-xs-15 compare-title">
+                <p>Magic3D-Fine</p>
+            </div>
+            <div class="col-xs-15 compare-title">
+                <p>DreamAvatar</p>
+            </div>
+            <div class="col-xs-15 compare-title">
+                <p>DreamWaltz</p>
+            </div>
+            <div class="col-xs-15 compare-title">
+                <p>Ours</p>
+            </div>
+        </div>
+        <div class="row captioned_videos" id="res_2" style="margin-top: 0px; margin-bottom: 0px ;">
+            <video class="video lazy" loop playsinline autoplay muted style="width: 100%">
+                <source data-src="avatarstudio/static/comparison/comp_1.mp4" type="video/mp4"></source>
+            </video>
+            <p class="compare-caption">Assassin Creed</p>
+        </div>
+        <div class="row captioned_videos" style="margin-top: 0px; margin-bottom: 0px ;">
+            <video class="video lazy" loop playsinline autoplay muted style="width: 100%">
+                <source data-src="avatarstudio/static/comparison/comp_2.mp4" type="video/mp4"></source>
+            </video>
+            <p class="compare-caption">A standing Captain Jack Sparrow from Pirates of the Caribbean</p>
+        </div>
+
+        <div class="row" style="margin-bottom: 0px;">
+            <div class="col-xs-15 compare-title  compare-title-sm">
+                <p>DreamFusion</p>
+            </div>
+            <div class="col-xs-15 compare-title">
+                <p>Magic3D-Fine</p>
+            </div>
+            <div class="col-xs-15 compare-title">
+                <p>DreamHuman</p>
+            </div>
+            <div class="col-xs-15 compare-title">
+                <p>AvatarVerse</p>
+            </div>
+            <div class="col-xs-15 compare-title">
+                <p>Ours</p>
+            </div>
+        </div>
+
+        <div class="row captioned_videos" id="res_3" style="margin-top: 0px; margin-bottom: 0px ;">
+            <video class="video lazy" loop playsinline autoplay muted style="width: 100%">
+                <source data-src="avatarstudio/static/comparison/comp_3.mp4" type="video/mp4"></source>
+            </video>
+            <p class="compare-caption">A man wearing a bomber jacket</p>
+        </div>
+        <div class="row captioned_videos" style="margin-top: 0px; margin-bottom: 0px ;">
+            <video class="video lazy" loop playsinline autoplay muted style="width: 100%">
+                <source data-src="avatarstudio/static/comparison/comp_4.mp4" type="video/mp4"></source>
+            </video>
+            <p class="compare-caption">A karate master wearing a black belt</p>
+        </div>
+
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Multimodal Avatar Animation</h2>
+                <p>AvatarStudio provides high-quality and easy-to-use animation, allowing users to drive the generated avatars with multimodal signals, such as text or video.</p>
+            </div>
+        </div>
+        <div class="compositional captioned_videos" style="width: 100%">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="avatarstudio/static/animation/text_driven_1.mp4" type="video/mp4"></source>
+            </video>
+            <h6 class="caption">Text-driven animation. We adopt MDM to convert text prompts, like "A person is punching a bag", into SMPL sequences for animation.</h6>
+        </div>
+        <br>
+        <div class="compositional captioned_videos" style="width: 100%">
+            <video class="video lazy" autoplay loop playsinline muted>
+                <source data-src="avatarstudio/static/animation/video_driven_1.mp4" type="video/mp4"></source>
+            </video>
+            <h6 class="caption">Video-driven animation. We use VIBE to estimate SMPL sequences from driving videos for animation.</h6>
+        </div>
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Stylized avatar creation</h2>
+                <p>AvatarStudio supports stylized avatar creation by simply providing an additional style image.</p>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/refimg/sumiao.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Style image</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/sumiao/a_chef.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A chef</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/sumiao/a_karate_master.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A karate master</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/sumiao/a_girl_wearing_a_skirt.mp4" type="video/mp4"></source>
+                </video>
+            <h6 class="caption">A girl wearing skirt</h6>
+        </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/refimg/fireman.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Style image</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/fireman/Kratos.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Kratos</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/fireman/a_karate_master.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A karate master</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/fireman/Gintoki.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Gintoki</h6>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/refimg/shuimo.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Style image</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/shuimo/a_girl_wearing_dress.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A girl wearing dress</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/shuimo/a_karate_master.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A karate master</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/shuimo/a_girl_wearing_a_skirt.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A girl wearing skirt</h6>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/refimg/wood.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Style image</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/wood/a_chef.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A chef</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/wood/a_karate_master.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A karate master</h6>
+            </div>
+            <div class="col-3">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/style_avatar/wood/a_ninja.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A ninja</h6>
+            </div>
+        </div>
+    </div>
+
+    <!-- different sds guidances -->
+    <hr class="divider" />
+        <div class="container" style="max-width: 768px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Comparison between different SDS guidances</h2>
+                    <p>We compare avatar results generated using different SDS guidances, i.e., Stable Diffusion (left), Skeleton-based ControlNet (middle) and DensePose-conditional ControlNet (right) guidances.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 text-center">Stable Diffusion</div>
+                <div class="col-sm-4 text-center">Skeleton-based ControlNet</div>
+                <div class="col-sm-4 text-center">DensePose-conditional ControlNet</div>
+            </div>
+            <div class="row captioned_videos">
+                <div class="col-12">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/different_guidance/albus_dumbledore_merge.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">Albus Dumbledore</h6>
+                </div>
+                <div class="col-12">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/different_guidance/wolverine_merge.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">Wolverine, Marvel Character</h6>
+                </div>
+            </div>
+            <div class="row captioned_videos">
+                <div class="col-12">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/different_guidance/zeus_merge.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">Zeus</h6>
+                </div>
+                <!-- <div class="col-6">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="static/different_guidance/blackman_merge.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">A Black man wearing a red baseball cap</h6>
+                </div> -->
+            </div>
+        </div>
+
+        <!-- new animation results -->
+        <!-- <hr class="divider" />
+        <div class="container" style="max-width: 768px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>More animation results</h2>
+                    <p>Our AvatarStudio can achieve plausible animation results on loose clothing to a certain extent, such as a person wearing ballet costume.
+                       By further introducing non-rigid deformation module into the model, AvatarStudio can animate persons with more challenging clothes, e.g., skirts and dresses.
+                    </p>
+                </div>
+            </div>
+            <hr> 
+            <h6 class="caption" style="text-align: center;">Original AvatarStudio</h6>
+            <hr> 
+            <div class="row captioned_videos">
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/ballerina_001.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/ballerina_002.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">A ballerina</h6>
+                </div>
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/ballerina_003.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+            </div>
+            <hr> 
+            <h6 class="caption" style="text-align: center;">AvatarStudio with non-rigid deformation</h6>
+            <hr> 
+            <div class="row captioned_videos">
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/jean_001.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/jean_002.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">A woman wearing a short jean skirt and a cropped top</h6>
+                </div>
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/jean_003.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+            </div>
+            <div class="row captioned_videos">
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/pregnant_person_001.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/pregnant_person_002.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">A pregnant person of color</h6>
+                </div>
+                <div class="col-4">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/new_animation/pregnant_person_003.mp4" type="video/mp4"></source>
+                    </video>
+                </div>
+            </div>
+        </div> -->
+
+        <!-- different representations -->
+        <hr class="divider" />
+        <div class="container" style="max-width: 768px;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h2>Comparison between different 3D representations</h2>
+                    <p>We compare avatar results generated using different 3D representations, i.e., DMTet-only (left), NeRF-only (middle) and ours (right) representations.
+                        The NeRF-only representation, despite achieving reasonable results, still struggles with issues like coarse faces and noisy geometry with floating artifacts.
+                    </p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-4 text-center">DMTet</div>
+                <div class="col-sm-4 text-center">NeRF</div>
+                <div class="col-sm-4 text-center">Ours</div>
+            </div>
+            <div class="row captioned_videos">
+                <div class="col-12">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/different_representation/einstein_merge.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">Albert Einstein</h6>
+                </div>
+            </div>
+            <div class="row captioned_videos">
+                <div class="col-12">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="avatarstudio/static/different_representation/harry_potter_merge.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">Harry Potter</h6>
+                </div>
+            </div>
+            <!-- <div class="row captioned_videos">
+                <div class="col-12">
+                    <video class="video lazy" autoplay loop playsinline muted>
+                        <source data-src="static/different_representation/harry_potter_merge.mp4" type="video/mp4"></source>
+                    </video>
+                    <h6 class="caption">Zeus</h6>
+                </div> -->
+            </div>
+        </div>
+
+    <!-- less optimization time -->
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-sm-12">
+                <h2>Generations with fewer optimization steps</h2>
+                <p>We conduct a comparative analysis of the avatar generation results that are achieved with fewer optimization steps. Left: the results obtained with reduced optimization steps. Right: original results.
+                    We see the model, even when optimized with fewer steps, can still yield results that are comparable to the original ones.
+                </p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-3 text-center">Fewer steps</div>
+            <div class="col-sm-3 text-center">Default</div>
+            <div class="col-sm-3 text-center">Fewer steps</div>
+            <div class="col-sm-3 text-center">Default</div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-6">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/lesstime/lincoln_dual_merge.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Abraham Lincoln</h6>
+            </div>
+            <div class="col-6">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/lesstime/messi_dual_merge.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Messi</h6>
+            </div>
+        </div>
+        <div class="row captioned_videos">
+            <div class="col-6">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/lesstime/harry_potter_dual_merge.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">Harry Potter</h6>
+            </div>
+            <div class="col-6">
+                <video class="video lazy" autoplay loop playsinline muted>
+                    <source data-src="avatarstudio/static/lesstime/karate_dual_merge.mp4" type="video/mp4"></source>
+                </video>
+                <h6 class="caption">A karate master wearing a black belt</h6>
+            </div>
+        </div>
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <div class="row">
+            <div class="col-md-12">
+                <h2>Citation</h2>
+                <code>
+                    @article{zhang2023avatarstudio,<br>
+                    &nbsp; author = {Zhang, Jianfeng and Zhang, Xuanmeng and Zhang, Huichao and Liew, Jun Hao and Zhang, Chenxu and Yang, Yi and Feng, Jiashi},<br>
+                    &nbsp; title  = {AvatarStudio: High-fidelity and Animatable 3D Avatar Creation from Text},<br>
+                    &nbsp; joural = {ArXiv},<br>
+                    &nbsp; year   = {2023},<br>
+                }</code></div>
+        </div>
+    </div>
+
+    <hr class="divider" />
+    <div class="container" style="max-width: 768px;">
+        <footer>
+            <p> Website template from <a href="https://dreamfusion3d.github.io/">DreamFusion</a>. We thank the authors for the open-source code.</p>
+        </footer>
+    </div>
+
+    <script src="https://polyfill.io/v3/polyfill.js?features=IntersectionObserver"></script>
+    <script src="avatarstudio/assets/js/yall.js"></script>
+    <script>
+        yall(
+            {
+                observeChanges: true
+            }
+        );
+    </script>
+    <script src="avatarstudio/assets/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.bundle.min.js"></script>
+    <script src="https://uploads-ssl.webflow.com/51e0d73d83d06baa7a00000f/js/webflow.fd002feec.js"></script>
+</body>
+
+</html>
