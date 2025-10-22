@@ -1,722 +1,1925 @@
-<!DOCTYPE HTML>
-<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <!-- Hi, Jon Here. Please DELETE the two <script> tags below if you use this HTML, otherwise my analytics will track your page -->
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-7580334-2"></script> -->
-  <!-- <script type="text/javascript" src="js/hidebib.js"></script> -->
-  <!-- <script src="pet_cursor.js"></script>  -->
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Jianfeng Zhang</title>
+    <link href="./css/style.css" rel="stylesheet" media="all" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons/css/academicons.min.css"
+    />
+    <script
+      type="text/javascript"
+      src="https://code.jquery.com/jquery-2.2.0.min.js"
+    ></script>
 
-    gtag('config', 'UA-7580334-2');
-  </script>
+    <script
+      src="https://kit.fontawesome.com/57fb8d417e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="./js/hidebib.js"></script>
+    <script type="text/javascript" src="./js/loadtxt.js"></script>
+  </head>
 
-  <title>Jianfeng Zhang</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  
-  <meta name="author" content="Jianfeng Zhang">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  <link rel="stylesheet" type="text/css" href="stylesheet.css">
-  <link rel="stylesheet" type="text/css" href="css/style.css">
-  <link rel="icon" type="image/png" href="images/jianfeng.ico">
-</head>
+  <body onload="RefreshFunc()">
+    <div class="container_bg navbar">
+      <h2>
+        <a href="index.html">Home</a>&nbsp;&nbsp;<span class="delimiter"
+          >&middot;</span
+        >&nbsp;&nbsp; <a href="index.html#biography">Bio</a>&nbsp;&nbsp;<span
+          class="delimiter"
+          >&middot;</span
+        >&nbsp;&nbsp; <a href="index.html#news">News</a>&nbsp;&nbsp;<span
+          class="delimiter"
+          >&middot;</span
+        >&nbsp;&nbsp; <a href="index.html#citation"><strong>Research</strong></a
+        >
+      </h2>
+    </div>
 
-<!-- <body onload="startPetCursor();"> -->
-  <table style="width:100%;max-width:1000px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-    <tr style="padding:0px">
-      <td style="padding:0px">
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr style="padding:0px">
-            <td style="padding:2.5%;width:70%;vertical-align:middle">
-              <p style="text-align:center">
-                <name>Jianfeng Zhang</name>
-                <p>I am a Research Scientist at ByteDance, working on 3D generative models and human avatar generation/animation. I received my PhD from National University of Singapore, where I worked with <a href="https://sites.google.com/site/jshfeng/">Prof. Jiashi Feng</a> and  <a href="https://sites.google.com/site/sitexinchaowang/">Prof. Xinchao Wang</a>. 
-                  Before that, I got my bachelor at Wuhan University in 2018. I also spent wonderful time at Meta Reality Labs, TikTok and Sea AI Lab.
-		  <br> <br/>
-		  <b><font color="#FF0000">ByteDance internship/University collaboration: feel free to email me, if you share similar interests in 3D content creation from images, videos and texts, as well as human avatar generation/animation!</font></b>
-               </p>
-               <p align=center>
-                <script language="JavaScript">
-                var snm = "zhang958@";
-                var nm = "jf.";
-                var hnm_l = "com"
-                var hnm_uni = "outlook";
-                var linktext = nm + snm + hnm_uni + "."+ hnm_l;
-                document.write("<a href=" + "'mai" + "lto:" + linktext + "'>" + "Email" + "</a>");;
-                </script> &nbsp/&nbsp
-                <!-- <a href="files/CV.pdf">Resume</a> &nbsp/&nbsp -->
-                <a href="https://scholar.google.com/citations?user=VEusWMYAAAAJ&hl=zh-CN">Google Scholar</a> &nbsp/&nbsp
-                <a href="http://www.github.com/jfzhang95/"> GitHub </a>  &nbsp/&nbsp
-                <a href="http://www.linkedin.com/in/jianfeng-zhang-518815104/"> LinkedIn </a> 
-              </p>
+    <div class="content">
+      <div id="container">
+        <table>
+          <tbody>
+            <tr>
+              <td>
+                <img
+                  id="myPicture"
+                  src="./about/jianfengzhang.jpg"
+                  style="
+                    float: left;
+                    margin-top: 60px;
+                    margin-left: 60px;
+                    margin-bottom: 10px;
+                    border-radius: 10%;
+                  "
+                  width="200px"
+                />
+              </td>
+              <td>
+                <div id="DocInfo">
+                  <div id="intro">
+                    <h1>Jianfeng Zhang 张健锋</h1>
+                    <!-- <a target='_blank'
+                        href='https://goo.gl/maps/vfTQ6Gbbg3gNvzTZ8'
+                        title='Location'>
+                        <font size="5"><i class='fas
+                            fa-map-marker-alt'></i></font>
+                      </a> -->
+                    <a
+                      style="color: black"
+                      href="https://team.doubao.com/en/"
+                      >ByteDance Seed</a
+                    ><br />
+                    <br />
+                    <a href="mailto: jf.zhang958@outlook.com">
+                      <span
+                        class="fa fa-envelope"
+                        style="color: navy; font-size: 20px"
+                      >
+                        <span style="font-family: Optima Bold"
+                          >jf.zhang958</span
+                        >
+                        <span
+                          class="fa fa-at"
+                          style="color: navy; font-size: 20px"
+                          ><span style="font-family: Optima Bold">
+                            outlook.com</span
+                          ></span
+                        ></span
+                      ></a
+                    ><br />
+                  </div>
+
+                  <ul class="icon-list">
+                    <!-- <a style="color: black" href="./about/jianfengzhang.pdf">
+                      <span class="ai ai-cv fa-xl"></span>
+                    </a> -->
+
+                    <a
+                      style="color: black"
+                      href="https://scholar.google.com/citations?user=VEusWMYAAAAJ&hl=en"
+                    >
+                      <span class="ai ai-google-scholar fa-xl"></span>
+                    </a>
+
+                    <a
+                      style="color: black"
+                      href="https://github.com/jfzhang95"
+                    >
+                      <span class="fa-brands fa-github fa-xl"></span>
+                    </a>
+
+                    <!-- <span style="color: gray; font-weight: normal">|</span> -->
+                    <a
+                      style="color: black"
+                      href="http://www.linkedin.com/in/jianfeng-zhang-518815104/"
+                    >
+                      <span class="fa fa-linkedin fa-xl"></span>
+                    </a>
+
+                    <a
+                      style="color: black"
+                      href="https://x.com/jianfengzhang95"
+                    >
+                      <span class="fa-brands fa-twitter fa-xl"></span>
+                    </a>
+
+                  </ul>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <table>
+          <tr>
+            <td>
+              <br />
+              <h1 id="biography">Biography</h1>
+              <b>
+                <!-- <center> -->
+
+                  I am a Research Scientist at <a href="https://seed.bytedance.com/en/" target="_blank">ByteDance Seed</a>, 
+                  where I lead the <a href="https://github.com/Seed3D" target="_blank">Seed3D</a> project. Our goal is to build World Models 
+                  that simulate the real world through generative 3D foundation models, including its geometry, appearance, dynamics, and physics.
+                  We are always looking for great talents (both full-time & intern). Feel free to reach out if interested!
+
+                  <br /><br />
+
+                  Beyond research, I am passionate about creating real-world impact. Over the years, technologies I developed have been deployed in production, 
+                  powering 3D generation tools on the <a href="https://console.volcengine.com/ark/region:ark+cn-beijing/experience/vision?modelId=doubao-seed3d-1-0-250928&tab=Gen3D" target="_blank">Volcano Engine</a> 
+                  and <a href="https://effect.douyin.com/" target="_blank">Douyin AR Platform</a>, as well as <a href="https://www.tiktok.com/discover/ai-dance-tiktok" target="_blank">TikTok AI Dancing</a>.
+
+
+              </b>
+
+              <!-- Calendly badge widget begin -->
+              <link
+                href="https://assets.calendly.com/assets/external/widget.css"
+                rel="stylesheet"
+              />
+              <script
+                src="https://assets.calendly.com/assets/external/widget.js"
+                type="text/javascript"
+                async
+              ></script>
+              <script type="text/javascript">
+                window.onload = function () {
+                  Calendly.initBadgeWidget({
+                    url: "https://calendly.com/yuliangxiu/45min",
+                    text: "One-on-One Meet with Me",
+                    color: "#0069ff",
+                    textColor: "#ffffff",
+                    branding: undefined,
+                  });
+                };
+              </script>
+              <!-- Calendly badge widget end -->
+
+              <hr />
+
+              I received my PhD from
+              National University of Singapore, 
+              advised by 
+              <a href="https://scholar.google.com/citations?user=Q8iay0gAAAAJ&hl=en/"
+                >Prof. Jiashi Feng</a>. 
+                <!-- Before that, I obtained my Bachelor's degree in Mathematics from Wuhan University in 2018. -->
+                
+                During my PhD, I interned at ByteDance AI Lab  with 
+                <a href="https://scholar.google.com/citations?user=DsVZkjAAAAAJ&hl=en/">Changhu Wang</a>, 
+                Sea AI Lab with <a href="https://yanshuicheng.info/">Prof. Shuicheng Yan</a>, 
+                and Meta Reality Labs with <a href="https://sites.google.com/site/zjucaochen/home">Chen Cao</a> 
+                and <a href="https://sites.google.com/view/xuweipeng">Weipeng Xu</a>.
+              <br />
             </td>
-            <!-- <td style="padding:2.5%;width:40%;max-width:40%">
-              <a href="images/CihangXie.jpg"><img style="width:100%;max-width:100%;border-radius:50%" alt="profile photo" src="images/CihangXie.jpg" class="hoverZoomLink"></a>
-            </td> -->
           </tr>
-        </tbody></table>
-
-        <hr>
+        </table>
 
         
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-                <td style="padding:10px;width:100%;vertical-align:middle">
-                    <heading>Recent News</heading>
-                </td>
-            </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        <tr>
-            <ul>
-	      <li><strong>[September 2023]</strong> One paper accepted to NeurIPS 2023 </li>
-	      <li><strong>[July 2023]</strong> Two paper accepted to ICCV 2023 </li>
-	      <li><strong>[February 2023]</strong> One paper accepted to CVPR 2023 </li>
-	      <li><strong>[January 2023]</strong> PoseAug is accepted to TPAMI </li>
-    	      <li><strong>[January 2023]</strong> One paper accepted to ICLR 2023 </li>
-	      <li><strong>[July 2022]</strong> One paper accepted to ECCV 2022 </li>
-	      <li><strong>[March 2022]</strong> One paper accepted to CVPR 2022 </li>
-              <li><strong>[September 2021]</strong> One paper accepted to NeurIPS 2021 </li>
-              <li><strong>[August 2021]</strong> One paper accepted to TIP </li>
-              <li><strong>[March 2021]</strong> Two papers accepted to CVPR 2021. </li>
-              <li><strong>[September 2020]</strong> One paper accepted to NeurIPS 2020 </li>
-              <li><strong>[July 2019]</strong> One paper accepted to ICCV 2019 </li>
-            </ul>
-          </td>
-        </tr>
-        </tbody></table>
-        <hr>
+        <div class="logo">
+          <span class="logo2">
 
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-            <td style="padding:10px;width:100%;vertical-align:middle">
-              <heading>Publications</heading>
+            <a href="https://nus.edu.sg/"
+            ><img src="./about/nus_logo.png"
+          /></a>
+          <a href="https://en.whu.edu.cn/"
+            ><img src="./about/whu_logo.png"
+          /></a>
+            <a href="https://about.meta.com/realitylabs/"
+              ><img src="./about/meta_logo.png"
+            /></a>
+            <a href="https://en.orionstar.com/"
+            ><img src="./about/orionstar.jpeg"
+          /></a>
+          <a href="https://sail.sea.com/"
+              ><img src="./about/sea_logo.png"
+            /></a>
+          <a href="https://www.bytedance.com/en/"
+            ><img src="./about/bytedance_logo.png"
+          /></a>
+          </span>
+        </div>
+
+        <br />
+
+        <h1 id="news">
+          News
+        </h1>
+
+        <div style="height: 60px; overflow: auto">
+          [2025/08/14] <a href="https://chaoyuesong.github.io/Puppeteer/">Puppeteer</a> is accepted to NeurIPS 2025 as a <font color="red"><strong>spotlight</strong></font> paper, see you in San Diego!<br />
+          [2025/06/26] <a href="https://jfzhang95.github.io/">MS3D</a> is accepted to ICCV 2025.<br />
+          [2025/02/17] <a href="https://aruichen.github.io/Dora/">Dora</a> and <a href="https://chaoyuesong.github.io/MagicArticulate/">MagicArticulate</a> are accepted to CVPR 2025.<br />
+        </div>
+        <br /><br />
+
+        <h1 id="citation">
+          Publications
+          <a
+            style="color: #4285f4"
+            href="https://scholar.google.com/citations?user=VEusWMYAAAAJ&hl=en"
+          >
+            <span class="ai ai-google-scholar-square"></span>
+          </a>
+        </h1>
+
+        Representative works are
+        <span style="background-color: lightgoldenrodyellow">highlighted</span>
+        &nbsp;&nbsp; (* equal contribution, &#8224; corresponding author)<br />
+
+        <br />
+
+        <table class="pub_table">
+          <tr id="seed3d" class="focus">
+            <td class="pub_td1">
+                <img src="about/seed3d_logo.png" width="100%">
+            </td>
+            <td class="pub_td2">
+              <b
+                >Seed3D 1.0: From Images to High-Fidelity Simulation-Ready 3D Assets&nbsp;</b
+              ><br />
+
+              <br />
+              Seed3D Team, ByteDance Seed
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  Tech Report
+                </i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;seed3d&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://seed.bytedance.com/seed3d"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://seed3d.github.io/Seed3D/report.pdf"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <a class="box" href="https://console.volcengine.com/ark/region:ark+cn-beijing/experience/vision?modelId=doubao-seed3d-1-0-250928&tab=Gen3D"
+                ><i class="fa fa-cube" aria-hidden="true">&nbsp;</i>Demo
+              </a>
+              <a class="box" href="https://seed.bytedance.com/seed3d"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              >
+
+              <span id="seed3d_abs" style="display: none; margin-top: 10px">
+                Seed3D 1.0: a 3D generative foundation model that generates simulation-ready assets from single images, enabling scalable physics-based world simulators!
+            </span>
             </td>
           </tr>
-        </tbody></table>
-
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-          <tr onmouseout="avatargen_stop()" onmouseover="avatargen_start()">
-            <td style="padding:5px;width:35%;vertical-align:top">
-              <div class="one">
-                <div class="two" id="avatargen_image" style="opacity: 0;">
-                  <img src='images/avatargen_re_teaser.gif' width="300">
-                </div>
-                <img src='images/avatargen_re_teaser.gif' width="300">
-              </div>
-              <script type="text/javascript">
-                function avatargen_start() {
-                  document.getElementById('avatargen_image').style.opacity = "1";
-                }
-  
-                function avatargen_stop() {
-                  document.getElementById('avatargen_image').style.opacity = "0";
-                }
-                avatargen_stop()
-              </script>
+          <tr id="song2025puppeteer" class="focus">
+            <td class="pub_td1">
+                <img src="assets/puppeteer_demo.gif" width="100%">
+                <iframe
+                src="https://ghbtns.com/github-btn.html?user=Seed3D&repo=Puppeteer&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
             </td>
+            <td class="pub_td2">
+              <b
+                >Puppeteer: Rig and Animate Your 3D Models&nbsp;</b
+              ><br />
 
-            <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/2211.14589.pdf">
-                <papertitle>AvatarGen: A 3D Generative Model for Animatable Human Avatars</papertitle>
+              <br />
+              <a href="https://chaoyuesong.github.io/">Chaoyue Song</a>,
+              <a href="https://lixiulive.com/">Xiu Li</a>,
+              <a href="https://scholar.google.com/citations?user=afDvaa8AAAAJ&hl">Fan Yang</a>,
+              <a href="https://zcxu-eric.github.io/">Zhongcong Xu</a>,
+              <a href="https://plusmultiply.github.io/">Jiacheng Wei</a>,
+              <a href="https://sites.google.com/site/fayaoliu/">Fayao Liu</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://guosheng.github.io/">Guosheng Lin</a>,
+              <u>Jianfeng Zhang</u>&#8224;
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  Neural Information Processing Systems 2025 (<strong
+                    style="color: brown"
+                    >NeurIPS 2025, Spotlight</strong
+                  >)
+                </i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;song2025puppeteer&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://chaoyuesong.github.io/Puppeteer/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arXiv.org/abs/2508.10898"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
               </a>
-              <br>
-              <strong>Jianfeng Zhang</strong>*,
-              <a href="https://zihangjiang.github.io">Zihang Jiang</a>*,
-              <a href="https://dblp.org/pid/213/8223.html">Dingdong Yang</a>,
-              <a href="http://www-scf.usc.edu/~hongyixu/">Hongyi Xu</a>,
+              <a class="box" href="https://github.com/Seed3D/Puppeteer"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code
+              </a>
+              <a class="box" href="https://www.youtube.com/watch?v=DnKx803JHyI"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              >
+              <a class="box" href="https://chaoyuesong.github.io/files/pdfs/Puppeteer_techbeat.pdf"
+                ><i class="fa fa-chalkboard-user" aria-hidden="true">&nbsp;</i
+                >Slides&nbsp;</a
+              >
+
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;song2025puppeteer&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre id="song2025puppeteer_bib" xml:space="preserve" style="display: none;">
+@inproceedings{song2025puppeteer,
+  title={{Puppeteer: Rig and Animate Your 3D Models}},
+  author={Song, Chaoyue and Li, Xiu and Yang, Fan and Xu, Zhongcong and Wei, Jiacheng and Liu, Fayao and Feng, Jiashi and Lin, Guosheng and Zhang, Jianfeng},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2025}
+}
+              </pre>
+              <span id="song2025puppeteer_abs" style="display: none; margin-top: 10px">
+                What if static 3D models could be automatically rigged and animated? Puppeteer makes it possible, transforming any 3D object into animation-ready assets with stable motion!
+            </span>
+            </td>
+          </tr>
+          <tr id="guan2025ms3d">
+            <td class="pub_td1">
+              <!-- <marquee behavior="alternate" direction="left" scrollamount="3"> -->
+                <img src="assets/ms3d.png" width="100%">
+              <!-- </marquee> -->
+            </td>
+            <td class="pub_td2">
+              <b
+                >MS3D: High-Quality 3D Generation via Multi-Scale Representation Modeling &nbsp;</b
+              ><br />
+
+              <br />
+              <a href="https://logan0601.github.io/">Guan Luo</a>,
+              <u>Jianfeng Zhang</u>&#8224;
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  International Conference on Computer Vision 2025 (<strong
+                    style="color: brown"
+                    >ICCV 2025</strong
+                  >)
+                </i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;guan2025ms3d&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://www.youtube.com/watch?time_continue=1&v=xE1nEnC9pDg"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              >
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;guan2025ms3d&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre id="guan2025ms3d_bib" xml:space="preserve" style="display: none;">
+@inproceedings{guan2025ms3d,
+  title={{MS3D: High-Quality 3D Generation via Multi-Scale Representation Modeling}},
+  author={Luo, Guan and Zhang, Jianfeng},
+  booktitle={International Conference on Computer Vision},
+  year={2025}
+}
+              </pre>
+              <span
+                id="guan2025ms3d_abs"
+                style="display: none; margin-top: 10px"
+              >Sparse views to high-quality 3D meshes in 5 seconds? MS3D makes it real with hierarchical multi-scale magic!
+            </span>
+            </td>
+          </tr>
+          <tr id="song2025magicarticulate" class="focus">
+            <td class="pub_td1">
+              <img src="assets/magicarticulate_demo.gif" width="100%">
+              <iframe
+                src="https://ghbtns.com/github-btn.html?user=Seed3D&repo=MagicArticulate&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
+            </td>
+            <td class="pub_td2">
+              <b
+                >MagicArticulate: Make Your 3D Models Articulation-Ready&nbsp;</b
+              ><br />
+
+              <br />
+              <a href="https://chaoyuesong.github.io/">Chaoyue Song</a>,
+              <u>Jianfeng Zhang</u>&#8224;,
+              <a href="https://lixiulive.com/">Xiu Li</a>,
+              <a href="https://scholar.google.com/citations?user=afDvaa8AAAAJ&hl">Fan Yang</a>,
+              <a href="https://buaacyw.github.io/">Yiwen Chen</a>,
+              <a href="https://zcxu-eric.github.io/">Zhongcong Xu</a>,
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew</a>,
+              Xiaoyang Guo,
+              <a href="https://sites.google.com/site/fayaoliu/">Fayao Liu</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://guosheng.github.io/">Guosheng Lin</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  Computer Vision and Pattern Recognition 2025 (<strong
+                    style="color: brown"
+                    >CVPR 2025</strong
+                  >)
+                </i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;song2025magicarticulate&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://chaoyuesong.github.io/MagicArticulate/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arXiv.org/abs/2502.12135"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <a class="box" href="https://github.com/Seed3D/MagicArticulate"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code
+              </a>
+              <a class="box" href="https://www.youtube.com/watch?v=eJP_VR4cVnk"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              >
+              <a class="box" href="https://chaoyuesong.github.io/files/pdfs/MagicArticulate_anysyn3d.pdf"
+                ><i class="fa fa-chalkboard-user" aria-hidden="true">&nbsp;</i
+                >Slides&nbsp;</a
+              >
+
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;song2025magicarticulate&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="song2025magicarticulate_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{song2025magicarticulate,
+  title={{MagicArticulate: Make Your 3D Models Articulation-Ready}},
+  author={Song, Chaoyue and Zhang, Jianfeng and Li, Xiu and Yang, Fan and Chen, Yiwen and Xu, Zhongcong and Liew, Jun Hao and Guo, Xiaoyang and Liu, Fayao and Feng, Jiashi and Lin, Guosheng},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2025}
+}
+            </pre>
+              <span id="song2025magicarticulate_abs" style="display: none; margin-top: 10px">
+                MagicArticulate transforms static 3D models into articulation-ready assets with 1) Articulation-XL, a large-scale benchmark of 33K+ annotated models; 2) auto-regressive skeleton generation handling varying bone structures; and 3) functional diffusion for skinning with geodesic priors.
+              </span>
+            </td>
+          </tr>
+          <tr id="chen2025dora" class="focus">
+            <td class="pub_td1">
+              <img src="assets/dora.jpg" width="100%">
+              <iframe
+                src="https://ghbtns.com/github-btn.html?user=Seed3D&repo=Dora&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
+            </td>
+            <td class="pub_td2" >
+              <b
+                >Dora: Sampling and Benchmarking for 3D Shape Variational Auto-Encoders&nbsp;</b
+              ><br />
+              <br />
+              <a href="https://aruichen.github.io/">Rui Chen</a>,
+              <u>Jianfeng Zhang</u>&#8224;,
+              <a href="https://yixunliang.github.io/">Yixun Liang</a>,
+              <a href="https://logan0601.github.io/">Guan Luo</a>,
+              <a href="https://weiyuli.xyz/">Weiyu Li</a>,
+              <a href="https://openreview.net/profile?id=~Jiarui_Liu6">Jiarui Liu</a>,
+              <a href="https://lixiulive.com/">Xiu Li</a>,
+              <a href="https://www.xxlong.site/">Xiaoxiao Long</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://ece.hkust.edu.hk/pingtan">Ping Tan</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  Computer Vision and Pattern Recognition 2025 (<strong
+                    style="color: brown"
+                    >CVPR 2025</strong
+                  >)
+                </i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;chen2025dora&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://aruichen.github.io/Dora/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arXiv.org/abs/2412.17808"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <a class="box" href="https://github.com/Seed3D/Dora"
+                ><i class="fa fa-file-code" aria-hidden="true">&nbsp;</i>Code
+              </a>
+              <a class="box" href="https://www.youtube.com/watch?v=6evNqk0b-bQ"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              >
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;chen2025dora&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="chen2025dora_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{chen2025dora,
+  title={{Dora: Sampling and Benchmarking for 3D Shape Variational Auto-Encoders}},
+  author={Chen, Rui and Zhang, Jianfeng and Liang, Yixun and Luo, Guan and Li, Weiyu and Liu, Jiarui and Li, Xiu and Long, Xiaoxiao and Feng, Jiashi and Tan, Ping},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2025}
+}
+            </pre>
+              <span
+                id="chen2025dora_abs"
+                style="display: none; margin-top: 10px"
+              >
+              3D shape VAEs used to lose geometric details with uniform sampling, but Dora's sharp edge sampling preserves them while being 8× smaller.
+            </span>
+            </td>
+          </tr>
+          <tr id="zhang2025avatarstudio">
+            <td class="pub_td1">
+                <img src="assets/avatarstudio.jpg" width="100%">
+              <iframe
+                src="https://ghbtns.com/github-btn.html?user=magic-research&repo=avatarstudio&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
+            </td>
+            <td class="pub_td2">
+              <b
+                >AvatarStudio: High-fidelity and Animatable 3D Avatar Creation from Text&nbsp;</b
+              ><br />
+
+              <br />
+              <a href="https://xuanmeng-zhang.github.io/">Xuanmeng Zhang*</a>, 
+              <u>Jianfeng Zhang</u>*&#8224;,
+              <a href="https://scholar.google.com/citations?user=ZfUJGskAAAAJ&hl=en">Huichao Zhang</a>,
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew</a>,
+              <a href="https://zhangchenxu528.github.io/">Chenxu Zhang</a>,
+              <a href="https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en">Yi Yang</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>IJCV 2025</i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;zhang2025avatarstudio&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://jfzhang95.github.io/projects/avatarstudio.html"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arXiv.org/abs/2311.17917"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+
+              <a class="box" href="https://github.com/magic-research/avatarstudio"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i
+                >Code&nbsp;</a
+              >
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;zhang2025avatarstudio&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="zhang2025avatarstudio_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@article{zhang2025avatarstudio,
+  title={Avatarstudio: High-fidelity and animatable 3d avatar creation from text},
+  author={Zhang, Xuanmeng and Zhang, Jianfeng and Zhang, Chenxu and Liew, Jun Hao and Zhang, Huichao and Yang, Yi and Feng, Jiashi},
+  journal={International Journal of Computer Vision},
+  volume={133},
+  pages={5178--5196},
+  year={2025},
+  publisher={Springer}
+}
+            </pre>
+              <span
+                id="zhang2025avatarstudio_abs"
+                style="display: none; margin-top: 10px"
+              >
+              What if you could create animation-ready 3D avatars from just text? AvatarStudio brings it to life via coarse-to-fine modeling and DensePose-guided control.
+            </span>
+            </td>
+          </tr>
+          <tr id="yang2024magicboost">
+            <td class="pub_td1">
+              <img src="./assets/magicboost_demo.png" width="100%">
+              <iframe
+                src="https://ghbtns.com/github-btn.html?user=magic-research&repo=avatarstudio&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
+            </td>
+            <td class="pub_td2">
+              <b
+                >Magic-Boost: Boost 3D Generation with Multi-View Conditioned Diffusion&nbsp;</b
+              ><br />
+
+              <br />
+              <a href="https://scholar.google.com/citations?user=afDvaa8AAAAJ&hl">Fan Yang</a>, 
+              <u>Jianfeng Zhang</u>&#8224;,
+              <a href="https://seasonsh.github.io/">Yichun Shi</a>,
+              Bowen Chen,
+              <a href="https://zhangchenxu528.github.io/">Chenxu Zhang</a>,
+              <a href="https://scholar.google.com/citations?user=ZfUJGskAAAAJ&hl=en">Huichao Zhang</a>,
+              <a href="https://xfyang.net/">Xiaofeng Yang</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://guosheng.github.io/">Guosheng Lin</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>arXiv 2024</i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;yang2024magicboost&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://magic-research.github.io/magic-boost/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="http://arxiv.org/abs/2404.06429"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+
+              <a class="box" href="https://github.com/magic-research/magic-boost"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i
+                >Code&nbsp;</a
+              >
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;yang2024magicboost&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="yang2024magicboost_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@article{yang2024magicboost,
+  title={{Magic-Boost: Boost 3D Generation with Multi-View Conditioned Diffusion}},
+  author={Yang, Fan and Zhang, Jianfeng and Shi, Yichun and Chen, Bowen and Zhang, Chenxu and Zhang, Huichao and Yang, Xiaofeng and Feng, Jiashi and Lin, Guosheng},
+  journal={arXiv preprint arXiv:2404.06429},
+  year={2024}
+}
+            </pre>
+              <span
+                id="yang2024magicboost_abs"
+                style="display: none; margin-top: 10px"
+              >
+              Coarse 3D generation results plagued by blur and geometry errors? Magic-Boost refines them into high-quality assets in ~15 minutes through multi-view conditioned diffusion.
+            </span>
+            </td>
+          </tr>
+          <tr id="xu2024hia">
+            <td class="pub_td1">
+              <img src="assets/hia_demo.gif" width="100%">
+            </td>
+            <td class="pub_td2">
+              <b
+                >High Quality Human Image Animation using Regional Supervision and Motion Blur Condition&nbsp;</b
+              ><br />
+
+              <br />
+              <a
+                href="https://zcxu-eric.github.io/"
+                >Zhongcong Xu*</a
+              >, 
+              <a href="https://chaoyuesong.github.io/">Chaoyue Song*</a>,
+              <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song*</a>,
+              <u>Jianfeng Zhang</u>&#8224;,
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew</a>,
+              <a href="https://hongyixu37.github.io/homepage/">Hongyi Xu</a>,
+              <a href="https://youxie.github.io/">You Xie</a>,
+              <a href="https://linjieluo.github.io/">Linjie Luo</a>,
+              <a href="https://guosheng.github.io/">Guosheng Lin</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://sites.google.com/view/showlab">Zheng Shou</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>arXiv 2024</i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;xu2024hia&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <!-- <a class="box" href="https://chatgarment.github.io/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              > -->
+              <a class="box" href="https://arxiv.org/pdf/2409.19580"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+
+              <!-- <a class="box" href="https://youtu.be/-Fj4mN3jeNo"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              > -->
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;xu2024hia&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="xu2024hia_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@article{xu2024hia,
+  title={{High Quality Human Image Animation using Regional Supervision and Motion Blur Condition}},
+  author={Xu, Zhongcong and Song, Chaoyue and Song, Guoxian and Zhang, Jianfeng and Liew, Jun Hao and Xu, Hongyi and Xie, You and Luo, Linjie and Lin, Guosheng and Feng, Jiashi and Shou, Zheng},
+  journal={arXiv preprint arXiv:2409.19580},
+  year={2024}
+}
+            </pre>
+              <span
+                id="xu2024hia_abs"
+                style="display: none; margin-top: 10px"
+              >
+              Better faces, hands, and motion in human animation—regional supervision + explicit blur modeling deliver 21% L1 and 57% FVD improvements.
+            </span>
+            </td>
+          </tr>
+          <tr id="xu2024magicanimate" class="focus">
+            <td class="pub_td1">
+              <img src="assets/magicanimate_demo.gif" />
+              <iframe
+                src="https://ghbtns.com/github-btn.html?user=magic-research&repo=magic-animate&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
+            </td>
+            <td class="pub_td2">
+              <b
+                >MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model&nbsp;</b
+              ><br />
+
+              <br />
+              <a href="https://zcxu-eric.github.io/">Zhongcong Xu</a>,
+              <u>Jianfeng Zhang</u>,
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew</a>,
+              <a href="https://hanshuyan.github.io/">Hanshu Yan</a>,
+              <a href="https://jia-wei-liu.github.io/">Jiawei Liu</a>,
+              <a href="https://zhangchenxu528.github.io/">Chenxu Zhang</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://sites.google.com/view/showlab">Zheng Shou</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  Computer Vision and Pattern Recognition 2024 (<strong
+                    style="color: brown"
+                    >CVPR 2024</strong
+                  >)
+                </i>
+                <br />
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;xu2024magicanimate&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://showlab.github.io/magicanimate"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arxiv.org/abs/2311.16498"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+
+              <a class="box" href="https://github.com/magic-research/magic-animate"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i
+                >Code&nbsp;</a
+              >
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;xu2024magicanimate&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="xu2024magicanimate_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{xu2024magicanimate,
+  title={{MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model}},
+  author={Xu, Zhongcong and Zhang, Jianfeng and Liew, Jun Hao and Yan, Hanshu and Liu, Jiawei and Zhang, Chenxu and Feng, Jiashi and Shou, Zheng},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2024}
+}
+            </pre>
+              <span
+                id="xu2024magicanimate_abs"
+                style="display: none; margin-top: 10px"
+              >A breakthrough in human animation: MagicAnimate delivers the first high-fidelity, temporally consistent results via video diffusion model!</span>
+            </td>
+          </tr>
+
+          <tr id="zhang2024magicavatar">
+            <td class="pub_td1">
+              <img src="assets/magicavatar_demo.gif" />
+              <iframe
+                src="https://ghbtns.com/github-btn.html?user=magic-research&repo=magic-avatar&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
+            </td>
+            <td class="pub_td2">
+              <b
+                >MagicAvatar: Multimodal Avatar Generation and Animation&nbsp;</b
+              ><br />
+              <br />
+              <u>Jianfeng Zhang</u>*,
+              <a href="https://hanshuyan.github.io/">Hanshu Yan*</a>,
+              <a href="https://zcxu-eric.github.io/">Zhongcong Xu*</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew*</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>arXiv 2023</i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;zhang2024magicavatar&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://magic-avatar.github.io/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arxiv.org/abs/2308.14748"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+
+              <a class="box" href="https://github.com/magic-research/magic-avatar"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Code&nbsp;</a>
+
+              <a class="box" href="https://youtu.be/UN7W5oKmWNA"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a>
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;zhang2024magicavatar&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="zhang2024magicavatar_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@article{zhang2023magicavatar,
+  title={{MagicAvatar: Multimodal Avatar Generation and Animation}},
+  author={Zhang, Jianfeng and Yan, Hanshu and Xu, Zhongcong and Feng, Jiashi and Liew, Jun Hao},
+  journal={arXiv preprint arXiv:2308.14748},
+  year={2023}
+}
+            </pre>
+              <span
+                id="zhang2024magicavatar_abs"
+                style="display: none; margin-top: 10px"
+              >
+              Text prompt? Video clip? A few selfies? MagicAvatar turns them all into animated avatars through explicit motion-based generation.
+            </span>
+            </td>
+          </tr>
+          <tr id="liew2024magicedit">
+            <td class="pub_td1">
+              <img src="assets/magicedit_demo.gif" />
+              <iframe
+                src="https://ghbtns.com/github-btn.html?user=magic-research&repo=magic-edit&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
+            </td>
+            <td class="pub_td2">
+              <b
+                >MagicEdit: High-Fidelity Temporally Coherent Video Editing&nbsp;</b
+              >
+
+              <br /><br />
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew*</a>,
+              <a href="https://hanshuyan.github.io/">Hanshu Yan*</a>,
+              <u>Jianfeng Zhang</u>,
+              <a href="https://zcxu-eric.github.io/">Zhongcong Xu</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>arXiv 2023</i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;liew2024magicedit&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://magic-edit.github.io/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arxiv.org/abs/2308.14749"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+
+              <a class="box" href="https://github.com/magic-research/magic-edit"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code
+              </a>
+
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;liew2024magicedit&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="liew2024magicedit_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@article{liew2023magicedit,
+  title={{MagicEdit: High-Fidelity Temporally Coherent Video Editing}},
+  author={Liew, Jun Hao and Yan, Hanshu and Zhang, Jianfeng and Xu, Zhongcong and Feng, Jiashi},
+  journal={arXiv preprint arXiv:2308.14749},
+  year={2023}
+}
+            </pre>
+            <span
+                id="liew2024magicedit_abs"
+                style="display: none; margin-top: 10px"
+              >
+              Simple, effective, versatile—MagicEdit disentangles content, structure, and motion to power diverse video editing tasks with high quality.
+            </span>
+            </td>
+          </tr>
+
+          <tr id="xu2023xagen">
+            <td class="pub_td1">
+              <img src="./assets/xagen_demo.png" />
+            </td>
+            <td class="pub_td2">
+              <b
+                >XAGen: 3D Expressive Human Avatars Generation&nbsp;</b
+              >
+
+              <br /><br />
+              <a href="https://zcxu-eric.github.io/">Zhongcong Xu</a>,
+              <u>Jianfeng Zhang</u>,
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://sites.google.com/view/showlab">Zheng Shou</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  Neural Information Processing Systems 2023 (<strong
+                    style="color: brown"
+                    >NeurIPS 2023</strong
+                  >)
+                </i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;xu2023xagen&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://showlab.github.io/xagen/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <!-- <a href="https://youtu.be/SjzQ6158Pho"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i>Video</a
+              >[<a href="https://youtu.be/SjzQ6158Pho">En</a>,
+              <a
+                href="https://www.bilibili.com/video/BV1Ju411J7XF/?vd_source=4fa43a1b25f1451c4212f214517d8932"
+                >中</a
+              >]&nbsp; -->
+
+              <a class="box" href="https://arxiv.org/abs/2311.13574"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+
+              <a class="box" href="https://github.com/magic-research/xagen"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code
+              </a>
+
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;xu2023xagen&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="xu2023xagen_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{xu2023xagen,
+  title={{XAGen: 3D Expressive Human Avatars Generation}},
+  author={Xu, Zhongcong and Zhang, Jianfeng and Liew, Jun Hao and Feng, Jiashi and Shou, Zheng},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2023}
+}
+            </pre>
+              <span
+                id="xu2023xagen_abs"
+                style="display: none; margin-top: 10px"
+              >Want expressive 3D avatars with detailed face and hand control? XAGen delivers as the first model to master body, facial, and hand synthesis!
+            </span>
+            </td>
+          </tr>
+          <tr id="getavatar2023zhang">
+            <td class="pub_td1">
+              <img src="./assets/getavatar_demo.gif" />
+            </td>
+            <td class="pub_td2">
+              <b
+                >GETAvatar: Generative Textured Meshes for Animatable Human Avatars&nbsp;</b
+              >
+
+              <br /><br />
+              <a href="https://xuanmeng-zhang.github.io/">Xuanmeng Zhang*</a>,
+              <u>Jianfeng Zhang</u>*,
+              <a href="https://rohanchacko.github.io/">Rohan Chacko</a>,
+              <a href="https://hongyixu37.github.io/homepage/">Hongyi Xu</a>,
+              <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song</a>,
+              <a href="https://scholar.google.com/citations?user=RMSuNFwAAAAJ&hl=en">Yi Yang</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  International Conference on Computer Vision 2023 (<strong
+                    style="color: brown"
+                    >ICCV 2023</strong
+                  >)
+                </i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;getavatar2023zhang&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://getavatar.github.io/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://openaccess.thecvf.com/content/ICCV2023/papers/Zhang_GETAvatar_Generative_Textured_Meshes_for_Animatable_Human_Avatars_ICCV_2023_paper.pdf"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <a class="box" href="https://github.com/magic-research/GETAvatar"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code
+              </a>
+
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;getavatar2023zhang&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="getavatar2023zhang_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{zhang2023getavatar,
+  title={{GETAvatar: Generative Textured Meshes for Animatable Human Avatars}},
+  author={Zhang, Xuanmeng and Zhang, Jianfeng and Chacko, Rohan and Xu, Hongyi and Song, Guoxian and Yang, Yi and Feng, Jiashi},
+  booktitle={Proceedings of the IEEE/CVF International Conference on Computer Vision},
+  year={2023}
+}
+            </pre>
+              <span
+                id="getavatar2023zhang_abs"
+                style="display: none; margin-top: 10px"
+              >
+              GETAvatar generates explicit textured 3D meshes that capture rich surface details and enable efficient high-resolution rendering for animatable avatars.
+            </span>
+            </td>
+          </tr>
+          <tr id="zhang2023learning">
+            <td class="pub_td1">
+              <img src="assets/poseaugv2_teaser.gif" width="100%">
+            </td>
+            <td class="pub_td2">
+              <b
+                >Learning to Augment Poses for 3D Human Pose Estimation in Images and Videos
+                &nbsp;</b
+              >
+
+              <br /><br />
+              <u>Jianfeng Zhang</u>*,
+              <a href="https://github.com/Garfield-kh">Kehong Gong*</a>,
+              <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  IEEE Transactions on Pattern Analysis and Machine Intelligence 2023 (<strong
+                    style="color: brown"
+                    >TPAMI 2023</strong
+                  >)</i
+                >
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;zhang2023learning&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <!-- <a class="box" href="https://tingtingliao.github.io/CAR/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              > -->
+              <a class="box" href="https://ieeexplore.ieee.org/document/10050391"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;zhang2023learning&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre id="zhang2023learning_bib" xml:space="preserve" style="display: none">
+@article{zhang2023learning,
+  title={{Learning to Augment Poses for 3D Human Pose Estimation in Images and Videos}},
+  author={Zhang, Jianfeng and Gong, Kehong and Wang, Xinchao and Feng, Jiashi},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  volume={45},
+  number={8},
+  pages={10012--10026},
+  year={2023},
+  publisher={IEEE}
+}
+              </pre>
+              <span id="zhang2023learning_abs" style="display: none; margin-top: 10px">
+                Simple yet effective extension of PoseAug, which decomposes video pose augmentation into end frames and intermediate generation for improved cross-dataset generalization.
+              </span>
+            </td>
+          </tr>
+          <tr id="xu2023pv3d">
+            <td class="pub_td1">
+              <img src="assets/pv3d_demo.gif" width="100%">
+              <!-- <iframe
+                src="https://ghbtns.com/github-btn.html?user=huangyangyi&repo=TeCH&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe> -->
+            </td>
+            <td class="pub_td2">
+              <b
+                >PV3D: A 3D Generative Model for Portrait Video Generation&nbsp;</b
+              >
+              <br /><br />
+              <a href="https://zcxu-eric.github.io/">Zhongcong Xu*</a>,
+              <u>Jianfeng Zhang</u>*, 
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew</a>,
+              <a href="https://scholar.google.com/citations?user=8h6zPncAAAAJ&hl=en">Wenqing Zhang</a>,
+              <a href="https://songbai.site/">Song Bai</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://sites.google.com/view/showlab">Zheng Shou</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i
+                  >International Conference on Learning Representations 2023 (<strong
+                    style="color: brown"
+                    >ICLR 2023</strong
+                  >)</i
+                >
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;xu2023pv3d&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://showlab.github.io/pv3d/"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arxiv.org/abs/2212.06384"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <a class="box" href="https://github.com/bytedance/pv3d"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code</a
+              >
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;xu2023pv3d&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="xu2023pv3d_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{xu2023pv3d,
+  title={{PV3D: A 3D Generative Model for Portrait Video Generation}},
+  author={Xu, Zhongcong and Zhang, Jianfeng and Liew, Jun Hao and Zhang, Wenqing and Bai, Song and Feng, Jiashi and Shou, Zheng},
+  booktitle={International Conference on Learning Representations},
+  year={2023}
+}
+            </pre>
+              <span id="xu2023pv3d_abs" style="display: none; margin-top: 10px">PV3D breaks new ground in 3D portrait video generation, enabling multi-view consistent synthesis for animating static portraits and view-consistent editing.</span>
+            </td>
+          </tr>
+          <tr id="gong2022posetriplet">
+            <td class="pub_td1">
+              <img src="images/posetriplet_teaser.gif" />
+              <iframe
+                src="https://ghbtns.com/github-btn.html?user=Garfield-kh&repo=PoseTriplet&type=star&count=true&v=2&size=small"
+                frameborder="0"
+                scrolling="0"
+                width="200"
+                height="20"
+              ></iframe>
+            </td>
+            <td class="pub_td2">
+              <b
+                >PoseTriplet: Co-evolving 3D Human Pose Estimation, Imitation, and Hallucination under Self-supervision&nbsp;</b
+              >
+              <br /><br />
+              <a href="https://github.com/Garfield-kh">Kehong Gong*</a>,
+              <a href="https://ieeexplore.ieee.org/author/37085390780">Bingbing Li*</a>,
+              <u>Jianfeng Zhang</u>*,
+              <a href="https://twangnh.github.io/Home.html">Tao Wang*</a>,
+              Jing Huang,
+              Michael Bi Mi,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i
+                  >Computer Vision and Pattern Recognition 2022 (<strong style="color: brown">CVPR 2022, Oral</strong
+                  >)</i
+                >
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;gong2022posetriplet&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <!-- <a class="box" href="https://github.com/MVIG-SJTU/AlphaPose"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              > -->
+              <a class="box" href="https://arxiv.org/pdf/2203.15625"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <a
+                class="box"
+                href="https://github.com/Garfield-kh/PoseTriplet"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i
+                >Code&nbsp;</a
+              >
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;gong2022posetriplet&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="gong2022posetriplet_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{gong2022posetriplet,
+  title={{PoseTriplet: Co-evolving 3D Human Pose Estimation, Imitation, and Hallucination under Self-supervision}},
+  author={Gong, Kehong and Li, Bingbing and Zhang, Jianfeng and Wang, Tao and Huang, Jing and Mi, Michael Bi and Feng, Jiashi and Wang, Xinchao},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2022}
+}
+            </pre>
+              <span
+                id="gong2022posetriplet_abs"
+                style="display: none; margin-top: 10px"
+              >How to train 3D pose estimators without 3D data? Our dual-loop framework generates augmented 2D-3D pairs through RL-based physical constraints and motion sequence hallucination!
+            </span>
+            </td>
+          </tr>
+          <tr id="zhang2022avatargen" class="focus">
+            <td class="pub_td1">
+              <img src="assets/avatargen_demo.gif" width="100%">
+            </td>
+            <td class="pub_td2">
+              <b>AvatarGen: A 3D Generative Model for Animatable Human Avatars&nbsp;</b>
+
+              <br /><br />
+              <u>Jianfeng Zhang</u>*,
+              <a href="https://zihangjiang.github.io">Zihang Jiang*</a>,
+              <a href="https://santisy.github.io/">Dingdong Yang</a>,
+              <a href="https://hongyixu37.github.io/homepage/">Hongyi Xu</a>,
               <a href="https://seasonsh.github.io">Yichun Shi</a>,
               <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song</a>,
               <a href="https://github.com/zcxu-eric">Zhongcong Xu</a>,
               <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
-              <br>
-            <em>Arxiv Preprint</em>, 2023
-            <br>
-              <a href="https://arxiv.org/pdf/2211.14589.pdf">arxiv</a> /
-              <a href="http://jeff95.me/projects/avatargen.html">project page</a> /
-              <a href="https://github.com/jfzhang95/AvatarGen/">code</a> /
-              <a href="bibtex/avatargen_2022.txt">bibtex</a>
-              <p></p>
-            </td>
-          </tr>
-
-          <tr onmouseout="omniavatar_stop()" onmouseover="omniavatar_start()">
-            <td style="padding:5px;width:35%;vertical-align:top">
-              <div class="one">
-                <div class="two" id="omniavatar_image" style="opacity: 0;">
-                  <img src='images/omniavatar_teaser.png' width="300">
-                </div>
-                <img src='images/omniavatar_teaser.png' width="300">
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  European Conference on Computer Vision 2022 Workshop (<strong style="color: brown">ECCV Workshop 2022</strong>)
+                </i>
               </div>
-              <script type="text/javascript">
-                function omniavatar_start() {
-                  document.getElementById('omniavatar_image').style.opacity = "1";
-                }
-  
-                function omniavatar_stop() {
-                  document.getElementById('omniavatar_image').style.opacity = "0";
-                }
-                omniavatar_stop()
-              </script>
-            </td>
 
-          <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/2303.15539.pdf">
-                <papertitle>OmniAvatar: Geometry-Guided Controllable 3D Head Synthesis</papertitle>
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;zhang2022avatargen&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="http://jfzhang95.me/projects/avatargen.html"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              >
+              <a class="box" href="https://arxiv.org/abs/2211.14589"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
               </a>
-              <br>
-              <a href="http://www-scf.usc.edu/~hongyixu/">Hongyi Xu</a>,
-              <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song</a>,
-              <a href="https://zihangjiang.github.io">Zihang Jiang</a>,
-              <strong>Jianfeng Zhang</strong>,
-              <a href="https://seasonsh.github.io">Yichun Shi</a>,
-              <a href="https://www.jingliu.net/">Jing Liu</a>,
-              <a href="https://scholar.google.com/citations?user=VBpzuo4AAAAJ&hl=en">Wanchun Ma</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>,
-              <a href="http://linjieluo.com//">Linjie Luo</a>
-              <br>
-            <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2023
-            <br>
-              <a href="https://arxiv.org/pdf/2303.15539.pdf">arxiv</a> /
-              <a href="bibtex/omniavatar_2023.txt">bibtex</a>
-              <p></p>
+              <a class="box" href="https://github.com/jfzhang95/AvatarGen"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code</a
+              >
+
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;zhang2022avatargen&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="zhang2022avatargen_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{zhang2022avatargen,
+  title={{AvatarGen: A 3D Generative Model for Animatable Human Avatars}},
+  author={Zhang, Jianfeng and Jiang, Zihang and Yang, Dingdong and Xu, Hongyi and Shi, Yichun and Song, Guoxian and Xu, Zhongcong and Wang, Xinchao and Feng, Jiashi},
+  booktitle={European Conference on Computer Vision Workshops},
+  year={2022}
+}
+            </pre>
+              <span id="zhang2022avatargen_abs" style="display: none; margin-top: 10px">Generative 3D humans that are both high-quality and animatable? AvatarGen achieves this through SMPL-guided canonical representation, trained only from 2D images.
+              </span>
             </td>
           </tr>
+          <tr id="chen2022geometry">
+            <td class="pub_td1">
+              <marquee behavior="alternate" direction="left" scrollamount="3">
+                <img src="images/gp_nerf.png" width="100%">
+              </marquee>
+            </td>
+            <td class="pub_td2">
+              <b>Geometry-Guided Progressive NeRF for Generalizable and Efficient Neural Human Rendering&nbsp;</b>
 
-          <tr onmouseout="omniavatar_stop()" onmouseover="omniavatar_start()">
-            <td style="padding:5px;width:35%;vertical-align:top">
-              <div class="one">
-                <div class="two" id="omniavatar_image" style="opacity: 0;">
-                  <img src='images/3dagilegan_teaser.gif' width="300">
-                </div>
-                <img src='images/3dagilegan_teaser.gif' width="300">
-              </div>
-              <script type="text/javascript">
-                function omniavatar_start() {
-                  document.getElementById('omniavatar_image').style.opacity = "1";
-                }
-  
-                function omniavatar_stop() {
-                  document.getElementById('omniavatar_image').style.opacity = "0";
-                }
-                omniavatar_stop()
-              </script>
-            </td>
-
-          <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/2303.14297.pdf">
-                <papertitle>AgileGAN3D: Few-Shot 3D Portrait Stylization by Augmented Transfer Learning</papertitle>
-              </a>
-              <br>
-              <a href="https://guoxiansong.github.io/homepage/index.html">Guoxian Song</a>,
-              <a href="http://www-scf.usc.edu/~hongyixu/">Hongyi Xu</a>,
-              <a href="https://www.jingliu.net/">Jing Liu</a>,
-              <a href="https://tiancheng-zhi.github.io/">Tiancheng Zhi</a>,
-              <a href="https://seasonsh.github.io">Yichun Shi</a>,
-              <strong>Jianfeng Zhang</strong>,
-              <a href="https://zihangjiang.github.io">Zihang Jiang</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>,
-              <a href="https://ssangx.github.io/">Shen Sang</a>,
-              <a href="http://linjieluo.com//">Linjie Luo</a>
-              <br>
-            <em>Arxiv Preprint</em>, 2023
-            <br>
-              <a href="https://arxiv.org/pdf/2303.14297.pdf">arxiv</a> /
-              <a href="bibtex/agilegan3d_2023.txt">bibtex</a>
-              <p></p>
-            </td>
-          </tr>
-
-          <tr onmouseout="omniavatar_stop()" onmouseover="omniavatar_start()">
-            <td style="padding:5px;width:35%;vertical-align:top">
-              <div class="one">
-                <div class="two" id="omniavatar_image" style="opacity: 0;">
-                  <img src='images/poseaugv2_teaser.gif' width="300">
-                </div>
-                <img src='images/poseaugv2_teaser.gif' width="300">
-              </div>
-              <script type="text/javascript">
-                function omniavatar_start() {
-                  document.getElementById('omniavatar_image').style.opacity = "1";
-                }
-  
-                function omniavatar_stop() {
-                  document.getElementById('omniavatar_image').style.opacity = "0";
-                }
-                omniavatar_stop()
-              </script>
-            </td>
-
-          <td valign="top" width="75%">
-              <a href="https://ieeexplore.ieee.org/abstract/document/10050391/">
-                <papertitle>Learning to Augment Poses for 3D Human Pose Estimation in Images and Videos</papertitle>
-              </a>
-              <br>
-              <strong>Jianfeng Zhang</strong>*,
-              <a href="https://github.com/Garfield-kh">Kehong Gong</a>*,
-              <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
-              <br>
-            <em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)</em>, 2023
-            <br>
-              <a href="https://ieeexplore.ieee.org/abstract/document/10050391">arxiv</a> /
-              <a href="bibtex/poseaugv2_2023.txt">bibtex</a>
-              <p></p>
-            </td>
-          </tr>
-
-            <tr onmouseout="pv3d_stop()" onmouseover="pv3d_start()">
-              <td style="padding:5px;width:35%;vertical-align:top">
-                <div class="one">
-                  <div class="two" id="pv3d_image" style="opacity: 0;">
-                    <img src='images/pv3d_teaser.gif' width="300">
-                  </div>
-                  <img src='images/pv3d_teaser.gif' width="300">
-                </div>
-                <script type="text/javascript">
-                  function pv3d_start() {
-                    document.getElementById('pv3d_image').style.opacity = "1";
-                  }
-    
-                  function avatargen_stop() {
-                    document.pv3d_stop('pv3d_image').style.opacity = "0";
-                  }
-                  avatargen_stop()
-                </script>
-              </td>
-            
-            <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/2211.14589.pdf">
-                <papertitle>PV3D: A 3D Generative Model for Portrait Video Generation</papertitle>
-              </a>
-              <br>
-              <a href="https://github.com/zcxu-eric">Zhongcong Xu</a>*,
-              <strong>Jianfeng Zhang</strong>*,
-              <a href="https://scholar.google.com/citations?user=8gm-CYYAAAAJ&hl=zh-CN">Jun Hao Liew</a>,
-              <a href="http://jeff95.me">Wenqing Zhang</a>,
-              <a href="https://songbai.site/">Song Bai</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>,
-              <a href="https://sites.google.com/view/showlab">Zheng Shou</a>
-              <br>
-            <em>International Conference on Learning Representations (ICLR)</em>, 2023
-            <br>
-            <!-- <font color="red"><strong>Oral Presentation</strong></font> -->
-            <!-- <br> -->
-              <a href="https://arxiv.org/pdf/2212.06384.pdf">arxiv</a> /
-              <a href="https://showlab.github.io/pv3d/">project page</a> /
-              <a href="https://showlab.github.io/pv3d">code</a> 
-              <!-- <a href="bibtex/avatargen_2022.txt">bibtex</a> -->
-              <p></p>
-            </td>
-          </tr>
-
-          <tr onmouseout="posetriplet_stop()" onmouseover="posetriplet_start()">
-            <td style="padding:5px;width:35%;vertical-align:top">
-              <div class="one">
-                <div class="two" id="posetriplet_image" style="opacity: 0;">
-                  <img src='images/posetriplet_teaser.gif' width="300">
-                </div>
-                <img src='images/posetriplet_teaser.jpg' width="300">
-              </div>
-              <script type="text/javascript">
-                function posetriplet_start() {
-                  document.getElementById('posetriplet_image').style.opacity = "1";
-                }
-  
-                function posetriplet_stop() {
-                  document.getElementById('posetriplet_image').style.opacity = "0";
-                }
-                posetriplet_stop()
-              </script>
-            </td>
-            
-            <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/2203.15625">
-                <papertitle>PoseTriplet: Co-evolving 3D Human Pose Estimation, Imitation, and Hallucination under Self-supervision</papertitle>
-              </a>
-              <br>
-              <a href="https://github.com/Garfield-kh">Kehong Gong</a>*,
-              <a href="https://jeff95.me">Bingbing Li</a>*,
-              <strong>Jianfeng Zhang</strong>*,
-              <a href="https://twangnh.github.io/Home.html">Tao Wang</a>*,
-              <a href="https://jeff95.me">Jing Huang</a>,
-              <a href="https://jeff95.me">Bi Mi</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>,
-              <a href="https://sites.google.com/site/sitexinchaowang/">Xinchao Wang</a>
-              <br>
-            <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2022
-            <br>
-            <font color="red"><strong>Oral Presentation</strong></font>
-            <br>
-              <a href="https://arxiv.org/pdf/2203.15625">arxiv</a> /
-              <a href="https://arxiv.org/pdf/2203.15625">supp</a> /
-              <a href="https://user-images.githubusercontent.com/37209147/159867887-4fb0251c-5824-49bb-a4ee-1c06c42aabdb.mp4">video</a> /
-              <a href="http://jeff95.me/">project page</a> /
-              <a href="https://github.com/Garfield-kh/PoseTriplet/">code</a> /
-              <a href="bibtex/posetriplet_cvpr_2022.txt">bibtex</a>
-              <p></p>
-            </td>
-          </tr>
-          
-          <tr onmouseout="gpnerf_stop()" onmouseover="gpnerf_start()">
-            <td style="padding:5px;width:35%;vertical-align:top">
-              <div class="one">
-                <div class="two" id="gpnerf_image" style="opacity: 0;">
-                  <img src='images/gp_nerf.png' width="300">
-                </div>
-                <img src='images/gp_nerf.png' width="300">
-              </div>
-              <script type="text/javascript">
-                function gpnerf_start() {
-                  document.getElementById('gpnerf_image').style.opacity = "1";
-                }
-  
-                function gpnerf_stop() {
-                  document.getElementById('gpnerf_image').style.opacity = "0";
-                }
-                mvp_stop()
-              </script>
-            </td>
-            <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/2112.04312.pdf">
-                <papertitle>Geometry-Guided Progressive NeRF for Generalizable and Efficient Neural Human Rendering</papertitle>
-              </a>
-              <br>
+              <br /><br />
               <a href="https://www.mingfeichen.com/">Mingfei Chen</a>,
-              <strong>Jianfeng Zhang</strong>,
+              <u>Jianfeng Zhang</u>,
               <a href="https://sites.google.com/view/xiangyuxu/">Xiangyu Xu</a>,
-              <a href="https://scholar.google.com/citations?user=nANxp5wAAAAJ&hl=zh-CN/">Lijuan Liu</a>,
-	      <a href="https://yujuncai.netlify.app/">Yujun Cai</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>,
-              <a href="https://yanshuicheng.ai/">Shuicheng Yan</a>
-              <br>
-              <em>European Conference on Computer Vision (ECCV)</em>, 2022
-              <br>
-              <a href="https://arxiv.org/pdf/2112.04312.pdf">arxiv</a> /
-              <a href="http://jeff95.me/">project page</a> /
-              <a href="https://github.com/sail-sg/GP-Nerf">code</a>
-              <!-- <a href="https://github.com/sail-sg/mvp/">code</a> / -->
-              <!-- <a href="bibtex/mvp_nips2021.txt">bibtex</a> -->
-              <p></p>
+              <a href="https://scholar.google.com/citations?user=nANxp5wAAAAJ&hl=en">Lijuan Liu</a>,
+              <a href="https://vanoracai.github.io/">Yujun Cai</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>,
+              <a href="https://yanshuicheng.info/">Shuicheng Yan</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i>
+                  European Conference on Computer Vision 2022 (<strong style="color: brown">ECCV 2022</strong>)
+                </i>
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;chen2022geometry&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://arxiv.org/abs/2112.04312"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <a class="box" href="https://github.com/sail-sg/GP-Nerf"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i
+                >Code&nbsp;</a
+              >
+
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;chen2022geometry&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="chen2022geometry_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{chen2022geometry,
+  title={{Geometry-Guided Progressive NeRF for Generalizable and Efficient Neural Human Rendering}},
+  author={Chen, Mingfei and Zhang, Jianfeng and Xu, Xiangyu and Liu, Lijuan and Cai, Yujun and Feng, Jiashi and Yan, Shuicheng},
+  booktitle={European Conference on Computer Vision},
+  year={2022}
+}
+            </pre>
+              <span id="chen2022geometry_abs" style="display: none; margin-top: 10px">
+                GP-NeRF tackles sparse-view human synthesis through geometry-guided multi-view integration for handling occlusions and progressive rendering for 70%+ speedup.
+              </span>
             </td>
           </tr>
-        
-          <tr onmouseout="mvp_stop()" onmouseover="mvp_start()">
-            <td style="padding:5px;width:35%;vertical-align:top">
-              <div class="one">
-                <div class="two" id="mvp_image" style="opacity: 0;">
-                  <img src='images/mvp_teaser.gif' width="300">
-                </div>
-                <img src='images/mvp_teaser.png' width="300">
-              </div>
-              <script type="text/javascript">
-                function mvp_start() {
-                  document.getElementById('mvp_image').style.opacity = "1";
-                }
-  
-                function mvp_stop() {
-                  document.getElementById('mvp_image').style.opacity = "0";
-                }
-                mvp_stop()
-              </script>
+          <tr id="wang2021direct">
+            <td class="pub_td1">
+              <img src="images/mvp_teaser.gif" width="100%">
             </td>
-            <td valign="top" width="75%">
-              <a href="https://arxiv.org/pdf/2111.04076.pdf">
-                <papertitle>Direct Multi-view Multi-person 3D Pose Estimation</papertitle>
+            <td class="pub_td2">
+              <b>Direct Multi-view Multi-person 3D Pose Estimation&nbsp;</b>
+              <br /><br />
+              <a href="https://twangnh.github.io/Home.html/">Tao Wang*</a>,
+              <u>Jianfeng Zhang</u>*,
+              <a href="https://vanoracai.github.io/">Yujun Cai</a>,
+              <a href="https://yanshuicheng.info/">Shuicheng Yan</a>,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i
+                  >Neural Information Processing Systems 2021 (<strong
+                    style="color: brown"
+                    >NeurIPS 2021</strong
+                  >)</i
+                >
+              </div>
+
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;wang2021direct&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <!-- <a class="box" href="https://icon.is.tue.mpg.de"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              > -->
+              <a class="box" href="https://arxiv.org/pdf/2111.04076.pdf"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
               </a>
-              <br>
-              <strong>Jianfeng Zhang</strong>*,
-              <a href="https://twangnh.github.io/Home.html/">Tao Wang</a>*,
-              <a href="https://yujuncai.netlify.app/">Yujun Cai</a>,
-              <a href="https://yanshuicheng.ai/">Shuicheng Yan</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
-              <br>
-              <em>Neural Information Processing Systems (NeurIPS)</em>, 2021
-              <br>
-              <a href="https://arxiv.org/pdf/2111.04076.pdf">arxiv</a> /
-              <a href="publications/mvp_supp.pdf">supp</a> /
-              <a href="http://jeff95.me/">project page</a> /
-              <a href="https://github.com/sail-sg/mvp/">code</a> /
-              <a href="bibtex/mvp_nips2021.txt">bibtex</a>
-              <p></p>
+              <a class="box" href="https://github.com/sail-sg/mvp"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code
+              </a>
+              <a class="box" href="https://www.youtube.com/watch?v=dBT4SO2ve0c"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              >
+              <a
+                class="box"
+                href="https://drive.google.com/file/d/1NJeAYTbbV3ohXaYcUM7up-qITp37pvf6/view"
+                ><i class="fas fa-chalkboard-user" aria-hidden="true">&nbsp;</i
+                >Slides&nbsp;</a
+              >
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;wang2021direct&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex&nbsp;</a
+              >
+              <pre
+                id="wang2021direct_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{wang2021direct,
+  title={{Direct Multi-view Multi-person 3D Pose Estimation}},
+  author={Wang, Tao and Zhang, Jianfeng and Cai, Yujun and Yan, Shuicheng and Feng, Jiashi},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2021}
+}
+            </pre>
+              <span id="wang2021direct_abs" style="display: none; margin-top: 10px">
+                Why use costly volumetric representation or 2D pose reconstruction? MvP directly estimates multi-person 3D poses through transformer decoder and geometry-guided projective attention.
+              </span>
             </td>
           </tr>
 
-          <tr onmouseout="spatt_stop()" onmouseover="spatt_start()">
-            <td style="padding:5px;width:35%;vertical-align:top">
-              <div class="one">
-                <div class="two" id="spatt_image" style="opacity: 0;">
-                  <img src='images/spatt_teaser.png' width="300">
-                </div>
-                <img src='images/spatt_teaser.png' width="300">
-              </div>
-              <script type="text/javascript">
-                function spatt_start() {
-                  document.getElementById('spatt_image').style.opacity = "1";
-                }
-  
-                function spatt_stop() {
-                  document.getElementById('spatt_image').style.opacity = "0";
-                }
-                spatt_stop()
-              </script>
+          <tr id="gong2021poseaug" class="focus">
+            <td class="pub_td1">
+              <img src="images/pose_aug_teaser.gif" />
             </td>
-            <td valign="top" width="75%">
-              <a href="https://ieeexplore.ieee.org/document/9525061/">
-                <papertitle>Spatial-Aware Texture Transformer for
-                  High-Fidelity Garment Transfer</papertitle>
+            <td class="pub_td2">
+              <b>PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation&nbsp;</b>
+              <br /><br />
+              <a href="https://github.com/Garfield-kh">Kehong Gong*</a>,
+              <u>Jianfeng Zhang</u>*,
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i
+                  >Computer Vision and Pattern Recognition 2021 (<strong
+                    style="color: brown"
+                    >CVPR 2021, Best Paper Finalist</strong
+                  >)</i
+                >
+              </div>
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;gong2021poseaug&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <!-- <a class="box" href="./monoport"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              > -->
+              <a class="box" href="https://arxiv.org/pdf/2105.02465.pdf"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
               </a>
-              <br>
-              <a href="https://scholar.google.com/citations?hl=en&user=KXwNipsAAAAJ&view_op=list_works">Ting Liu</a>,
-              <strong>Jianfeng Zhang</strong>,
+
+              <a class="box" href="https://github.com/jfzhang95/PoseAug"
+                ><i class="fa fa-code" aria-hidden="true">&nbsp;</i>Code
+              </a>
+              <!-- <a class="box" href="https://youtu.be/fQDsYVE7GtQ"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              > -->
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;gong2021poseaug&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex
+                <?php $paperid="9890425650052236496" ; include
+                'php/citation.php';?>&nbsp;
+              </a>
+              <pre
+                id="gong2021poseaug_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{gong2021poseaug,
+  title={{PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation}},
+  author={Gong, Kehong and Zhang, Jianfeng and Feng, Jiashi},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2021}
+}
+            </pre>
+              <span
+                id="gong2021poseaug_abs"
+                style="display: none; margin-top: 10px"
+              >3D pose estimators struggle with generalization? PoseAug solves this through differentiable, online pose augmentation that learns to generate diverse yet plausible training poses!
+            </span>
+            </td>
+          </tr>
+
+          <tr id="zhang2021body">
+            <td class="pub_td1">
+              <img src="images/bmp_teaser.png" />
+            </td>
+            <td class="pub_td2">
+              <b>Body Meshes as Points&nbsp;</b><br /><br />
+              <u>Jianfeng Zhang</u>,
+              <a href="https://scholar.google.com/citations?user=B2RmjSYAAAAJ&hl=en">Dongdong Yu</a>,
+              <a href="https://liewjunhao.github.io/">Jun Hao Liew</a>,
               <a href="https://niexc.github.io/">Xuecheng Nie</a>,
-              <a href="https://weiyc.github.io/">Yunchao Wei</a>,
-              <a href="https://scholar.google.com/citations?user=vpuMdMUAAAAJ&hl=en/">Shikui Wei</a>,
-              <a href="https://scholar.google.com/citations?user=474TbQYAAAAJ&hl=en/">Yao Zhao</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
-              <br>
-              <em>IEEE Transactions on Image Processing (TIP)</em>, 2021
-              <br>
-              <a href="https://ieeexplore.ieee.org/document/9525061/">pdf</a> /
-              <a href="bibtex/spatt_tip2021.txt">bibtex</a>
-              <p></p>
-            </td>
-          </tr>
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
 
-        <tr onmouseout="poseaug_stop()" onmouseover="poseaug_start()">
-          <td style="padding:5px;width:35%;vertical-align:top">
-            <div class="one">
-              <div class="two" id="poseaug_image" style="opacity: 0;">
-                <img src='images/pose_aug_teaser.gif' width="300">
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i
+                  >Computer Vision and Pattern Recognition 2021 (<strong
+                    style="color: brown"
+                    >CVPR 2021</strong
+                  >)</i
+                >
               </div>
-              <img src='images/pose_aug_teaser.jpg' width="300">
-            </div>
-            <script type="text/javascript">
-              function poseaug_start() {
-                document.getElementById('poseaug_image').style.opacity = "1";
-              }
-
-              function poseaug_stop() {
-                document.getElementById('poseaug_image').style.opacity = "0";
-              }
-              poseaug_stop()
-            </script>
-          </td>
-          <td valign="top" width="75%">
-            <a href="https://arxiv.org/pdf/2105.02465">
-              <papertitle>PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation</papertitle>
-            </a>
-            <br>
-            <strong>Jianfeng Zhang</strong>*,
-            <a href="https://github.com/Garfield-kh">Kehong Gong</a>*,
-            <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
-            <br>
-            <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2021
-            <br>
-            <font color="red"><strong>Oral Presentation, Best Paper Award Finalist</strong></font>
-            <br>
-            <a href="https://arxiv.org/pdf/2105.02465">arxiv</a> /
-            <a href="publications/poseaug_supp.pdf">supp</a> /
-            <a href="http://jeff95.me/">project page</a> /
-            <a href="https://github.com/jfzhang95/PoseAug/">code</a> /
-            <a href="bibtex/poseaug_cvpr_2021.txt">bibtex</a>
-            <p></p>
-          </td>
-        </tr>
-
-          <tr onmouseout="bird_stop()" onmouseover="bird_start()">
-            <td style="padding:20px;width:35%;vertical-align:top">
-              <img src='images/bmp_teaser.png' width="300">
-          </td>
-
-            <td valign="middle" width="75%">
-              <a href="https://arxiv.org/pdf/2105.02467">
-                <papertitle>Body Meshes as Points</papertitle>
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;zhang2021body&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <!-- <a class="box" href="./monoport"
+                ><i class="fas fa-home" aria-hidden="true">&nbsp;</i
+                >Home&nbsp;</a
+              > -->
+              <a
+                class="box"
+                href="https://arxiv.org/abs/2105.02467"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
               </a>
-              <br>
-              <strong>Jianfeng Zhang</strong>,
-	            <a href="https://miracle-fmh.github.io/">Dongdong Yu</a>,
-              <a href="https://scholar.google.com/citations?user=8gm-CYYAAAAJ&hl=zh-CN">Jun Hao Liew</a>,
-              <a href="https://niexc.github.io/">Xuecheng Nie</a>,
-	            <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
-              <br>
-              <em>Computer Vision and Pattern Recognition (CVPR)</em>, 2021
-              <br>
-              <a href="https://arxiv.org/pdf/2105.02467">arxiv</a> /
-              <a href="publications/bmp_supp.pdf">supp</a> /
-              <a href="http://jeff95.me/">project page</a> /
-              <a href="https://github.com/jfzhang95/BMP/">code</a> /
-              <a href="bibtex/bmp_cvpr_2021.txt">bibtex</a>
-              <p></p>
-            </td>
-          </tr>
+              <!-- <a class="box" href="https://youtu.be/THxYxcEnKFk"
+                ><i class="fa fa-video" aria-hidden="true">&nbsp;</i
+                >Video&nbsp;</a
+              > -->
 
-          <tr onmouseout="bird_stop()" onmouseover="bird_start()">
-            <td style="padding:20px;width:35%;vertical-align:top">
-              <img src='images/iso_motivation.png' width="300">
-          </td>
-
-            <td valign="middle" width="75%">
-              <a href="https://arxiv.org/abs/2007.02054">
-                <papertitle>Inference Stage Optimization for Cross-scenario 3D Human Pose Estimation</papertitle>
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;zhang2021body&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex
+                <?php $paperid="17210272119514281912" ; include
+                'php/citation.php';?>&nbsp;
               </a>
-              <br>
-              <strong>Jianfeng Zhang</strong>,
-	            <a href="https://niexc.github.io/">Xuecheng Nie</a>,
-	            <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
-              <br>
-              <em>Neural Information Processing Systems (NeurIPS)</em>, 2020
-              <br>
-              <a href="https://arxiv.org/abs/2007.02054/">arxiv</a> /
-              <a href="publications/iso_supp.pdf">supp</a> /
-              <a href="bibtex/iso_nips2020.txt">bibtex</a>
-              <p></p>
-              <!-- <p>A model and a method for 3D bird reconstruction from images.</p> -->
+              <pre
+                id="zhang2021body_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{zhang2021body,
+  title={{Body Meshes as Points}},
+  author={Zhang, Jianfeng and Yu, Dongdong and Liew, Jun Hao and Nie, Xuecheng and Feng, Jiashi},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  year={2021}
+}
+            </pre>
+              <span
+                id="zhang2021body_abs"
+                style="display: none; margin-top: 10px"
+              >
+              BMP simplifies multi-person mesh estimation through single-stage point-based representation, concurrently localizing instances and estimating meshes with depth coherence.
+            </span>
             </td>
           </tr>
 
-        <tr>
-          <td style="padding:20px;width:35%;vertical-align:top">
-            <img src='images/spm.png' width="300">
-        </td>
+          <tr id="zhang2020inference">
+            <td class="pub_td1">
+              <img src="images/iso_motivation.png" />
+            </td>
+            <td class="pub_td2">
+              <b>	Inference Stage Optimization for Cross-scenario 3D Human Pose Estimation&nbsp;</b><br /><br />
+              <u>Jianfeng Zhang</u>, 
+              <a href="https://niexc.github.io/">Xuecheng Nie</a>, 
+              <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>
 
-            <td width="75%" valign="middle">
-                <p>
-                <a href="https://arxiv.org/abs/1908.09220">
-                    <papertitle>Single-stage Multi-person Pose Machines</papertitle>
-                </a>
-                <br>
-                <a href="https://niexc.github.io/">Xuecheng Nie</a>,
-              <strong>Jianfeng Zhang</strong>,
-              <a href="https://www.ece.nus.edu.sg/stfpage/eleyans/">Shuicheng Yan</a>,
-              <a href="https://sites.google.com/site/jshfeng/">Jiashi Feng</a>
-              <br>
-              <em>International Conference on Computer Vision (ICCV)</em>, 2019
-              <br>
-              <a href ="https://arxiv.org/abs/1908.09220">arxiv</a>
-              /
-              <a href ="https://github.com/NieXC/pytorch-spm">code</a>
-              /
-              <a href="bibtex/spm_iccv19.txt">bibtex</a>
-              <p></p>
-              <!-- <p>End-to-end reconstruction of multiple people using two novel geometric losses that encourage coherent 3D estimates</p> -->
+              <br />
+              <div style="margin-top: 10px; margin-bottom: 10px">
+                <i
+                  >Neural Information Processing Systems (<strong
+                    style="color: brown"
+                    >NeurIPS 2020</strong
+                  >)</i
+                >
+              </div>
+              <a
+                shape="rect"
+                href="javascript:toggleabs(&#39;zhang2020inference&#39;)"
+                class="toggleabs box"
+                ><i class="fas fa-angle-double-down" aria-hidden="true"
+                  >&nbsp;</i
+                >Intro&nbsp;</a
+              >
+              <a class="box" href="https://arxiv.org/abs/2007.02054"
+                ><i class="fa fa-file-lines" aria-hidden="true">&nbsp;</i>Paper
+              </a>
+              <!-- <a
+                class="box"
+                href="https://www.zhihu.com/question/271211525/answer/554960781"
+                ><i class="fab fa-quora">&nbsp;</i>Zhihu&nbsp;</a
+              > -->
+              <a
+                shape="rect"
+                href="javascript:togglebib(&#39;zhang2020inference&#39;)"
+                class="togglebib box"
+                ><i class="fas fa-quote-left" aria-hidden="true">&nbsp;</i
+                >Bibtex
+                <?php $paperid="5164850732214894798" ; include
+                'php/citation.php';?>&nbsp;
+              </a>
+              <pre
+                id="zhang2020inference_bib"
+                xml:space="preserve"
+                style="display: none"
+              >
+@inproceedings{zhang2020inference,
+  title={{Inference Stage Optimization for Cross-scenario 3D Human Pose Estimation}},
+  author={Zhang, Jianfeng and Nie, Xuecheng and Feng, Jiashi},
+  booktitle={Advances in Neural Information Processing Systems},
+  year={2020}
+}
+            </pre>
+              <span
+                id="zhang2020inference_abs"
+                style="display: none; margin-top: 10px"
+              >
+              ISO improves cross-scenario 3D pose generalization by adapting models at inference time through geometry-aware self-supervised learning.
+            </span>
             </td>
           </tr>
-  
-        
-        <tr onmouseout="portrait_stop()" onmouseover="portrait_start()">
-            <td style="padding:20px;width:35%;vertical-align:middle">
-                <div class="one">
-                    <div class="two" id='wang2018cvsp'><img src='images/jh_graphabstract.png' width="300"></div>
-                    <img src='images/jh_graphabstract.png' width="300">
-                    </div>
-                <script type="text/javascript">
-                    function portrait_start() {
-                        document.getElementById('wang2018cvsp').style.opacity = "1";
-                    }
-                
-                function portrait_stop() {
-                    document.getElementById('wang2018cvsp').style.opacity = "0";
-                }
-                portrait_stop()
-                </script>
-            </td>
-            <td width="75%" valign="middle">
-                <p>
-                <a href="https://www.sciencedirect.com/science/article/pii/S0022169418303184?via%3Dihub">
-                    <papertitle>Developing a LSTM based Model for Predicting Water Table Depth</papertitle>
-                </a>
-                <br>
-                <strong>Jianfeng Zhang</strong>,
-                <a href="https://www.researchgate.net/profile/Yan-Zhu-83/">Yan Zhu</a>,
-                <a href="http://xpzhang.me/">Xiaoping Zhang</a>,
-                <a href="https://scholar.google.com/citations?user=8NhUhVMAAAAJ&hl=zh-CN/">Ming Ye</a>,
-                <a href="https://www.researchgate.net/scientific-contributions/Jinzhong-Yang-2163329955/">Jinzhong Yang</a>
-                <br>
-                <em>Journal of Hydrology</em>, 2018
-                <br>   
-                <a href = "https://www.sciencedirect.com/science/article/pii/S0022169418303184?via%3Dihub">pdf</a>
-                /                           
-                <a href = "https://github.com/jfzhang95/LSTM-water-table-depth-prediction">code</a>
-                /
-                <a href="bibtex/lstm_jh2018.txt">bibtex</a>
-                <p></p>
-                <!-- <p>Improving model-based human pose and shape regression with automatic in-the-loop fitting</p> -->
-              </td>
-            </tr>
-            </td>
-        </tr> 
-        
-      
-        
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr>
-                <td style="padding:10px;width:100%;vertical-align:middle">
-                    <heading>Projects</heading>
-                </td>
-            </tr>
-        </tbody></table>
-        <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-        
-          <tr>
-            <td style="padding:0px;width:20%;vertical-align:middle">
-                <p style="text-align:center">
-                    <img src='images/deeplab_results.png' height="150">
-                    <br>
-                    <a href="https://github.com/jfzhang95/pytorch-deeplab-xception">Deeplab V3+ in PyTorch</a>
-                </p>
-            </td>
-  
-            <td style="padding:0px;width:20%;vertical-align:middle">
-              <p style="text-align:center">
-                  <img src='images/dgc_demo.gif' height="150">
-                  <br>
-                  <a href="https://github.com/jfzhang95/DeepGrabCut-PyTorch">Deep Grabcut</a>
-              </p>
-          </td>
+        </table>
 
-          <td style="padding:0px;width:20%;vertical-align:middle">
-            <p style="text-align:center">
-                <img src='images/demo2.gif' height="150">
-                <br>
-                <a href="https://github.com/jfzhang95/pytorch-video-recognition">Action Recognition Toolbox</a>
-            </p>
-        </td>
-   
-          <td style="padding:0px;width:20%;vertical-align:middle">
-            <p style="text-align:center">
-                <img src='images/rgbd_cut.png' height="150">
-                <br>
-                <a href="https://github.com/ZVsion/rgbd_image_segmentation">Interactive Segmentation</a>
-            </p>
-          </td>
-        </td>
-        </tr>
         
-        </tbody></table>
-
-
-        <div id="footer">
-          <div id="footer-text"></div>
+        <h1>Academic Service</h1>
+        <ul>
+          <li>
+            <strong>Computer Graphics (CG)</strong>:
+            <ul>
+              <li>
+                <strong>Conference Reviewer</strong>: SIGGRAPH, SIGGRAPH Asia
+              </li>
+              <li><strong>Journal Reviewer</strong>: TVCG, TOG</li>
+            </ul>
+          </li>
+          <li>
+            <strong>Computer Vision (CV)</strong>:
+            <ul>
+              <li>
+                <strong>Conference Reviewer</strong>: CVPR, ECCV, ICCV, NeurIPS, ICLR,
+                3DV, WACV, BMVC
+              </li>
+              <li>
+                <strong>Journal Reviewer</strong>: T-PAMI, IJCV, TIP
+              </li>
+              <li><strong>Area Chair</strong>: </li>
+            </ul>
+          </li>
+        </ul>
+        <div align="center">
+          <!-- <div>
+            <script
+              type="text/javascript"
+              src="//rf.revolvermaps.com/0/0/6.js?i=5defqxh6kgm&amp;m=1&amp;c=ff0000&amp;cr1=ffffff&amp;f=ubuntu&amp;l=0&amp;s=300&amp;bv=100&amp;hi=20"
+              async="async"
+            ></script>
+          </div> -->
+          <strong
+            >This page is last updated at
+            <span id="demo" style="color: blue"></span
+          ></strong>
         </div>
-          <p><center><font face="Arial">
-                <br>
-                    <script type='text/javascript' id='clustrmaps' src='//cdn.clustrmaps.com/map_v2.js?cl=ffffff&w=360&t=tt&d=notuMmjZmmmqgGr27ELZx5OsJzDyX5EM5xhYhsafATk&co=2d78ad&ct=ffffff&cmo=3acc3a&cmn=ff5353'></script>
-                    &copy; Jianfeng Zhang | Last updated: 04/2023
-                </font></center></p>
+      </div>
+    </div>
+  </body>
 
-<script xml:space="preserve" language="JavaScript">
-hideallbibs();
-</script>
+  <script type="text/javascript">
+    window.onload = RefreshFunc;
 
+    function RefreshFunc() {
+      // console.log("RefreshFunc called!"); // Debugging line
+      var lastUpdate = document.lastModified.substr(0, 10);
+      // console.log("Last modified:", lastUpdate); // Check browser console
 
-</body>
-
+      if (lastUpdate && lastUpdate !== "Invalid Date") {
+        var formattedDate = lastUpdate.substr(0, 10);
+        // console.log("Formatted date:", formattedDate); // Debugging line
+        document.getElementById("demo").innerHTML = formattedDate;
+      } else {
+        // console.log("Using fallback date"); // Debugging line
+        var today = new Date();
+        var formattedDate = today.toISOString().split("T")[0];
+        document.getElementById("demo").innerHTML = formattedDate;
+      }
+    }
+  </script>
 </html>
+
