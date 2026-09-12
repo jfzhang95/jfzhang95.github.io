@@ -1,6 +1,0 @@
-@inproceedings{wang2021mvp,
-  title={Direct Multi-view Multi-person 3D Pose Estimation},
-  author={Wang, Tao and Zhang, Jianfeng and Cai, Yujun and Yan, Shuicheng and Feng, Jiashi},
-  booktitle={NeurIPS},
-  year={2021}
-}

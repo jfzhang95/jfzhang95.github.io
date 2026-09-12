@@ -1,6 +1,0 @@
-@article{liu2021spatt,
-  title={Spatial-Aware Texture Transformer for High-Fidelity Garment Transfer},
-  author={Liu, Ting and Zhang, Jianfeng and Nie, Xuecheng and Wei, Yunchao and Wei, Shikui and Zhao, Yao and Feng, Jiashi},
-  journal={IEEE Transactions on Image Processing},
-  year={2021}
-}

@@ -1,6 +1,0 @@
-@inproceedings{nie2019spm,
-  title={Single-stage Multi-person Pose Machines},
-  author={Nie, Xuecheng and Zhang, Jianfeng and Yan, Shuicheng and Feng, Jiashi},
-  booktitle={ICCV},
-  year={2019}
-}
