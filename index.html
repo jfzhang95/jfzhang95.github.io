@@ -38,6 +38,8 @@ nav ul a{color:var(--muted);font-size:13.5px} nav ul a:hover{color:var(--text);t
 .hero h1{font-size:46px;line-height:1.05;margin:0 0 10px;font-weight:600;letter-spacing:-.02em}
 .hero h1 span{font-weight:500;font-size:22px;letter-spacing:0;color:var(--muted);margin-left:12px;vertical-align:middle}
 .hero .tag{font-size:15px;color:var(--muted);margin-bottom:22px} .hero .tag b{color:var(--text);font-weight:600}
+.hero .tag a{color:inherit;text-decoration:underline;text-decoration-color:var(--line);text-underline-offset:3px}
+.hero .tag a:hover{color:var(--accent)}
 .hero p{margin:0 0 12px;color:var(--muted);max-width:640px}
 .hero p b{color:var(--text)}
 .hero .photo img{width:220px;height:220px;border-radius:50%;object-fit:cover;box-shadow:0 0 0 6px var(--card),0 0 60px rgba(110,168,255,.25)}
@@ -75,7 +77,7 @@ h2.sec{font-size:22px;font-weight:600;margin:0 0 6px;padding-left:12px;border-le
 .card-meta{display:flex;gap:6px;flex-wrap:wrap}
 .pill{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:10px;letter-spacing:.08em;text-transform:uppercase;background:var(--pill);color:var(--muted);padding:3px 7px;border-radius:5px}
 .pill.accent{background:color-mix(in srgb,var(--accent) 18%,transparent);color:var(--accent)}
-.pill.star{margin-left:auto;text-transform:none;background:color-mix(in srgb,var(--award) 16%,transparent);color:var(--award);display:inline-flex;align-items:center;gap:4px} .pill.star i{font-size:9px}
+.pill.star{margin-left:auto;text-transform:none;font-size:11px;background:color-mix(in srgb,var(--award) 16%,transparent);color:var(--award);display:inline-flex;align-items:center;gap:4px} .pill.star i{font-size:9px}
 .card-name{font-weight:600} .card p{margin:0;font-size:12.5px;color:var(--muted);flex:1}
 .card-links a{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;margin-right:12px;color:var(--text);border-bottom:1px solid var(--line)}
 /* pubs */
@@ -101,6 +103,8 @@ sup.mk{color:var(--accent);font-weight:700;font-size:1em;line-height:0;margin-le
 .pub-venue{font-size:13px;margin:4px 0 8px;color:var(--muted)} .venue{font-style:italic;color:var(--text)} .venue-full{color:var(--dim)} .venue-full:before{content:"· "}
 .award{display:inline-flex;align-items:center;gap:5px;margin-left:8px;padding:2px 9px;border-radius:999px;background:color-mix(in srgb,var(--award) 18%,transparent);border:1px solid color-mix(in srgb,var(--award) 55%,transparent);color:var(--award);font-weight:700;font-size:11.5px;letter-spacing:.02em;text-transform:uppercase;font-style:normal;vertical-align:middle}
 .award i{font-size:11px}
+a.award{text-decoration:none}
+a.award:hover{background:color-mix(in srgb,var(--award) 30%,transparent);text-decoration:none}
 .role{display:inline-flex;align-items:center;gap:6px;margin-left:8px;padding:2px 9px;border-radius:999px;background:color-mix(in srgb,var(--accent) 14%,transparent);border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);color:var(--accent);font-weight:600;font-size:11.5px;font-style:normal;vertical-align:middle}
 .role i{font-size:10px}
 .pub-links{display:flex;flex-wrap:wrap;gap:6px}
@@ -140,10 +144,9 @@ footer{padding:40px 0 30px;color:var(--dim);font-size:12.5px;text-align:center;b
 <header class="wrap hero">
   <div>
     <h1>Jianfeng Zhang <span>张健锋</span></h1>
-    <div class="tag"><b>Research Scientist</b> at ByteDance Seed &nbsp;·&nbsp; Lead of Seed3D &nbsp;·&nbsp; Generative 3D &amp; World Models</div>
+    <div class="tag"><b>Research Scientist</b> at <a href="https://seed.bytedance.com/en/" target="_blank">ByteDance Seed</a> &nbsp;·&nbsp; Lead of <a href="https://seed.bytedance.com/en/seed3d_2_0" target="_blank">Seed3D</a> &nbsp;·&nbsp; PhD @ <a href="https://nus.edu.sg/" target="_blank">NUS</a></div>
     <p>I am a Research Scientist at <a href="https://seed.bytedance.com/en/" target="_blank">ByteDance Seed</a>, where I lead <b><a href="https://seed.bytedance.com/en/seed3d_2_0" target="_blank">Seed3D</a></b>. Like humans, machines will need a world to grow up in: a place to see, act, and fail safely before they enter ours. We build generative 3D world models that create such worlds, from objects to scenes to interactions, with the geometry, materials, dynamics, and physics to be acted in rather than just looked at.</p>
-        <p>Before this, I received my PhD from the <a href="https://nus.edu.sg/" target="_blank">National University of Singapore</a>, with research internships at ByteDance AI Lab, Sea AI Lab, and Meta Reality Labs.</p>
-    <p><b>We are always looking for great talent (both full-time &amp; intern). Feel free to reach out if interested!</b></p>
+            <p><b>We are always looking for great talent (both full-time &amp; intern). Feel free to reach out if interested!</b></p>
     <div class="btns">
       <a class="btn" id="em" href="javascript:void(0)"><i class="fa-solid fa-envelope"></i>Email</a>
       <a class="btn" href="https://scholar.google.com/citations?user=VEusWMYAAAAJ&hl=en" target="_blank"><i class="fa-solid fa-graduation-cap"></i>Google Scholar</a>
@@ -206,9 +209,9 @@ footer{padding:40px 0 30px;color:var(--dim);font-size:12.5px;text-align:center;b
 </div><div class="card">
   <div class="card-img contain"><img src="assets/magicanimate_teaser.gif" alt="" loading="lazy"></div>
   <div class="card-body">
-    <div class="card-meta"><span class="pill">2024</span><span class="pill accent">CVPR 2024</span></div>
+    <div class="card-meta"><span class="pill">2024</span><span class="pill accent">CVPR 2024</span><span class="pill star"><i class="fa-solid fa-star"></i>10k+</span></div>
     <div class="card-name">MagicAnimate</div>
-    <p>Temporally consistent human image animation (10k+ GitHub stars); powers AI Dancing on TikTok.</p>
+    <p>Temporally consistent human image animation; powers AI Dancing on TikTok.</p>
     <div class="card-links"><a href="https://github.com/magic-research/magic-animate" target="_blank">Code</a><a href="https://showlab.github.io/magicanimate/" target="_blank">Project</a></div>
   </div>
 </div></div>
@@ -434,7 +437,7 @@ footer{padding:40px 0 30px;color:var(--dim);font-size:12.5px;text-align:center;b
   <div class="pub-body">
     <h3 class="pub-title">MagicAnimate: Temporally Consistent Human Image Animation using Diffusion Model</h3>
     <div class="pub-authors"><a href="https://zcxu-eric.github.io/">Zhongcong Xu</a>, <span class="me">Jianfeng Zhang</span>, <a href="https://liewjunhao.github.io/">Jun Hao Liew</a>, <a href="https://hanshuyan.github.io/">Hanshu Yan</a>, <a href="https://jia-wei-liu.github.io/">Jiawei Liu</a>, <a href="https://zhangchenxu528.github.io/">Chenxu Zhang</a>, <a href="https://scholar.google.com.sg/citations?user=Q8iay0gAAAAJ">Jiashi Feng</a>, <a href="https://sites.google.com/view/showlab">Zheng Shou</a></div>
-    <div class="pub-venue"><span class="venue">CVPR 2024</span></div>
+    <div class="pub-venue"><span class="venue">CVPR 2024</span> <a class="award" href="https://github.com/magic-research/magic-animate" target="_blank"><i class="fa-solid fa-star"></i>10k+ GitHub Stars</a></div>
     <div class="pub-links"><a class="chip" href="https://showlab.github.io/magicanimate" target="_blank"><i class="fa-solid fa-house"></i>Home</a><a class="chip" href="https://arxiv.org/abs/2311.16498" target="_blank"><i class="fa-solid fa-file-lines"></i>Paper</a><a class="chip" href="https://github.com/magic-research/magic-animate" target="_blank"><i class="fa-brands fa-github"></i>Code</a><a class="chip" href="javascript:void(0)" onclick="toggleBib('xu2024magicanimate')"><i class="fa-solid fa-quote-left"></i>Cite</a></div>
     <p class="pub-tag">A breakthrough in human animation: MagicAnimate delivers the first high-fidelity, temporally consistent results via video diffusion model!</p>
     <pre class="bib" id="bib-xu2024magicanimate">@inproceedings{xu2024magicanimate,
@@ -617,7 +620,7 @@ footer{padding:40px 0 30px;color:var(--dim);font-size:12.5px;text-align:center;b
   <div class="pub-body">
     <h3 class="pub-title">PoseAug: A Differentiable Pose Augmentation Framework for 3D Human Pose Estimation</h3>
     <div class="pub-authors"></div>
-    <div class="pub-venue"><span class="venue">CVPR 2021</span><span class="award"><i class="fa-solid fa-award"></i>Best Paper Finalist</span></div>
+    <div class="pub-venue"><span class="venue">CVPR 2021</span><a class="award" href="https://cvpr2021.thecvf.com/node/290" target="_blank"><i class="fa-solid fa-award"></i>Best Paper Finalist</a></div>
     <div class="pub-links"><a class="chip" href="https://arxiv.org/pdf/2105.02465.pdf" target="_blank"><i class="fa-solid fa-file-lines"></i>Paper</a><a class="chip" href="https://github.com/jfzhang95/PoseAug" target="_blank"><i class="fa-brands fa-github"></i>Code</a><a class="chip" href="javascript:void(0)" onclick="toggleBib('gong2021poseaug')"><i class="fa-solid fa-quote-left"></i>Cite</a></div>
     <p class="pub-tag">3D pose estimators struggle with generalization? PoseAug solves this through differentiable, online pose augmentation that learns to generate diverse yet plausible training poses!</p>
     <pre class="bib" id="bib-gong2021poseaug">@inproceedings{gong2021poseaug,
